@@ -18,15 +18,24 @@ public class PlayerController : MonoBehaviour
 
     private Animator animator; // 애니메이터
     private Rigidbody2D _rigidbody;
-    private BoxCollider2D groundDetector; // 바닥 감지기
+
+    [SerializeField] private Collider2D playerCollider; // 플레이어 콜라이더
+    [SerializeField] private Collider2D slidingCollider; // 슬라이딩 콜라이더
+    [SerializeField] private Collider2D groundDetector; // 바닥 감지기
+    [SerializeField] private LayerMask ground;// 바닥 레이어
 
     void Start()
     {
+        playerCollider.enabled = true;
+        slidingCollider.enabled = false;
         animator = GetComponentInChildren<Animator>();
         _rigidbody = GetComponent<Rigidbody2D>();
-        groundDetector = GetComponentInChildren<BoxCollider2D>();
     }
-
+    private void FixedUpdate()
+    {
+        CheckGround();
+        Move();
+    }
     void Update()
     {
         if (isDead)
@@ -35,10 +44,19 @@ public class PlayerController : MonoBehaviour
         }
         else
         {
-            CheckGround();
-            Move();
-            HandleJump();
-            Slide();
+            if (Input.GetKeyDown(KeyCode.Space) && jumpCount < maxJumps)
+            {
+                HandleJump();
+            }
+            if (Input.GetKey(KeyCode.LeftShift) && isGrounded && !isSliding)
+            {
+                StartSlide();
+                Debug.Log("Sliding");
+            }
+            else if (Input.GetKeyUp(KeyCode.LeftShift) && isSliding || !isGrounded)
+            {
+                StopSlide();
+            }
         }
     }
 
@@ -49,10 +67,8 @@ public class PlayerController : MonoBehaviour
     }
     void HandleJump()
     {
-        if (Input.GetKeyDown(KeyCode.Space) && jumpCount < maxJumps)
+            if (jumpCount == 0 && isGrounded) // 바닥에 닿아있을 때만 점프 가능
         {
-            if (jumpCount == 0 && isGrounded)
-            {
                 // 점프
                 jumpCount = 1;
                 _rigidbody.velocity = new Vector2(_rigidbody.velocity.x, jumpForce);
@@ -60,28 +76,31 @@ public class PlayerController : MonoBehaviour
                 animator.SetBool("IsJump", true);
                 Debug.Log("First Jump");
             }
-            else if (!isGrounded && jumpCount < maxJumps)
+            else if (!isGrounded && jumpCount < maxJumps) // 공중에 있을 때만 더블점프 가능
             {
-                jumpCount++;
+                jumpCount = 2;
                 _rigidbody.velocity = new Vector2(_rigidbody.velocity.x, jumpForce);
                 isDoubleJumping = true;
                 animator.SetTrigger("IsDoubleJump");
                 Debug.Log("Double Jump");
             }
-        }
     }
-    void Slide()
+
+    void StartSlide()
     {
-        if (Input.GetKeyDown(KeyCode.LeftShift) && !isSliding && isGrounded)
-        {
-            isSliding = true;
-            animator.SetBool("IsSliding", true);
-        }
-        else if (Input.GetKeyUp(KeyCode.LeftShift) && isSliding)
-        {
-            isSliding = false;
-            animator.SetBool("IsSliding", false);
-        }
+        isSliding = true;
+        animator.SetBool("IsSliding", true);
+
+        playerCollider.enabled = false; // 플레이어 콜라이더 비활성화
+        slidingCollider.enabled = true; // 슬라이딩 콜라이더 활성화
+    }
+    void StopSlide()
+    {
+        isSliding = false;
+        animator.SetBool("IsSliding", false);
+
+        playerCollider.enabled = true; // 플레이어 콜라이더 활성화
+        slidingCollider.enabled = false; // 슬라이딩 콜라이더 비활성화
     }
     void CheckGround()
     {
