@@ -2280,7 +2280,7 @@ TilemapRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 10
   m_ChunkSize: {x: 32, y: 32, z: 32}
   m_ChunkCullingBounds: {x: 0, y: 0, z: 0}
   m_MaxChunkCount: 16
@@ -2820,6 +2820,10 @@ PrefabInstance:
       propertyPath: m_Points.m_Paths.Array.data[0].Array.data[28].y
       value: -0.85999995
       objectReference: {fileID: 0}
+    - target: {fileID: 582363506087360225, guid: 897a5a2a6702ca2418dde43f9b08bed9, type: 3}
+      propertyPath: m_SortingOrder
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 752246060471740377, guid: 897a5a2a6702ca2418dde43f9b08bed9, type: 3}
       propertyPath: m_Points.m_Paths.Array.data[0].Array.data[0].y
       value: -0.57
@@ -2936,6 +2940,10 @@ PrefabInstance:
       propertyPath: m_Points.m_Paths.Array.data[0].Array.data[28].y
       value: -0.85999995
       objectReference: {fileID: 0}
+    - target: {fileID: 1139856231811974958, guid: 897a5a2a6702ca2418dde43f9b08bed9, type: 3}
+      propertyPath: m_SortingOrder
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 1332148338151557771, guid: 897a5a2a6702ca2418dde43f9b08bed9, type: 3}
       propertyPath: m_Points.m_Paths.Array.data[0].Array.data[0].y
       value: -0.57
@@ -3051,6 +3059,10 @@ PrefabInstance:
     - target: {fileID: 1332148338151557771, guid: 897a5a2a6702ca2418dde43f9b08bed9, type: 3}
       propertyPath: m_Points.m_Paths.Array.data[0].Array.data[28].y
       value: -0.85999995
+      objectReference: {fileID: 0}
+    - target: {fileID: 1486920067897971738, guid: 897a5a2a6702ca2418dde43f9b08bed9, type: 3}
+      propertyPath: m_SortingOrder
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 2168739560536652670, guid: 897a5a2a6702ca2418dde43f9b08bed9, type: 3}
       propertyPath: m_Points.m_Paths.Array.data[0].Array.data[0].y
@@ -3172,6 +3184,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: Obstacles
       objectReference: {fileID: 0}
+    - target: {fileID: 2385839180907333209, guid: 897a5a2a6702ca2418dde43f9b08bed9, type: 3}
+      propertyPath: m_SortingOrder
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2623839725815333153, guid: 897a5a2a6702ca2418dde43f9b08bed9, type: 3}
+      propertyPath: m_SortingOrder
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2885782125431509983, guid: 897a5a2a6702ca2418dde43f9b08bed9, type: 3}
+      propertyPath: m_SortingOrder
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 3044601642493349203, guid: 897a5a2a6702ca2418dde43f9b08bed9, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -3212,6 +3236,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3168483883265619741, guid: 897a5a2a6702ca2418dde43f9b08bed9, type: 3}
+      propertyPath: m_SortingOrder
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3977532770864365201, guid: 897a5a2a6702ca2418dde43f9b08bed9, type: 3}
+      propertyPath: m_SortingOrder
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 4329480790633660705, guid: 897a5a2a6702ca2418dde43f9b08bed9, type: 3}
       propertyPath: m_Points.m_Paths.Array.data[0].Array.data[0].y
       value: -0.57
@@ -3327,6 +3359,10 @@ PrefabInstance:
     - target: {fileID: 4329480790633660705, guid: 897a5a2a6702ca2418dde43f9b08bed9, type: 3}
       propertyPath: m_Points.m_Paths.Array.data[0].Array.data[28].y
       value: -0.85999995
+      objectReference: {fileID: 0}
+    - target: {fileID: 5296894585690148968, guid: 897a5a2a6702ca2418dde43f9b08bed9, type: 3}
+      propertyPath: m_SortingOrder
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 5934722394703599520, guid: 897a5a2a6702ca2418dde43f9b08bed9, type: 3}
       propertyPath: m_Points.m_Paths.Array.data[0].Array.data[0].y
@@ -3587,6 +3623,10 @@ PrefabInstance:
     - target: {fileID: 8223307454194429635, guid: 897a5a2a6702ca2418dde43f9b08bed9, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8253629649601410118, guid: 897a5a2a6702ca2418dde43f9b08bed9, type: 3}
+      propertyPath: m_SortingOrder
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 8473025042179558418, guid: 897a5a2a6702ca2418dde43f9b08bed9, type: 3}
       propertyPath: m_Points.m_Paths.Array.data[0].Array.data[0].y
@@ -8028,7 +8068,7 @@ TilemapRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 10
   m_ChunkSize: {x: 32, y: 32, z: 32}
   m_ChunkCullingBounds: {x: 0, y: 0, z: 0}
   m_MaxChunkCount: 16
@@ -8456,7 +8496,7 @@ TilemapRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 10
   m_ChunkSize: {x: 32, y: 32, z: 32}
   m_ChunkCullingBounds: {x: 0, y: 0, z: 0}
   m_MaxChunkCount: 16
@@ -8830,7 +8870,7 @@ TilemapRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 10
   m_ChunkSize: {x: 32, y: 32, z: 32}
   m_ChunkCullingBounds: {x: 0, y: 0, z: 0}
   m_MaxChunkCount: 16
@@ -13184,7 +13224,7 @@ TilemapRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 10
   m_ChunkSize: {x: 32, y: 32, z: 32}
   m_ChunkCullingBounds: {x: 0, y: 0, z: 0}
   m_MaxChunkCount: 16
