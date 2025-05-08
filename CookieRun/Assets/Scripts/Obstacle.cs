@@ -5,7 +5,6 @@ using UnityEngine;
 public class Obstacle : MonoBehaviour
 {
     Collider2D collider;
-
     float widthPadding = 3;
 
     void Start()
@@ -20,16 +19,31 @@ public class Obstacle : MonoBehaviour
 
     public Vector3 RandomPosition(Vector3 lastPosition)
     {
-        //y위치 지정 0 = 낮은 장애물 100 = 중간 장애물 200 = 높은 장애물
-        //0은 1단 점프 100은 2단 점프 200은 슬라이딩으로 회피
+        //y위치 지정 -2 = 낮은 장애물 0 = 중간 장애물 2 = 높은 장애물
+        //-2은 1단 점프 0은 2단 점프 2은 슬라이딩으로 회피
         //임의 수치
-        float[] Y = { -2, 0, 2 };
+        //y위치 랜덤화
+        float[] Y = { -4.0f, -2.8f, -1.8f };
         float posY = Y[Random.Range(0, Y.Length)];
 
+        //위치 = 마지막 위치 + 가로간격
         Vector3 place = lastPosition + new Vector3(widthPadding, 0);
         place.y = posY;
 
+        //장애물 위에서 오면 반전
+        if (place.y > -2f)
+        {
+            transform.localScale = new Vector3(1, -1, 1);  //위에서 내려오는 모양
+        }
+        else
+        {
+            transform.localScale = new Vector3(1, 1, 1);   //기본 상태
+        }
+
+
+        //마지막 위치로 이동
         transform.position = place;
+        //위치 반환
         return place;
     }
 
