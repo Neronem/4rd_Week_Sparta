@@ -6,41 +6,53 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
 
-    public float speed = 5f; // ì†ë„
-    public float jumpForce = 5f; // ì í”„
-    public int maxJumps = 2; // ìµœëŒ€ ì í”„ íšŸìˆ˜
-    public int jumpCount = 0; // í˜„ì¬ ì í”„ íšŸìˆ˜
-    public bool isJumping = false; // ì í”„ ì¤‘ì¸ì§€ ì—¬ë¶€
-    public bool isDoubleJumping = false; // ë”ë¸” ì í”„ ì¤‘ì¸ì§€ ì—¬ë¶€
-    public bool isSliding = false; // ìŠ¬ë¼ì´ë”© ì¤‘ì¸ì§€ ì—¬ë¶€
-    public bool isGrounded = false; // ë°”ë‹¥ì— ë‹¿ì•„ ìˆëŠ”ì§€ ì—¬ë¶€
-    public bool isDead = false; // ì£½ìŒ ì—¬ë¶€
+    public float speed = 5f; // ¼Óµµ
+    public float playermaxhealth = 100f; // ÃÖ´ë Ã¼·Â
+    public float currenthealth; // ÇÃ·¹ÀÌ¾î Ã¼·Â
+    public float jumpForce = 5f; // Á¡ÇÁ·Â
+    private int maxJumps = 2; // ÃÖ´ë Á¡ÇÁ È½¼ö
+    private int jumpCount = 0; // ÇöÀç Á¡ÇÁ È½¼ö
+    private bool isJumping = false; // Á¡ÇÁ ÁßÀÎÁö ¿©ºÎ
+    private bool isDoubleJumping = false; // ´õºí Á¡ÇÁ ÁßÀÎÁö ¿©ºÎ
+    private bool isSliding = false; // ½½¶óÀÌµù ÁßÀÎÁö ¿©ºÎ
+    private bool isGrounded = false; // ¹Ù´Ú¿¡ ´ê¾Æ ÀÖ´ÂÁö ¿©ºÎ
+    private bool isDead = false; // Á×À½ ¿©ºÎ
+    public int damagedTimes; // µ¥¹ÌÁö ÀÔÀº È½¼ö
+    public int ObstacleCount; // Àå¾Ö¹° ¼ö
+    public int ObstacleComboCount; // µ¥¹ÌÁö¸¦ ÀÔÁö ¾Ê°í ³ÑÀº Àå¾Ö¹° ¼ö
 
-    private Animator animator; // ì• ë‹ˆë©”ì´í„°
+    private Animator animator; // ¾Ö´Ï¸ŞÀÌÅÍ
     private Rigidbody2D _rigidbody;
 
-    [SerializeField] private Collider2D playerCollider; // í”Œë ˆì´ì–´ ì½œë¼ì´ë”
-    [SerializeField] private Collider2D slidingCollider; // ìŠ¬ë¼ì´ë”© ì½œë¼ì´ë”
-    [SerializeField] private Collider2D groundDetector; // ë°”ë‹¥ ê°ì§€ê¸°
-    [SerializeField] private LayerMask ground;// ë°”ë‹¥ ë ˆì´ì–´
+    [SerializeField] private float healthdecreaseAmount = 0.1f; // Ã¼·Â °¨¼Ò·®
+    [SerializeField] private float healthdecreaseInterval = 0.1f; // Ã¼·Â °¨¼Ò ½Ã°£
+    [SerializeField] private float speedUpInterval = 10f; // ¼Óµµ Áõ°¡ ½Ã°£
+    [SerializeField] private float speedUpAmount = 1f; // ¼Óµµ Áõ°¡·®
+    [SerializeField] private Collider2D playerCollider; // ÇÃ·¹ÀÌ¾î Äİ¶óÀÌ´õ
+    [SerializeField] private Collider2D slidingCollider; // ½½¶óÀÌµù Äİ¶óÀÌ´õ
+    [SerializeField] private Collider2D groundDetector; // ¹Ù´Ú °¨Áö±â
+    [SerializeField] private LayerMask ground;// ¹Ù´Ú ·¹ÀÌ¾î
 
     void Start()
     {
-        playerCollider.enabled = true;
-        slidingCollider.enabled = false;
+        playerCollider.enabled = true; // ÇÃ·¹ÀÌ¾î Äİ¶óÀÌ´õ È°¼ºÈ­
+        slidingCollider.enabled = false; // ½½¶óÀÌµù Äİ¶óÀÌ´õ ºñÈ°¼ºÈ­
         animator = GetComponentInChildren<Animator>();
         _rigidbody = GetComponent<Rigidbody2D>();
+        currenthealth = playermaxhealth; // ÇÃ·¹ÀÌ¾î Ã¼·Â ÃÊ±âÈ­
+        StartCoroutine(SpeedUp()); // ½Ã°£¿¡ µû¶ó ¼Óµµ Áõ°¡
+        StartCoroutine(HpDecrease()); // ½Ã°£¿¡ µû¶ó Ã¼·Â °¨¼Ò
     }
     private void FixedUpdate()
     {
-        CheckGround();
-        Move();
+        CheckGround(); // ¹Ù´Ú °¨Áö
+        Move(); // ÀÌµ¿
     }
     void Update()
     {
         if (isDead)
         {
-            // ì£½ì—ˆì„ ë•Œì˜ ì²˜ë¦¬
+            // Á×¾úÀ» ¶§ÀÇ Ã³¸®
         }
         else
         {
@@ -58,25 +70,29 @@ public class PlayerController : MonoBehaviour
                 StopSlide();
             }
         }
+        if (currenthealth <= 0)
+        {
+            Die();
+        }
     }
 
     void Move()
     {
-        // ì…ë ¥ ì—†ì´ ìë™ìœ¼ë¡œ ì´ë™
+        // ÀÔ·Â ¾øÀÌ ÀÚµ¿À¸·Î ÀÌµ¿
         _rigidbody.velocity = new Vector2(speed, _rigidbody.velocity.y);
     }
     void HandleJump()
     {
-            if (jumpCount == 0 && isGrounded) // ë°”ë‹¥ì— ë‹¿ì•„ìˆì„ ë•Œë§Œ ì í”„ ê°€ëŠ¥
+            if (jumpCount == 0 && isGrounded) // ¹Ù´Ú¿¡ ´ê¾ÆÀÖÀ» ¶§¸¸ Á¡ÇÁ °¡´É
         {
-                // ì í”„
+                // Á¡ÇÁ
                 jumpCount = 1;
                 _rigidbody.velocity = new Vector2(_rigidbody.velocity.x, jumpForce);
                 isJumping = true;
                 animator.SetBool("IsJump", true);
                 Debug.Log("First Jump");
             }
-            else if (!isGrounded && jumpCount < maxJumps) // ê³µì¤‘ì— ìˆì„ ë•Œë§Œ ë”ë¸”ì í”„ ê°€ëŠ¥
+            else if (!isGrounded && jumpCount < maxJumps) // °øÁß¿¡ ÀÖÀ» ¶§¸¸ ´õºíÁ¡ÇÁ °¡´É
             {
                 jumpCount = 2;
                 _rigidbody.velocity = new Vector2(_rigidbody.velocity.x, jumpForce);
@@ -91,16 +107,16 @@ public class PlayerController : MonoBehaviour
         isSliding = true;
         animator.SetBool("IsSliding", true);
 
-        playerCollider.enabled = false; // í”Œë ˆì´ì–´ ì½œë¼ì´ë” ë¹„í™œì„±í™”
-        slidingCollider.enabled = true; // ìŠ¬ë¼ì´ë”© ì½œë¼ì´ë” í™œì„±í™”
+        playerCollider.enabled = false; // ÇÃ·¹ÀÌ¾î Äİ¶óÀÌ´õ ºñÈ°¼ºÈ­
+        slidingCollider.enabled = true; // ½½¶óÀÌµù Äİ¶óÀÌ´õ È°¼ºÈ­
     }
     void StopSlide()
     {
         isSliding = false;
         animator.SetBool("IsSliding", false);
 
-        playerCollider.enabled = true; // í”Œë ˆì´ì–´ ì½œë¼ì´ë” í™œì„±í™”
-        slidingCollider.enabled = false; // ìŠ¬ë¼ì´ë”© ì½œë¼ì´ë” ë¹„í™œì„±í™”
+        playerCollider.enabled = true; // ÇÃ·¹ÀÌ¾î Äİ¶óÀÌ´õ È°¼ºÈ­
+        slidingCollider.enabled = false; // ½½¶óÀÌµù Äİ¶óÀÌ´õ ºñÈ°¼ºÈ­
     }
     void CheckGround()
     {
@@ -109,6 +125,8 @@ public class PlayerController : MonoBehaviour
         if (isGrounded)
         {
             jumpCount = 0;
+            isJumping = false;
+            isDoubleJumping = false;
             animator.SetBool("IsJump", false);
             animator.SetBool("IsGround", true);
         }
@@ -118,8 +136,64 @@ public class PlayerController : MonoBehaviour
             animator.SetBool("IsGround", false);
         }
     }
-    public void TakeDamage()
+    public void TakeDamage(float damage)
     {
+        if (isDead) return;
+
+        damagedTimes++; // µ¥¹ÌÁö ÀÔÀº È½¼ö Áõ°¡
+        ObstacleComboCount = 0; // Àå¾Ö¹° ÄŞº¸ ÃÊ±âÈ­
+        currenthealth -= damage; // Ã¼·Â °¨¼Ò
         animator.SetTrigger("IsDamage");
+
+        if (currenthealth <= 0)
+            Die();
+    }
+    public void Combo()
+    {
+        if (isDead) return;
+
+        ObstacleComboCount++;
+        Debug.Log("Obstacle Combo: " + ObstacleComboCount); // ÄŞº¸ »ç¿îµå, ÀÌÆåÆ®, UI µî Ãß°¡
+    }
+
+    private IEnumerator SpeedUp()
+    {
+        while (!isDead)
+        {
+            yield return new WaitForSeconds(speedUpInterval);
+            speed += speedUpAmount;
+            Debug.Log("Speed Up: " + speed); // ¼Óµµ Áõ°¡ »ç¿îµå, ÀÌÆåÆ®, UI µî Ãß°¡
+        }
+    }
+
+    private IEnumerator HpDecrease()
+    {
+        while (!isDead)
+        {
+            yield return new WaitForSeconds(healthdecreaseInterval);
+            currenthealth -= healthdecreaseAmount;
+            Debug.Log("Health Decrease: " + currenthealth); // Ã¼·Â °¨¼Ò »ç¿îµå, ÀÌÆåÆ®, UI µî Ãß°¡
+            if (currenthealth <= 0)
+                Die();
+        }
+    }
+
+    public void Heal(float amount)
+    {
+        currenthealth += amount;
+        if (currenthealth > playermaxhealth)
+        {
+            currenthealth = playermaxhealth;
+        }
+    }
+    private void Die()
+    {
+        isDead = true;
+        animator.SetTrigger("IsDead");
+        speed = 0f; // Á×¾úÀ» ¶§ ¼Óµµ ÃÊ±âÈ­
+        playerCollider.enabled = false; // ÇÃ·¹ÀÌ¾î Äİ¶óÀÌ´õ ºñÈ°¼ºÈ­
+        slidingCollider.enabled = false; // ½½¶óÀÌµù Äİ¶óÀÌ´õ ºñÈ°¼ºÈ­
+        Debug.Log("Player is Dead");
+        Destroy(gameObject, 2f); // 2ÃÊ ÈÄ¿¡ ÇÃ·¹ÀÌ¾î ¿ÀºêÁ§Æ® »èÁ¦
     }
 }
