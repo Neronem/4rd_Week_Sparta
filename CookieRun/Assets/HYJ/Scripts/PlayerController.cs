@@ -7,18 +7,27 @@ public class PlayerController : MonoBehaviour
 {
 
     public float speed = 5f; // 속도
-    public float jumpForce = 5f; // 점프
-    public int maxJumps = 2; // 최대 점프 횟수
-    public int jumpCount = 0; // 현재 점프 횟수
-    public bool isJumping = false; // 점프 중인지 여부
-    public bool isDoubleJumping = false; // 더블 점프 중인지 여부
-    public bool isSliding = false; // 슬라이딩 중인지 여부
-    public bool isGrounded = false; // 바닥에 닿아 있는지 여부
-    public bool isDead = false; // 죽음 여부
+    public float playermaxhealth = 100f; // 최대 체력
+    public float currenthealth; // 플레이어 체력
+    public float jumpForce = 5f; // 점프력
+    private int maxJumps = 2; // 최대 점프 횟수
+    private int jumpCount = 0; // 현재 점프 횟수
+    private bool isJumping = false; // 점프 중인지 여부
+    private bool isDoubleJumping = false; // 더블 점프 중인지 여부
+    private bool isSliding = false; // 슬라이딩 중인지 여부
+    private bool isGrounded = false; // 바닥에 닿아 있는지 여부
+    private bool isDead = false; // 죽음 여부
+    public int damagedTimes; // 데미지 입은 횟수
+    public int ObstacleCount; // 장애물 수
+    public int ObstacleComboCount; // 데미지를 입지 않고 넘은 장애물 수
 
     private Animator animator; // 애니메이터
     private Rigidbody2D _rigidbody;
 
+    [SerializeField] private float healthdecreaseAmount = 0.1f; // 체력 감소량
+    [SerializeField] private float healthdecreaseInterval = 0.1f; // 체력 감소 시간
+    [SerializeField] private float speedUpInterval = 10f; // 속도 증가 시간
+    [SerializeField] private float speedUpAmount = 1f; // 속도 증가량
     [SerializeField] private Collider2D playerCollider; // 플레이어 콜라이더
     [SerializeField] private Collider2D slidingCollider; // 슬라이딩 콜라이더
     [SerializeField] private Collider2D groundDetector; // 바닥 감지기
@@ -26,15 +35,18 @@ public class PlayerController : MonoBehaviour
 
     void Start()
     {
-        playerCollider.enabled = true;
-        slidingCollider.enabled = false;
+        playerCollider.enabled = true; // 플레이어 콜라이더 활성화
+        slidingCollider.enabled = false; // 슬라이딩 콜라이더 비활성화
         animator = GetComponentInChildren<Animator>();
         _rigidbody = GetComponent<Rigidbody2D>();
+        currenthealth = playermaxhealth; // 플레이어 체력 초기화
+        StartCoroutine(SpeedUp()); // 시간에 따라 속도 증가
+        StartCoroutine(HpDecrease()); // 시간에 따라 체력 감소
     }
     private void FixedUpdate()
     {
-        CheckGround();
-        Move();
+        CheckGround(); // 바닥 감지
+        Move(); // 이동
     }
     void Update()
     {
@@ -57,6 +69,10 @@ public class PlayerController : MonoBehaviour
             {
                 StopSlide();
             }
+        }
+        if (currenthealth <= 0)
+        {
+            Die();
         }
     }
 
@@ -109,6 +125,8 @@ public class PlayerController : MonoBehaviour
         if (isGrounded)
         {
             jumpCount = 0;
+            isJumping = false;
+            isDoubleJumping = false;
             animator.SetBool("IsJump", false);
             animator.SetBool("IsGround", true);
         }
@@ -118,8 +136,64 @@ public class PlayerController : MonoBehaviour
             animator.SetBool("IsGround", false);
         }
     }
-    public void TakeDamage()
+    public void TakeDamage(float damage)
     {
+        if (isDead) return;
+
+        damagedTimes++; // 데미지 입은 횟수 증가
+        ObstacleComboCount = 0; // 장애물 콤보 초기화
+        currenthealth -= damage; // 체력 감소
         animator.SetTrigger("IsDamage");
+
+        if (currenthealth <= 0)
+            Die();
+    }
+    public void Combo()
+    {
+        if (isDead) return;
+
+        ObstacleComboCount++;
+        Debug.Log("Obstacle Combo: " + ObstacleComboCount); // 콤보 사운드, 이펙트, UI 등 추가
+    }
+
+    private IEnumerator SpeedUp()
+    {
+        while (!isDead)
+        {
+            yield return new WaitForSeconds(speedUpInterval);
+            speed += speedUpAmount;
+            Debug.Log("Speed Up: " + speed); // 속도 증가 사운드, 이펙트, UI 등 추가
+        }
+    }
+
+    private IEnumerator HpDecrease()
+    {
+        while (!isDead)
+        {
+            yield return new WaitForSeconds(healthdecreaseInterval);
+            currenthealth -= healthdecreaseAmount;
+            Debug.Log("Health Decrease: " + currenthealth); // 체력 감소 사운드, 이펙트, UI 등 추가
+            if (currenthealth <= 0)
+                Die();
+        }
+    }
+
+    public void Heal(float amount)
+    {
+        currenthealth += amount;
+        if (currenthealth > playermaxhealth)
+        {
+            currenthealth = playermaxhealth;
+        }
+    }
+    private void Die()
+    {
+        isDead = true;
+        animator.SetTrigger("IsDead");
+        speed = 0f; // 죽었을 때 속도 초기화
+        playerCollider.enabled = false; // 플레이어 콜라이더 비활성화
+        slidingCollider.enabled = false; // 슬라이딩 콜라이더 비활성화
+        Debug.Log("Player is Dead");
+        Destroy(gameObject, 2f); // 2초 후에 플레이어 오브젝트 삭제
     }
 }
