@@ -168,6 +168,7 @@ TextureImporter:
     secondaryTextures: []
     nameFileIdTable:
       Obstacle: 2008240115
+      Terrain (16x16)_0: -2110199607
       bottom: 2088410243
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0

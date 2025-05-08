@@ -4,26 +4,26 @@ using UnityEngine;
 
 public class Obstacle : MonoBehaviour
 {
-    Collision2D collision;
+    Collider2D collider;
 
-    float widthPadding;
+    float widthPadding = 3;
 
     void Start()
     {
-        collision = GetComponent<Collision2D>();
+        collider = GetComponent<Collider2D>();
     }
 
     void Update()
     {
-        widthPadding = Mathf.Lerp(10, 3, Time.deltaTime / 100);
+        //widthPadding = Mathf.Lerp(10, 3, Time.deltaTime / 100);
     }
 
-    Vector3 RandomPosition(Vector3 lastPosition)
+    public Vector3 RandomPosition(Vector3 lastPosition)
     {
         //y위치 지정 0 = 낮은 장애물 100 = 중간 장애물 200 = 높은 장애물
         //0은 1단 점프 100은 2단 점프 200은 슬라이딩으로 회피
         //임의 수치
-        float[] Y = { 0, 100, 200 };
+        float[] Y = { -2, 0, 2 };
         float posY = Y[Random.Range(0, Y.Length)];
 
         Vector3 place = lastPosition + new Vector3(widthPadding, 0);
