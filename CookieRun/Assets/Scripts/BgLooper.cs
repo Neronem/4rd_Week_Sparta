@@ -5,9 +5,10 @@ using UnityEngine.UIElements;
 
 public class BgLooper : MonoBehaviour
 {
+    int numOfBg = 5; //백그라운드 개수
     int obstacleCount = 0; //장애물 개수 선언
     Vector3 obstacleLastPosition = Vector3.zero; //마지막 장애물 위치 선언
-
+    
     void Start()
     {
         Obstacle[] obstacles = GameObject.FindObjectsOfType<Obstacle>(); //장애물 찾아오기
@@ -26,15 +27,14 @@ public class BgLooper : MonoBehaviour
 
     }
 
-    public void OnTriggerEnter2D(Collider2D collision)
+    public void OnTriggerExit2D(Collider2D collision)
     {
         if (collision.CompareTag("BackGround"))
         {
-            GameObject[] backgrounds = GameObject.FindGameObjectsWithTag("BackGround");
             float widthOfBgObject = ((BoxCollider2D)collision).size.x;
             Vector3 pos = collision.transform.position;
 
-            pos.x += widthOfBgObject * (backgrounds.Length / 2);
+            pos.x += widthOfBgObject * numOfBg;
             collision.transform.position = pos;
             return;
         }
