@@ -5,18 +5,19 @@ using UnityEngine.UIElements;
 
 public class BgLooper : MonoBehaviour
 {
-    int obstacleCount = 0; //Àå¾Ö¹° °³¼ö ¼±¾ğ
-    Vector3 obstacleLastPosition = Vector3.zero; //¸¶Áö¸· Àå¾Ö¹° À§Ä¡ ¼±¾ğ
-
+    int numOfBg = 5; //ë°±ê·¸ë¼ìš´ë“œ ê°œìˆ˜
+    int obstacleCount = 0; //ì¥ì• ë¬¼ ê°œìˆ˜ ì„ ì–¸
+    Vector3 obstacleLastPosition = Vector3.zero; //ë§ˆì§€ë§‰ ì¥ì• ë¬¼ ìœ„ì¹˜ ì„ ì–¸
+    
     void Start()
     {
-        Obstacle[] obstacles = GameObject.FindObjectsOfType<Obstacle>(); //Àå¾Ö¹° Ã£¾Æ¿À±â
-        obstacleLastPosition = obstacles[0].transform.position; //¸¶Áö¸· Àå¾Ö¹° À§Ä¡ ÃÊ±âÈ­
-        obstacleCount = obstacles.Length; //Àå¾Ö¹° °³¼ö ÃÊ±âÈ­
+        Obstacle[] obstacles = GameObject.FindObjectsOfType<Obstacle>(); //ì¥ì• ë¬¼ ì°¾ì•„ì˜¤ê¸°
+        obstacleLastPosition = obstacles[0].transform.position; //ë§ˆì§€ë§‰ ì¥ì• ë¬¼ ìœ„ì¹˜ ì´ˆê¸°í™”
+        obstacleCount = obstacles.Length; //ì¥ì• ë¬¼ ê°œìˆ˜ ì´ˆê¸°í™”
 
         for (int i = 0; i < obstacleCount; i++)
         {
-            //Àå¾Ö¹° ¸¶Áö¸· À§Ä¡ = i¹øÂ° Àå¾Ö¹° À§Ä¡
+            //ì¥ì• ë¬¼ ë§ˆì§€ë§‰ ìœ„ì¹˜ = ië²ˆì§¸ ì¥ì• ë¬¼ ìœ„ì¹˜
             obstacleLastPosition = obstacles[i].RandomPosition(obstacleLastPosition);
         }
     }
@@ -26,15 +27,14 @@ public class BgLooper : MonoBehaviour
 
     }
 
-    public void OnTriggerEnter2D(Collider2D collision)
+    public void OnTriggerExit2D(Collider2D collision)
     {
         if (collision.CompareTag("BackGround"))
         {
-            GameObject[] backgrounds = GameObject.FindGameObjectsWithTag("BackGround");
             float widthOfBgObject = ((BoxCollider2D)collision).size.x;
             Vector3 pos = collision.transform.position;
 
-            pos.x += widthOfBgObject * (backgrounds.Length / 2);
+            pos.x += widthOfBgObject * numOfBg;
             collision.transform.position = pos;
             return;
         }
