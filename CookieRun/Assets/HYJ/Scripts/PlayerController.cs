@@ -6,23 +6,23 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
 
-    public float speed = 5f; // ¼Óµµ
-    public float jumpForce = 5f; // Á¡ÇÁ
-    public int maxJumps = 2; // ÃÖ´ë Á¡ÇÁ È½¼ö
-    public int jumpCount = 0; // ÇöÀç Á¡ÇÁ È½¼ö
-    public bool isJumping = false; // Á¡ÇÁ ÁßÀÎÁö ¿©ºÎ
-    public bool isDoubleJumping = false; // ´õºí Á¡ÇÁ ÁßÀÎÁö ¿©ºÎ
-    public bool isSliding = false; // ½½¶óÀÌµù ÁßÀÎÁö ¿©ºÎ
-    public bool isGrounded = false; // ¹Ù´Ú¿¡ ´ê¾Æ ÀÖ´ÂÁö ¿©ºÎ
-    public bool isDead = false; // Á×À½ ¿©ºÎ
+    public float speed = 5f; // ì†ë„
+    public float jumpForce = 5f; // ì í”„
+    public int maxJumps = 2; // ìµœëŒ€ ì í”„ íšŸìˆ˜
+    public int jumpCount = 0; // í˜„ì¬ ì í”„ íšŸìˆ˜
+    public bool isJumping = false; // ì í”„ ì¤‘ì¸ì§€ ì—¬ë¶€
+    public bool isDoubleJumping = false; // ë”ë¸” ì í”„ ì¤‘ì¸ì§€ ì—¬ë¶€
+    public bool isSliding = false; // ìŠ¬ë¼ì´ë”© ì¤‘ì¸ì§€ ì—¬ë¶€
+    public bool isGrounded = false; // ë°”ë‹¥ì— ë‹¿ì•„ ìˆëŠ”ì§€ ì—¬ë¶€
+    public bool isDead = false; // ì£½ìŒ ì—¬ë¶€
 
-    private Animator animator; // ¾Ö´Ï¸ŞÀÌÅÍ
+    private Animator animator; // ì• ë‹ˆë©”ì´í„°
     private Rigidbody2D _rigidbody;
 
-    [SerializeField] private Collider2D playerCollider; // ÇÃ·¹ÀÌ¾î Äİ¶óÀÌ´õ
-    [SerializeField] private Collider2D slidingCollider; // ½½¶óÀÌµù Äİ¶óÀÌ´õ
-    [SerializeField] private Collider2D groundDetector; // ¹Ù´Ú °¨Áö±â
-    [SerializeField] private LayerMask ground;// ¹Ù´Ú ·¹ÀÌ¾î
+    [SerializeField] private Collider2D playerCollider; // í”Œë ˆì´ì–´ ì½œë¼ì´ë”
+    [SerializeField] private Collider2D slidingCollider; // ìŠ¬ë¼ì´ë”© ì½œë¼ì´ë”
+    [SerializeField] private Collider2D groundDetector; // ë°”ë‹¥ ê°ì§€ê¸°
+    [SerializeField] private LayerMask ground;// ë°”ë‹¥ ë ˆì´ì–´
 
     void Start()
     {
@@ -40,7 +40,7 @@ public class PlayerController : MonoBehaviour
     {
         if (isDead)
         {
-            // Á×¾úÀ» ¶§ÀÇ Ã³¸®
+            // ì£½ì—ˆì„ ë•Œì˜ ì²˜ë¦¬
         }
         else
         {
@@ -62,21 +62,21 @@ public class PlayerController : MonoBehaviour
 
     void Move()
     {
-        // ÀÔ·Â ¾øÀÌ ÀÚµ¿À¸·Î ÀÌµ¿
+        // ì…ë ¥ ì—†ì´ ìë™ìœ¼ë¡œ ì´ë™
         _rigidbody.velocity = new Vector2(speed, _rigidbody.velocity.y);
     }
     void HandleJump()
     {
-            if (jumpCount == 0 && isGrounded) // ¹Ù´Ú¿¡ ´ê¾ÆÀÖÀ» ¶§¸¸ Á¡ÇÁ °¡´É
+            if (jumpCount == 0 && isGrounded) // ë°”ë‹¥ì— ë‹¿ì•„ìˆì„ ë•Œë§Œ ì í”„ ê°€ëŠ¥
         {
-                // Á¡ÇÁ
+                // ì í”„
                 jumpCount = 1;
                 _rigidbody.velocity = new Vector2(_rigidbody.velocity.x, jumpForce);
                 isJumping = true;
                 animator.SetBool("IsJump", true);
                 Debug.Log("First Jump");
             }
-            else if (!isGrounded && jumpCount < maxJumps) // °øÁß¿¡ ÀÖÀ» ¶§¸¸ ´õºíÁ¡ÇÁ °¡´É
+            else if (!isGrounded && jumpCount < maxJumps) // ê³µì¤‘ì— ìˆì„ ë•Œë§Œ ë”ë¸”ì í”„ ê°€ëŠ¥
             {
                 jumpCount = 2;
                 _rigidbody.velocity = new Vector2(_rigidbody.velocity.x, jumpForce);
@@ -91,16 +91,16 @@ public class PlayerController : MonoBehaviour
         isSliding = true;
         animator.SetBool("IsSliding", true);
 
-        playerCollider.enabled = false; // ÇÃ·¹ÀÌ¾î Äİ¶óÀÌ´õ ºñÈ°¼ºÈ­
-        slidingCollider.enabled = true; // ½½¶óÀÌµù Äİ¶óÀÌ´õ È°¼ºÈ­
+        playerCollider.enabled = false; // í”Œë ˆì´ì–´ ì½œë¼ì´ë” ë¹„í™œì„±í™”
+        slidingCollider.enabled = true; // ìŠ¬ë¼ì´ë”© ì½œë¼ì´ë” í™œì„±í™”
     }
     void StopSlide()
     {
         isSliding = false;
         animator.SetBool("IsSliding", false);
 
-        playerCollider.enabled = true; // ÇÃ·¹ÀÌ¾î Äİ¶óÀÌ´õ È°¼ºÈ­
-        slidingCollider.enabled = false; // ½½¶óÀÌµù Äİ¶óÀÌ´õ ºñÈ°¼ºÈ­
+        playerCollider.enabled = true; // í”Œë ˆì´ì–´ ì½œë¼ì´ë” í™œì„±í™”
+        slidingCollider.enabled = false; // ìŠ¬ë¼ì´ë”© ì½œë¼ì´ë” ë¹„í™œì„±í™”
     }
     void CheckGround()
     {

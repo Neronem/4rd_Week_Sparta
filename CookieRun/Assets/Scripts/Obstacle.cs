@@ -19,38 +19,38 @@ public class Obstacle : MonoBehaviour
 
     public Vector3 RandomPosition(Vector3 lastPosition)
     {
-        //yÀ§Ä¡ ÁöÁ¤ -2 = ³·Àº Àå¾Ö¹° 0 = Áß°£ Àå¾Ö¹° 2 = ³ôÀº Àå¾Ö¹°
-        //-2Àº 1´Ü Á¡ÇÁ 0Àº 2´Ü Á¡ÇÁ 2Àº ½½¶óÀÌµùÀ¸·Î È¸ÇÇ
-        //ÀÓÀÇ ¼öÄ¡
-        //yÀ§Ä¡ ·£´ıÈ­
+        //yìœ„ì¹˜ ì§€ì • -2 = ë‚®ì€ ì¥ì• ë¬¼ 0 = ì¤‘ê°„ ì¥ì• ë¬¼ 2 = ë†’ì€ ì¥ì• ë¬¼
+        //-2ì€ 1ë‹¨ ì í”„ 0ì€ 2ë‹¨ ì í”„ 2ì€ ìŠ¬ë¼ì´ë”©ìœ¼ë¡œ íšŒí”¼
+        //ì„ì˜ ìˆ˜ì¹˜
+        //yìœ„ì¹˜ ëœë¤í™”
         float[] Y = { -4.0f, -2.8f, -1.8f };
         float posY = Y[Random.Range(0, Y.Length)];
 
-        //À§Ä¡ = ¸¶Áö¸· À§Ä¡ + °¡·Î°£°İ
+        //ìœ„ì¹˜ = ë§ˆì§€ë§‰ ìœ„ì¹˜ + ê°€ë¡œê°„ê²©
         Vector3 place = lastPosition + new Vector3(widthPadding, 0);
         place.y = posY;
 
-        //Àå¾Ö¹° À§¿¡¼­ ¿À¸é ¹İÀü
+        //ì¥ì• ë¬¼ ìœ„ì—ì„œ ì˜¤ë©´ ë°˜ì „
         if (place.y > -2f)
         {
-            transform.localScale = new Vector3(1, -1, 1);  //À§¿¡¼­ ³»·Á¿À´Â ¸ğ¾ç
+            transform.localScale = new Vector3(1, -1, 1);  //ìœ„ì—ì„œ ë‚´ë ¤ì˜¤ëŠ” ëª¨ì–‘
         }
         else
         {
-            transform.localScale = new Vector3(1, 1, 1);   //±âº» »óÅÂ
+            transform.localScale = new Vector3(1, 1, 1);   //ê¸°ë³¸ ìƒíƒœ
         }
 
 
-        //¸¶Áö¸· À§Ä¡·Î ÀÌµ¿
+        //ë§ˆì§€ë§‰ ìœ„ì¹˜ë¡œ ì´ë™
         transform.position = place;
-        //À§Ä¡ ¹İÈ¯
+        //ìœ„ì¹˜ ë°˜í™˜
         return place;
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        //Äİ¶óÀÌ´õ Æ®¸®°Å·Î È÷Æ® È®ÀÎ
-        //ÇÃ·¹ÀÌ¾î¿¡ È÷Æ® ÆÇÁ¤ »ı¼º ¹Ù¶÷
+        //ì½œë¼ì´ë” íŠ¸ë¦¬ê±°ë¡œ íˆíŠ¸ í™•ì¸
+        //í”Œë ˆì´ì–´ì— íˆíŠ¸ íŒì • ìƒì„± ë°”ëŒ
         //Player player = collision.GetComponent<Player>();
         //if (player != null)
         //{

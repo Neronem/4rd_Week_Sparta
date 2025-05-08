@@ -5,17 +5,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9e921631-4357-43f4-aeee-a7f5547725f0" name="변경" comment="">
-      <change beforePath="$PROJECT_DIR$/Assets/Externals/Pixel Adventure 1/Free/Background/Blue.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Externals/Pixel Adventure 1/Free/Background/Blue.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Externals/Pixel Adventure 1/Free/Background/Brown.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Externals/Pixel Adventure 1/Free/Background/Brown.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Externals/Pixel Adventure 1/Free/Background/Gray.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Externals/Pixel Adventure 1/Free/Background/Gray.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Externals/Pixel Adventure 1/Free/Background/Green.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Externals/Pixel Adventure 1/Free/Background/Green.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Externals/Pixel Adventure 1/Free/Background/Pink.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Externals/Pixel Adventure 1/Free/Background/Pink.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Externals/Pixel Adventure 1/Free/Background/Purple.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Externals/Pixel Adventure 1/Free/Background/Purple.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Externals/Pixel Adventure 1/Free/Background/Yellow.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Externals/Pixel Adventure 1/Free/Background/Yellow.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Externals/Pixel Adventure 1/Free/Terrain/Terrain (16x16).png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Externals/Pixel Adventure 1/Free/Terrain/Terrain (16x16).png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Externals/Pixel Adventure 1/Free/Terrain/Terrain (16x16).png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Externals/Pixel Adventure 1/Free/Terrain/Terrain (16x16).png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Externals/Pixel Adventure 1/Free/Traps/Platforms/Brown Off.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Externals/Pixel Adventure 1/Free/Traps/Platforms/Brown Off.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.CookieRun/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.CookieRun/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Animations/Items/MainSprite.controller" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Animations/Items/MainSprite.controller.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/HYJ/Scripts/PlayerController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/HYJ/Scripts/PlayerController.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/BgLooper.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/BgLooper.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Obstacle.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Obstacle.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -28,27 +24,28 @@
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.2d.tilemap@1.0.0/Editor/GridPaletteUtility.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 5
-}]]></component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 5
+}</component>
   <component name="ProjectId" id="2wnmK0mdCcIh7abWfJzvB22zN5q" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ModuleVcsDetector.initialDetectionPerformed": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "main",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;YSD__branch&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RunManager" selected="Unity 에디터에 연결.Unity 에디터에 연결">
     <configuration name="유닛 테스트(배치 모드)" type="RunUnityExe" factoryName="Unity Executable">
       <option name="EXE_PATH" value="C:\Program Files\Unity\Hub\Editor\2022.3.17f1\Editor\Unity.exe" />
@@ -109,6 +106,9 @@
       <option name="presentableId" value="Default" />
       <updated>1746685646263</updated>
       <workItem from="1746685651443" duration="1654000" />
+      <workItem from="1746695361947" duration="1000" />
+      <workItem from="1746695368545" duration="131000" />
+      <workItem from="1746695647867" duration="6000" />
     </task>
     <servers />
   </component>
@@ -117,7 +117,6 @@
   </component>
   <component name="UnityProjectConfiguration" hasMinimizedUI="true" />
   <component name="UnityProjectDiscoverer">
-    <option name="hasUnityReference" value="true" />
     <option name="unityProject" value="true" />
     <option name="unityProjectFolder" value="true" />
   </component>

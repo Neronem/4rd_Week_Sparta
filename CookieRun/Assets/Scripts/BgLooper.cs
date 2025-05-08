@@ -5,18 +5,18 @@ using UnityEngine.UIElements;
 
 public class BgLooper : MonoBehaviour
 {
-    int obstacleCount = 0; //Àå¾Ö¹° °³¼ö ¼±¾ð
-    Vector3 obstacleLastPosition = Vector3.zero; //¸¶Áö¸· Àå¾Ö¹° À§Ä¡ ¼±¾ð
+    int obstacleCount = 0; //ìž¥ì• ë¬¼ ê°œìˆ˜ ì„ ì–¸
+    Vector3 obstacleLastPosition = Vector3.zero; //ë§ˆì§€ë§‰ ìž¥ì• ë¬¼ ìœ„ì¹˜ ì„ ì–¸
 
     void Start()
     {
-        Obstacle[] obstacles = GameObject.FindObjectsOfType<Obstacle>(); //Àå¾Ö¹° Ã£¾Æ¿À±â
-        obstacleLastPosition = obstacles[0].transform.position; //¸¶Áö¸· Àå¾Ö¹° À§Ä¡ ÃÊ±âÈ­
-        obstacleCount = obstacles.Length; //Àå¾Ö¹° °³¼ö ÃÊ±âÈ­
+        Obstacle[] obstacles = GameObject.FindObjectsOfType<Obstacle>(); //ìž¥ì• ë¬¼ ì°¾ì•„ì˜¤ê¸°
+        obstacleLastPosition = obstacles[0].transform.position; //ë§ˆì§€ë§‰ ìž¥ì• ë¬¼ ìœ„ì¹˜ ì´ˆê¸°í™”
+        obstacleCount = obstacles.Length; //ìž¥ì• ë¬¼ ê°œìˆ˜ ì´ˆê¸°í™”
 
         for (int i = 0; i < obstacleCount; i++)
         {
-            //Àå¾Ö¹° ¸¶Áö¸· À§Ä¡ = i¹øÂ° Àå¾Ö¹° À§Ä¡
+            //ìž¥ì• ë¬¼ ë§ˆì§€ë§‰ ìœ„ì¹˜ = ië²ˆì§¸ ìž¥ì• ë¬¼ ìœ„ì¹˜
             obstacleLastPosition = obstacles[i].RandomPosition(obstacleLastPosition);
         }
     }
