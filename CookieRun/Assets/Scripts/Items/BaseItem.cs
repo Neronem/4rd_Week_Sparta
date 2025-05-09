@@ -26,22 +26,17 @@ public abstract class BaseItem : MonoBehaviour
     {
         Rigidbody = GetComponent<Rigidbody2D>();
     }
-
-    private void Start()
-    {
-        // BaseItem[] items = GameObject.FindObjectsOfType<BaseItem>();
-        // itemLastPosition = Vector3.zero;
-        // itemCount = items.Length;
-        //
-        // for (int i = 0; i < itemCount; i++)
-        // {
-        //     //장애물 마지막 위치 = i번째 장애물 위치
-        //     itemLastPosition = items[i].RandomCreate(itemLastPosition);
-        // }
-    }
-
+    
     // Player랑 충돌 시 처리는 각 아이템별로.
     protected virtual void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("Player"))
+        {
+            HandlePlayerCollision();  // 자식이 override 가능
+        }
+    }
+
+    protected virtual void HandlePlayerCollision()
     {
         
     }
