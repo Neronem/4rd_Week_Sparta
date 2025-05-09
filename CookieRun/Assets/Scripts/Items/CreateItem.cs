@@ -6,17 +6,36 @@ using UnityEngine;
 public class CreateItem : MonoBehaviour
 {
     // 랜덤 생성할 아이템들
-    public List<ItemData> itemDataList;
+    [SerializeField] private List<ItemData> itemDataList;
     
-    // 초기 생성할 아이템 개수
-    public int spawnCount = 15;
+    // 초기 생성할 아이템 개수. 현재 테스트용으로 100개 넣어놨음
+    private int spawnCount = 100;
     
     // 아이템 생성 시작위치
-    public Vector3 startSpawnPosition = Vector3.zero;
+    private Vector3 startSpawnPosition = Vector3.zero;
 
     // 아이템 마지막 생성위치
     private Vector3 lastPosition;
 
+    // private void Start()
+    // {
+    //     //아이템 처음 생성 = 초기화 시점
+    //     lastPosition = startSpawnPosition;
+    //
+    //     // 아이템 생성 개수만큼 아이템 생성
+    //     for (int i = 0; i < spawnCount; i++)
+    //     {
+    //         GameObject item = SpawnRandomItem(lastPosition);
+    //         
+    //         // 아이템이 생성되면 해당 아이템의 위치를 가져와서 x에 정해진 값을 더하고 y에 랜덤값 넣어서 랜덤 생성 후 마지막 위치 갱신
+    //         if (item != null)
+    //         {
+    //             BaseItem baseItem = item.GetComponent<BaseItem>();
+    //             lastPosition = baseItem.RandomCreate(lastPosition);
+    //         }
+    //     }
+    // }
+    
     private void Start()
     {
         //아이템 처음 생성 = 초기화 시점
@@ -25,16 +44,10 @@ public class CreateItem : MonoBehaviour
         // 아이템 생성 개수만큼 아이템 생성
         for (int i = 0; i < spawnCount; i++)
         {
-            GameObject item = SpawnRandomItem(lastPosition);
-            
-            // 아이템이 생성되면 해당 아이템의 위치를 가져와서 x에 정해진 값을 더하고 y에 랜덤값 넣어서 랜덤 생성 후 마지막 위치 갱신
-            if (item != null)
-            {
-                BaseItem baseItem = item.GetComponent<BaseItem>();
-                lastPosition = baseItem.RandomCreate(lastPosition);
-            }
+            SpawnAndCreateItem(lastPosition);
         }
     }
+
     
     private GameObject SpawnRandomItem(Vector3 position)
     {
@@ -58,4 +71,20 @@ public class CreateItem : MonoBehaviour
 
         return null;
     }
+    
+    
+    // 아이템을 생성하고 위치를 업데이트하는 메서드 분리.
+    public void SpawnAndCreateItem(Vector3 position)
+    {
+        GameObject item = SpawnRandomItem(position);
+        
+        if (item != null)
+        {
+            BaseItem baseItem = item.GetComponent<BaseItem>();
+            lastPosition = baseItem.RandomCreate(lastPosition);  // 아이템 위치를 갱신
+        }
+    }
+    
+    
+    
 }
