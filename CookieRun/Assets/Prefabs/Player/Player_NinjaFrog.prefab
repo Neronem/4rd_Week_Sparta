@@ -129,7 +129,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7353846878638420722}
-  - component: {fileID: 3791559299066722282}
   - component: {fileID: 1967425110537789199}
   - component: {fileID: 1551860594214398337}
   - component: {fileID: 8484134463172848456}
@@ -159,33 +158,6 @@ Transform:
   - {fileID: 6759966107766952719}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &3791559299066722282
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6079498129900740295}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1bca30dd608e0dc4c9fff3b7c9c3607d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  playermaxhealth: 20
-  jumpForce: 5
-  currenthealth: 0
-  healthdecreaseAmount: 0.1
-  healthdecreaseInterval: 0.1
-  speedUpInterval: 10
-  speedUpAmount: 1
-  undamageable: 1
-  playerCollider: {fileID: 1551860594214398337}
-  slidingCollider: {fileID: 8484134463172848456}
-  obstacleDetecter: {fileID: 8583826881884874480}
-  groundDetector: {fileID: 2495500402463342224}
-  ground:
-    serializedVersion: 2
-    m_Bits: 64
 --- !u!50 &1967425110537789199
 Rigidbody2D:
   serializedVersion: 4
