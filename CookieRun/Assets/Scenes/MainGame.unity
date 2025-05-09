@@ -3494,6 +3494,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Obstacles
       objectReference: {fileID: 0}
+    - target: {fileID: 2268607305500436569, guid: 897a5a2a6702ca2418dde43f9b08bed9, type: 3}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
     - target: {fileID: 3044601642493349203, guid: 897a5a2a6702ca2418dde43f9b08bed9, type: 3}
       propertyPath: m_LocalPosition.x
       value: 14.9
@@ -11831,18 +11835,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1967425110537789199, guid: 531bebac825302949937d4eb9c5df2d3, type: 3}
-      propertyPath: m_GravityScale
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 3791559299066722282, guid: 531bebac825302949937d4eb9c5df2d3, type: 3}
-      propertyPath: jumpForce
-      value: 20
-      objectReference: {fileID: 0}
-    - target: {fileID: 3791559299066722282, guid: 531bebac825302949937d4eb9c5df2d3, type: 3}
-      propertyPath: playermaxhealth
-      value: 100
-      objectReference: {fileID: 0}
     - target: {fileID: 6079498129900740295, guid: 531bebac825302949937d4eb9c5df2d3, type: 3}
       propertyPath: m_Name
       value: Player_MaskDude
