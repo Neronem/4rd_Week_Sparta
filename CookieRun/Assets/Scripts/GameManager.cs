@@ -16,6 +16,8 @@ public class GameManager : MonoBehaviour
     public int difficulty = 0; //난이도 선언
     public float speed; //속도 선언
 
+    private string scoreKey = "SavedAndLoadScore";
+
     //게임매니저 싱글톤
     private void Awake()
     {
@@ -80,7 +82,23 @@ public class GameManager : MonoBehaviour
     public void AddScore(int score)
     {
         startScore += score;
-        Debug.Log("score : " + startScore);
+    }
+
+    public void SaveScore()
+    {
+        int savedScore = PlayerPrefs.GetInt(scoreKey, 0);
+        
+        if (startScore > savedScore)
+        {
+            PlayerPrefs.SetInt(scoreKey, startScore);
+            PlayerPrefs.Save();
+            Debug.Log("최고점수?" + PlayerPrefs.GetInt(scoreKey, 0));
+            Debug.Log("최고 점수 갱신 성공!");
+        }
+        else
+        {
+            Debug.Log("최고 점수 갱신 실패!");
+        }
     }
     #endregion
     //     
