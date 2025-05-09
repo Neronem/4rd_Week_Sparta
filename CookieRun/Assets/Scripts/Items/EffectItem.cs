@@ -6,7 +6,6 @@ public class EffectItem : BaseItem
 {
     protected override void HandlePlayerCollision()
     {
-        
         // GameManager.Instance.AddScore(itemData.Score); // itemData에서 지정.
         
         // Debug.Log($"[ScoreItem] {itemData.Type} 획득, 점수 +{itemData.Score}");

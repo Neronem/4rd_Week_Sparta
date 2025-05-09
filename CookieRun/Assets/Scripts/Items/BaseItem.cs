@@ -9,8 +9,6 @@ public enum ItemType
     Silver,
     Gold,
     Heal,
-    SpeedUp,
-    SpeedDown,
 }
 [System.Serializable]
 public class ItemData

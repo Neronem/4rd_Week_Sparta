@@ -77,12 +77,10 @@ public class GameManager : MonoBehaviour
     //
     #region Score
     
-    public int AddScore(int score)
+    public void AddScore(int score)
     {
         startScore += score;
         Debug.Log("score : " + startScore);
-        
-        return startScore;
     }
     #endregion
     //     

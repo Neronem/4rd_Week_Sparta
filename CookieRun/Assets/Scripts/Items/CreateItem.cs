@@ -8,7 +8,7 @@ public class CreateItem : MonoBehaviour
     // 랜덤 생성할 아이템들
     [SerializeField] private List<ItemData> itemDataList;
     
-    // 초기 생성할 아이템 개수. 현재 테스트용으로 100개 넣어놨음
+    // 초기에 생성하고 끝까지 유지되는 아이템의 개수
     private int spawnCount = 15;
     
     // 아이템 생성 시작위치
@@ -68,15 +68,10 @@ public class CreateItem : MonoBehaviour
     // 아이템을 생성하고 위치를 업데이트하는 메서드 분리.
     public void SpawnAndCreateItem(Vector3 position)
     {
-        Debug.Log("왜 갑자기 안된다는거임?");
-        Debug.Log("item :" + position);
         GameObject item = SpawnRandomItem(position);
-        Debug.Log("item :" + item);
         
         if (item != null)
         {
-            Debug.Log("item :" + item.transform.position);
-            
             BaseItem baseItem = item.GetComponent<BaseItem>();
             lastPosition = baseItem.RandomCreate(lastPosition);  // 아이템 위치를 갱신
         }
