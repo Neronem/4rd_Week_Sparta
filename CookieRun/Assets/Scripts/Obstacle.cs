@@ -4,17 +4,25 @@ using UnityEngine;
 
 public class Obstacle : MonoBehaviour
 {
+    GameManager gameManager;
     Collider2D collider;
-    float widthPadding = 3;
+    
+    float widthPadding = 10f;
+    float elapsedTime = 0f;
+    float duration = 180f;
+
 
     void Start()
     {
+        gameManager = GameManager.Instance;
         collider = GetComponent<Collider2D>();
     }
 
     void Update()
     {
-        //widthPadding = Mathf.Lerp(10, 3, Time.deltaTime / 100);
+        elapsedTime += Time.deltaTime;
+        float t = Mathf.Clamp01(elapsedTime / duration);
+        widthPadding = Mathf.Lerp(10f, 3f, t);
     }
 
     public Vector3 RandomPosition(Vector3 lastPosition)
