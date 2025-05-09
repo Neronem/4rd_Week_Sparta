@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class AchievementManager : MonoBehaviour
 {
+    public static AchievementManager Instance; // 싱글톤 인스턴스
     [SerializeField] private List<AchievementData> achievementDatas; // 업적 데이터 리스트
 
     private Dictionary<string, Achievement> achievementDictionary; // 업적 데이터 딕셔너리
@@ -17,7 +18,16 @@ public class AchievementManager : MonoBehaviour
 
     private void Awake()
     {
-        achievementDictionary = new Dictionary<string, Achievement>();
+        if (Instance == null)
+        {
+            Instance = this; // 싱글톤 인스턴스 설정
+        }
+        else
+        {
+            Destroy(gameObject); // 중복 인스턴스 제거
+        }
+
+            achievementDictionary = new Dictionary<string, Achievement>();
         foreach (var data in achievementDatas)
         {
             achievementDictionary[data.achievementId] = new Achievement
