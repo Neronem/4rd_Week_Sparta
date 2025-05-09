@@ -780,10 +780,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b19a79888eb4ea146ad2ffdd2d489e12, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentScoreText: {fileID: 0}
-  bestScoreText: {fileID: 0}
-  healthSlider: {fileID: 0}
-  lerpSpeed: 5
 --- !u!1 &408019172
 GameObject:
   m_ObjectHideFlags: 0
@@ -7887,9 +7883,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 37cbbc99c95d4a442b7c5491c08c18b6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  totalScoreText: {fileID: 0}
-  bestScoreText: {fileID: 0}
-  newStageOpenText: {fileID: 0}
 --- !u!1 &1289199619
 GameObject:
   m_ObjectHideFlags: 0
