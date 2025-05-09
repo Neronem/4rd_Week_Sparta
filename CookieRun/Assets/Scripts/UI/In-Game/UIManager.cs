@@ -12,6 +12,9 @@ public class UIManager : MonoBehaviour
     private GameObject gameUI;
     private GameObject gameOverUI;
     
+    private GameOverUI gameOverUIScript;
+    private GameUI gameUIScript;
+    
     private void Awake()
     {
         // 싱글톤패턴
@@ -27,18 +30,21 @@ public class UIManager : MonoBehaviour
         gameUI = canvas.transform.Find("GameUI")?.gameObject; // 캔버스 자식들인 UI들을 찾아옴
         gameOverUI = canvas.transform.Find("GameOverUI")?.gameObject;
         
+        gameOverUIScript = gameOverUI.GetComponent<GameOverUI>(); // 각자의 스크립트도 찾아옴
+        gameUIScript = gameUI.GetComponent<GameUI>();
+        
         gameUI.SetActive(true); 
         gameOverUI.SetActive(false);
     }
 
     public void GameOverUIAppear()
     {
-        gameOverUI.SetActive(true);
+        gameOverUIScript.GameOverUIAppear();
     }
 
     public void GameOverUIDisappear()
     {
-        gameOverUI.SetActive(false);
+        gameOverUIScript.GameOverUIDisappear();
     }
     
     // "Exit" 선택 시 게임중단 메소드 (버튼용)
