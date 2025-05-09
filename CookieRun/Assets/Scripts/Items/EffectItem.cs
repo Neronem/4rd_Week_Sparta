@@ -4,14 +4,14 @@ using UnityEngine;
 
 public class EffectItem : BaseItem
 {
-    protected override void HandlePlayerCollision()
+    protected override void HandlePlayerCollision(GameObject player = null)
     {
-        // GameManager.Instance.AddScore(itemData.Score); // itemData에서 지정.
-        
-        // Debug.Log($"[ScoreItem] {itemData.Type} 획득, 점수 +{itemData.Score}");
+        // if (itemData.Type == ItemType.Heal && player != null)
+        // {
+        //     var pc = player.GetComponent<PlayerController>();
+        //     pc?.Heal(itemData.Effect);
+        // }
+
         Destroy(gameObject);
-        
-        // Debug.Log("아이템을 획득하였습니다.");
-        // Destroy(gameObject);
     }
 }
