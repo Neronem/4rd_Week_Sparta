@@ -55,9 +55,6 @@ public class CreateItem : MonoBehaviour
                 }
 
                 return go;
-                
-                // return Instantiate(item.Prefab, position, Quaternion.identity);
-
             }
         }
 
@@ -69,7 +66,6 @@ public class CreateItem : MonoBehaviour
     public void SpawnAndCreateItem(Vector3 position)
     {
         GameObject item = SpawnRandomItem(position);
-        
         if (item != null)
         {
             BaseItem baseItem = item.GetComponent<BaseItem>();
