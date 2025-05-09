@@ -45,5 +45,6 @@ public class PlayerHealth : MonoBehaviour
     {
         IsDead = true;
         animator.SetTrigger("IsDead");
+        Destroy(gameObject, 2f); // 2초 후에 오브젝트 삭제
     }
 }
