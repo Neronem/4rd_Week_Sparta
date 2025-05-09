@@ -37,4 +37,9 @@ public class GameUI : MonoBehaviour
         targetHealth = playerHealth.currentHealth; // 프레임마다 플레이어 체력 가져오고
         healthSlider.value = Mathf.Lerp(healthSlider.value, targetHealth, lerpSpeed * Time.deltaTime); // 체력바의 체력 부드럽게 전환
     }
+
+    void GameUIDisappear()
+    {
+        gameObject.SetActive(false);
+    }
 }
