@@ -13,13 +13,24 @@ public enum ItemType
 [System.Serializable]
 public class ItemData
 {
-    public ItemType type; // 생성할 아이템 enum
-    public GameObject prefab; //생성할 프리펩
-    public int weight; // 확률
+    [SerializeField] private ItemType type;
+    [SerializeField] private GameObject prefab;
+    [SerializeField] private int weight;
+    [SerializeField] private int score;
+    [SerializeField] private int effect;
+
+    public ItemType Type => type; // 생성할 아이템 enum
+    public GameObject Prefab => prefab; //생성할 프리펩
+    public int Weight => weight; // 확률
+    public int Score => score; // 점수
+    public int Effect => effect; // 체력 or 속도 효과
+    
 }
 public abstract class BaseItem : MonoBehaviour
 {
     protected Collider2D Collirder;
+    
+    protected ItemData data;
     
     //item 별 x축 거리
     float itemSpacing = 1.5f;

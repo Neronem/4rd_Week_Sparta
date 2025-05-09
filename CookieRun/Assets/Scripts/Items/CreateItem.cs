@@ -52,7 +52,7 @@ public class CreateItem : MonoBehaviour
     private GameObject SpawnRandomItem(Vector3 position)
     {
         // itemList의 가중치 합 구하고 랜덤값에 활용. 100을 안 쓰고 직접 다 구하는 이유는 손으로 하다 100이 안 되는 경우가 있을까봐.
-        int totalWeight = itemDataList.Sum(item => item.weight);
+        int totalWeight = itemDataList.Sum(item => item.Weight);
         int rand = Random.Range(1, totalWeight + 1);
 
         // rand 값과 비교할 아이템 생성 값. 
@@ -62,10 +62,16 @@ public class CreateItem : MonoBehaviour
         // rand 값이 가중치의 합보다 크면 다음 가중치의 합과 비교하는 식.
         foreach (var item in itemDataList)
         {
-            cumulative += item.weight;
+            cumulative += item.Weight;
             if (rand <= cumulative)
             {
-                return Instantiate(item.prefab, position, Quaternion.identity);
+                
+                // GameObject go = Instantiate(item.Prefab, position, Quaternion.identity);
+                // BaseItem baseItem = go.GetComponent<BaseItem>();
+                // baseItem.itemData = item; 
+                // return go;
+                
+                return Instantiate(item.Prefab, position, Quaternion.identity);
             }
         }
 
