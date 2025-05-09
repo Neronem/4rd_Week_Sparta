@@ -1,13 +1,12 @@
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
-
-public class ScoreItem : BaseItem
+public class EffectItem : BaseItem
 {
-    
     protected override void HandlePlayerCollision()
     {
-        
-        GameManager.Instance.AddScore(itemData.Score); // itemData에서 지정.
+        // GameManager.Instance.AddScore(itemData.Score); // itemData에서 지정.
         
         // Debug.Log($"[ScoreItem] {itemData.Type} 획득, 점수 +{itemData.Score}");
         Destroy(gameObject);
