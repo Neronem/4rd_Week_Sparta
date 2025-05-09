@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-
+    
      public float speed = 5f; // 속도
     public float playermaxhealth = 100f; // 최대 체력
     public float currenthealth; // 플레이어 체력
