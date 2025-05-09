@@ -2251,7 +2251,7 @@ GameObject:
   - component: {fileID: 787224673}
   - component: {fileID: 787224672}
   - component: {fileID: 787224671}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Floor (3)
   m_TagString: BackGround
   m_Icon: {fileID: 0}
@@ -7257,7 +7257,7 @@ GameObject:
   - component: {fileID: 1345713292}
   - component: {fileID: 1345713291}
   - component: {fileID: 1345713290}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Floor (4)
   m_TagString: BackGround
   m_Icon: {fileID: 0}
@@ -7936,6 +7936,11 @@ Transform:
   - {fileID: 1903578161}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &1484964315 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 7353846878638420722, guid: 531bebac825302949937d4eb9c5df2d3, type: 3}
+  m_PrefabInstance: {fileID: 1734180773}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1526669019
 GameObject:
   m_ObjectHideFlags: 0
@@ -7947,6 +7952,7 @@ GameObject:
   - component: {fileID: 1526669022}
   - component: {fileID: 1526669021}
   - component: {fileID: 1526669020}
+  - component: {fileID: 1526669023}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -8029,6 +8035,19 @@ Transform:
   - {fileID: 928433926}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1526669023
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1526669019}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 62d72f69273102045a5bee2175df3452, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  target: {fileID: 1484964315}
 --- !u!1 &1567853673
 GameObject:
   m_ObjectHideFlags: 0
@@ -8042,7 +8061,7 @@ GameObject:
   - component: {fileID: 1567853675}
   - component: {fileID: 1567853678}
   - component: {fileID: 1567853679}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Floor
   m_TagString: BackGround
   m_Icon: {fileID: 0}
@@ -10515,6 +10534,18 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1967425110537789199, guid: 531bebac825302949937d4eb9c5df2d3, type: 3}
+      propertyPath: m_GravityScale
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 3791559299066722282, guid: 531bebac825302949937d4eb9c5df2d3, type: 3}
+      propertyPath: jumpForce
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 3791559299066722282, guid: 531bebac825302949937d4eb9c5df2d3, type: 3}
+      propertyPath: playermaxhealth
+      value: 100
+      objectReference: {fileID: 0}
     - target: {fileID: 6079498129900740295, guid: 531bebac825302949937d4eb9c5df2d3, type: 3}
       propertyPath: m_Name
       value: Player_MaskDude
@@ -12567,7 +12598,7 @@ GameObject:
   - component: {fileID: 1812268632}
   - component: {fileID: 1812268631}
   - component: {fileID: 1812268630}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Floor (2)
   m_TagString: BackGround
   m_Icon: {fileID: 0}
@@ -13044,7 +13075,7 @@ GameObject:
   - component: {fileID: 1903578164}
   - component: {fileID: 1903578163}
   - component: {fileID: 1903578162}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Floor (1)
   m_TagString: BackGround
   m_Icon: {fileID: 0}
