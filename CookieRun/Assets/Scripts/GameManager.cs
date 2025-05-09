@@ -14,7 +14,7 @@ public class GameManager : MonoBehaviour
     public static GameManager Instance;
 
     public int difficulty = 0; //난이도 선언
-    public float speed = 0; //속도 선언
+    public float speed; //속도 선언
 
     //게임매니저 싱글톤
     private void Awake()
@@ -33,13 +33,13 @@ public class GameManager : MonoBehaviour
         switch (difficulty)
         {
             case 0:
-                speed = 1;
+                speed = 5;
                 break;
             case 1:
-                speed = 3;
+                speed = 6;
                 break;
             case 2:
-                speed = 5;
+                speed = 7;
                 break;
         }
 
@@ -67,8 +67,7 @@ public class GameManager : MonoBehaviour
 
     private void Update()
     {
-        //시간이 지나며 점차 빨라지는 속도
-        speed += Time.deltaTime * 0.1f;
+
     }
     //     
     //     

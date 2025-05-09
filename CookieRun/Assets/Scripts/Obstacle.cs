@@ -8,21 +8,33 @@ public class Obstacle : MonoBehaviour
     Collider2D collider;
     
     float widthPadding = 10f;
-    float elapsedTime = 0f;
-    float duration = 180f;
-
 
     void Start()
     {
         gameManager = GameManager.Instance;
         collider = GetComponent<Collider2D>();
+        StartCoroutine(ReducePadding());
     }
 
     void Update()
     {
-        elapsedTime += Time.deltaTime;
-        float t = Mathf.Clamp01(elapsedTime / duration);
-        widthPadding = Mathf.Lerp(10f, 3f, t);
+
+    }
+
+    private IEnumerator ReducePadding()
+    {
+        float padding = 10f;
+
+        while (padding > 3f)
+        {
+            yield return new WaitForSeconds(10);
+            padding -= 1;
+            padding = Mathf.Max(padding, 3f); // 3 이하로는 감소 안 함
+            Debug.Log("Padding 줄어듦: " + padding);
+
+            // 예: 외부 값 업데이트
+            widthPadding = padding;
+        }
     }
 
     public Vector3 RandomPosition(Vector3 lastPosition)
@@ -48,12 +60,12 @@ public class Obstacle : MonoBehaviour
             transform.localScale = new Vector3(1, 1, 1);   //기본 상태
         }
 
-
         //마지막 위치로 이동
         transform.position = place;
         //위치 반환
         return place;
     }
+
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
