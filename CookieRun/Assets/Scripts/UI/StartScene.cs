@@ -17,7 +17,7 @@ public class InfiniteTilemapBackground : MonoBehaviour
         backgroundWidth = tilemap.size.x * tilemap.cellSize.x;
     }
 
-    void Update()
+    void Update() 
     {
         // 배열에 있는 각 타일맵 오브젝트를 반복
         foreach (GameObject bg in backgrounds)

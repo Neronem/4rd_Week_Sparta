@@ -14,20 +14,18 @@ public class GameUI : MonoBehaviour
     [SerializeField] private float lerpSpeed = 5f; // 부드럽게 움직이는 속도
     
     private PlayerHealth playerHealth; // PlayerHealth 참조
-    private PlayerController playerController; // PlayerController 참조
     private float targetHealth; // Lerp에 사용될 플레이어 체력 저장 변수
     
     void Start()
     {
-        // PlayerController 스크립트 찾아서 할당
-        playerController = FindObjectOfType<PlayerController>();
+        // 스크립트, 컴포넌트 할당
         playerHealth = FindObjectOfType<PlayerHealth>();
         healthSlider = transform.Find("HealthBar").GetComponent<Slider>();
         currentScoreText = transform.Find("CurrentScoreText").GetComponent<TextMeshProUGUI>(); 
         bestScoreText = transform.Find("BestScoreText").GetComponent<TextMeshProUGUI>();
         
         healthSlider.maxValue = playerHealth.maxHealth; // 슬라이더의 최대 값 설정
-        healthSlider.value = playerHealth.maxHealth;
+        healthSlider.value = playerHealth.maxHealth; 
     }
 
     void Update()
