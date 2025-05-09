@@ -6,6 +6,7 @@ TagManager:
   tags:
   - BackGround
   - TutorlalObject
+  - BgLooper
   layers:
   - Default
   - TransparentFX
