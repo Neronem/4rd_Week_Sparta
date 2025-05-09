@@ -3,17 +3,17 @@ using System.Collections;
 using UnityEngine;
 
 // 이거 해놓으면 쓸까??
-// public enum ItemType
-// {
-//     Bronze,
-//     Silver,
-//     Gold,
-//     Heal
-// }
+public enum ItemType
+{
+    Bronze,
+    Silver,
+    Gold,
+    Heal
+}
 [System.Serializable]
 public class ItemData
 {
-    // public ItemType type; // 생성할 아이템 enum
+    public ItemType type; // 생성할 아이템 enum
     public GameObject prefab; //생성할 프리펩
     public int weight; // 확률
 }
@@ -25,7 +25,6 @@ public abstract class BaseItem : MonoBehaviour
     float itemSpacing = 1.5f;
 
     private bool isAdjusting = false;
-    
     
     protected virtual void Awake()
     {
