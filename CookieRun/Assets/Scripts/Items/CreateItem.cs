@@ -66,12 +66,17 @@ public class CreateItem : MonoBehaviour
             if (rand <= cumulative)
             {
                 
-                // GameObject go = Instantiate(item.Prefab, position, Quaternion.identity);
-                // BaseItem baseItem = go.GetComponent<BaseItem>();
-                // baseItem.itemData = item; 
-                // return go;
+                GameObject go = Instantiate(item.Prefab, position, Quaternion.identity);
+                BaseItem baseItem = go.GetComponent<BaseItem>();
+
+                if (baseItem != null)
+                {
+                    baseItem.SetItemData(item);  // 아이템 데이터 설정
+                }
                 
-                return Instantiate(item.Prefab, position, Quaternion.identity);
+                return go;
+                
+                // return Instantiate(item.Prefab, position, Quaternion.identity);
             }
         }
 

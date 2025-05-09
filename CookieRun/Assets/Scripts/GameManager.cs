@@ -8,7 +8,7 @@ public class GameManager : MonoBehaviour
     //     [SerializeField] private UIManager uiManager;
     //     [SerializeField] private GameObject scoreItemPrefab; 
     //     
-    //     private int startScore = 0;
+    private int startScore = 0;
     //
 
     public static GameManager Instance;
@@ -76,13 +76,12 @@ public class GameManager : MonoBehaviour
     //     
     //     
     //
-    //     #region Score
-    //
-    //     public void AddScore(int score)
-    //     {
-    //         startScore += score;
-    //         uiManager.UpdateScore(startScore);
-    //     }
-    //     #endregion
+    #region Score
+    
+    public void AddScore(int score)
+    {
+        startScore += score;
+    }
+    #endregion
     //     
 }

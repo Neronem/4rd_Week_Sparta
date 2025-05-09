@@ -5,10 +5,10 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "AchievementData", menuName = "ScriptableObjects/AchievementData", order = 1)]
 public class AchievementData : ScriptableObject
 {
-    public string achievementId; // ì—…ì  ì‹ë³„ì
-    public string achievementName; // ì—…ì  ì´ë¦„
-    public string achievementDescription; // ì—…ì  ì„¤ëª…
-    public float achievementTarget; // ì—…ì  ëª©í‘œ ê°’
-    public int reward; // ì—…ì  ë³´ìƒ
-    public Sprite achievemetIcon; // ì—…ì  ì•„ì´ì½˜
+    public string achievementId; // ¾÷Àû ½Äº°ÀÚ
+    public string achievementName; // ¾÷Àû ÀÌ¸§
+    public string achievementDescription; // ¾÷Àû ¼³¸í
+    public float achievementTarget; // ¾÷Àû ¸ñÇ¥ °ª
+    public int reward; // ¾÷Àû º¸»ó
+    public Sprite achievemetIcon; // ¾÷Àû ¾ÆÀÌÄÜ
 }

@@ -30,7 +30,7 @@ public abstract class BaseItem : MonoBehaviour
 {
     protected Collider2D Collirder;
     
-    protected ItemData data;
+    protected ItemData itemData;
     
     //item 별 x축 거리
     float itemSpacing = 1.5f;
@@ -43,7 +43,7 @@ public abstract class BaseItem : MonoBehaviour
     }
     
     // Player랑 충돌 시 처리는 각 아이템별로.
-    protected virtual void OnCollisionEnter2D(Collision2D collision)
+    protected virtual void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.CompareTag("Player"))
         {
@@ -89,11 +89,16 @@ public abstract class BaseItem : MonoBehaviour
         if (collision.gameObject.layer == LayerMask.NameToLayer("Obstacle"))
         {
             // 디버그로그가 꽤 많이 뜬다 = 움직일 때도 실행된다. = 성능에 부담이 간다. 일단 놔두고, 나중에 추가 작업이 될 지 모르겠네.
-            Debug.Log("장애물과 충돌 중! 아이템 위치 조정");
+            // Debug.Log("장애물과 충돌 중! 아이템 위치 조정");
             Vector3 newPosition = transform.position;
             newPosition.y = -1f;
             transform.position = newPosition;
         }
+    }
+    
+    public void SetItemData(ItemData data)
+    {
+        itemData = data;
     }
     
  
