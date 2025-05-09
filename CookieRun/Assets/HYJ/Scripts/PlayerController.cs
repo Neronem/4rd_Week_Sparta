@@ -8,8 +8,8 @@ public class PlayerController : MonoBehaviour
 
     public float speed = 5f; // 속도
     public float playermaxhealth = 100f; // 최대 체력
-    public float currenthealth; // 플레이어 체력
     public float jumpForce = 5f; // 점프력
+    private float currenthealth; // 현재 플레이어 체력
     private int maxJumps = 2; // 최대 점프 횟수
     private int jumpCount = 0; // 현재 점프 횟수
     private bool isUndamageable = false; // 무적 상태 여부
@@ -18,9 +18,9 @@ public class PlayerController : MonoBehaviour
     private bool isSliding = false; // 슬라이딩 중인지 여부
     private bool isGrounded = false; // 바닥에 닿아 있는지 여부
     private bool isDead = false; // 죽음 여부
-    public int damagedTimes; // 데미지 입은 횟수
-    public int ObstacleCount; // 장애물 수
-    public int ObstacleComboCount; // 데미지를 입지 않고 넘은 장애물 수
+    private int damagedTimes; // 데미지 입은 횟수
+    private int ObstacleCount; // 넘은 장애물 수
+    private int ObstacleComboCount; // 데미지를 입지 않고 넘은 장애물 수
 
     private Animator animator;
     private Rigidbody2D _rigidbody;
