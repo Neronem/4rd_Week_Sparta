@@ -16,5 +16,16 @@ public class GameOverUI : MonoBehaviour
         bestScoreText = transform.Find("BestScoreText").GetComponent<TextMeshProUGUI>();
         newStageOpenText = transform.Find("NewStageOpenText").GetComponent<TextMeshProUGUI>();
     }
+
+    public void GameOverUIAppear()
+    {
+        // 텍스트에 점수 넣고, 스테이지 클리어 여부 따진 뒤
+        gameObject.SetActive(true);
+    }
+
+    public void GameOverUIDisappear()
+    {
+        gameObject.SetActive(false);
+    }
 }
 
