@@ -7,63 +7,63 @@ public class PlayerController : MonoBehaviour
 {
     GameManager gameManager;
 
-    public float playermaxhealth = 100f; // ÃÖ´ë Ã¼·Â
-    public float jumpForce = 5f; // Á¡ÇÁ·Â
-    public float currenthealth; // ÇöÀç ÇÃ·¹ÀÌ¾î Ã¼·Â
-    private int maxJumps = 2; // ÃÖ´ë Á¡ÇÁ È½¼ö
-    private int jumpCount = 0; // ÇöÀç Á¡ÇÁ È½¼ö
-    private bool isUndamageable = false; // ¹«Àû »óÅÂ ¿©ºÎ
-    private bool isJumping = false; // Á¡ÇÁ ÁßÀÎÁö ¿©ºÎ
-    private bool isDoubleJumping = false; // ´õºí Á¡ÇÁ ÁßÀÎÁö ¿©ºÎ
-    private bool isSliding = false; // ½½¶óÀÌµù ÁßÀÎÁö ¿©ºÎ
-    private bool isGrounded = false; // ¹Ù´Ú¿¡ ´ê¾Æ ÀÖ´ÂÁö ¿©ºÎ
-    private bool isDead = false; // Á×À½ ¿©ºÎ
-    private int damagedTimes; // µ¥¹ÌÁö ÀÔÀº È½¼ö
-    private int ObstacleCount; // ³ÑÀº Àå¾Ö¹° ¼ö
-    private int ObstacleComboCount; // µ¥¹ÌÁö¸¦ ÀÔÁö ¾Ê°í ³ÑÀº Àå¾Ö¹° ¼ö
-    private float movedistance = 0f; // ÀÌµ¿ °Å¸®
-    public int uiMoveDistance; // UI¿¡ Ç¥½ÃÇÒ ÀÌµ¿ °Å¸®
-    public int uicurrenthealth; // UI¿¡ Ç¥½ÃÇÒ ÇöÀç Ã¼·Â
+    public float playermaxhealth = 100f; // ìµœëŒ€ ì²´ë ¥
+    public float jumpForce = 5f; // ì í”„ë ¥
+    public float currenthealth; // í˜„ì¬ í”Œë ˆì´ì–´ ì²´ë ¥
+    private int maxJumps = 2; // ìµœëŒ€ ì í”„ íšŸìˆ˜
+    private int jumpCount = 0; // í˜„ì¬ ì í”„ íšŸìˆ˜
+    private bool isUndamageable = false; // ë¬´ì  ìƒíƒœ ì—¬ë¶€
+    private bool isJumping = false; // ì í”„ ì¤‘ì¸ì§€ ì—¬ë¶€
+    private bool isDoubleJumping = false; // ë”ë¸” ì í”„ ì¤‘ì¸ì§€ ì—¬ë¶€
+    private bool isSliding = false; // ìŠ¬ë¼ì´ë”© ì¤‘ì¸ì§€ ì—¬ë¶€
+    private bool isGrounded = false; // ë°”ë‹¥ì— ë‹¿ì•„ ìˆëŠ”ì§€ ì—¬ë¶€
+    private bool isDead = false; // ì£½ìŒ ì—¬ë¶€
+    private int damagedTimes; // ë°ë¯¸ì§€ ì…ì€ íšŸìˆ˜
+    private int ObstacleCount; // ë„˜ì€ ì¥ì• ë¬¼ ìˆ˜
+    private int ObstacleComboCount; // ë°ë¯¸ì§€ë¥¼ ì…ì§€ ì•Šê³  ë„˜ì€ ì¥ì• ë¬¼ ìˆ˜
+    private float movedistance = 0f; // ì´ë™ ê±°ë¦¬
+    public int uiMoveDistance; // UIì— í‘œì‹œí•  ì´ë™ ê±°ë¦¬
+    public int uicurrenthealth; // UIì— í‘œì‹œí•  í˜„ì¬ ì²´ë ¥
 
 
     private Animator animator;
     private Rigidbody2D _rigidbody;
 
-    [SerializeField] private float healthdecreaseAmount = 0.1f; // Ã¼·Â °¨¼Ò·®
-    [SerializeField] private float healthdecreaseInterval = 0.1f; // Ã¼·Â °¨¼Ò ½Ã°£
-    [SerializeField] private float speedUpInterval = 10f; // ¼Óµµ Áõ°¡ ½Ã°£
-    [SerializeField] private float speedUpAmount = 1f; // ¼Óµµ Áõ°¡·®
-    [SerializeField] private float undamageable = 1f; // ¹«Àû ½Ã°£
-    [SerializeField] private Collider2D playerCollider; // ÇÃ·¹ÀÌ¾î Äİ¶óÀÌ´õ
-    [SerializeField] private Collider2D slidingCollider; // ½½¶óÀÌµù Äİ¶óÀÌ´õ
-    [SerializeField] private Collider2D obstacleDetecter; // Àå¾Ö¹° °¨Áö±â
-    [SerializeField] private Collider2D groundDetector; // ¹Ù´Ú °¨Áö±â
-    [SerializeField] private LayerMask ground;// ¹Ù´Ú ·¹ÀÌ¾î
+    [SerializeField] private float healthdecreaseAmount = 0.1f; // ì²´ë ¥ ê°ì†ŒëŸ‰
+    [SerializeField] private float healthdecreaseInterval = 0.1f; // ì²´ë ¥ ê°ì†Œ ì‹œê°„
+    [SerializeField] private float speedUpInterval = 10f; // ì†ë„ ì¦ê°€ ì‹œê°„
+    [SerializeField] private float speedUpAmount = 1f; // ì†ë„ ì¦ê°€ëŸ‰
+    [SerializeField] private float undamageable = 1f; // ë¬´ì  ì‹œê°„
+    [SerializeField] private Collider2D playerCollider; // í”Œë ˆì´ì–´ ì½œë¼ì´ë”
+    [SerializeField] private Collider2D slidingCollider; // ìŠ¬ë¼ì´ë”© ì½œë¼ì´ë”
+    [SerializeField] private Collider2D obstacleDetecter; // ì¥ì• ë¬¼ ê°ì§€ê¸°
+    [SerializeField] private Collider2D groundDetector; // ë°”ë‹¥ ê°ì§€ê¸°
+    [SerializeField] private LayerMask ground;// ë°”ë‹¥ ë ˆì´ì–´
 
     void Start()
     {
         gameManager = GameManager.Instance;
 
-        playerCollider.enabled = true; // ÇÃ·¹ÀÌ¾î Äİ¶óÀÌ´õ È°¼ºÈ­
-        slidingCollider.enabled = false; // ½½¶óÀÌµù Äİ¶óÀÌ´õ ºñÈ°¼ºÈ­
+        playerCollider.enabled = true; // í”Œë ˆì´ì–´ ì½œë¼ì´ë” í™œì„±í™”
+        slidingCollider.enabled = false; // ìŠ¬ë¼ì´ë”© ì½œë¼ì´ë” ë¹„í™œì„±í™”
         animator = GetComponentInChildren<Animator>();
         _rigidbody = GetComponent<Rigidbody2D>();
-        currenthealth = playermaxhealth; // ÇÃ·¹ÀÌ¾î Ã¼·Â ÃÊ±âÈ­
-        StartCoroutine(SpeedUp()); // ½Ã°£¿¡ µû¶ó ¼Óµµ Áõ°¡
-        StartCoroutine(HpDecrease()); // ½Ã°£¿¡ µû¶ó Ã¼·Â °¨¼Ò
-        Obstacle[] obstacles = GameObject.FindObjectsOfType<Obstacle>(); //Àå¾Ö¹° Ã£¾Æ¿À±â
+        currenthealth = playermaxhealth; // í”Œë ˆì´ì–´ ì²´ë ¥ ì´ˆê¸°í™”
+        StartCoroutine(SpeedUp()); // ì‹œê°„ì— ë”°ë¼ ì†ë„ ì¦ê°€
+        StartCoroutine(HpDecrease()); // ì‹œê°„ì— ë”°ë¼ ì²´ë ¥ ê°ì†Œ
+        Obstacle[] obstacles = GameObject.FindObjectsOfType<Obstacle>(); //ì¥ì• ë¬¼ ì°¾ì•„ì˜¤ê¸°
 
     }
     private void FixedUpdate()
     {
-        CheckGround(); // ¹Ù´Ú °¨Áö
-        Move(); // ÀÌµ¿        
+        CheckGround(); // ë°”ë‹¥ ê°ì§€
+        Move(); // ì´ë™        
     }
     void Update()
     {
         if (isDead)
         {
-            // Á×¾úÀ» ¶§ÀÇ Ã³¸®
+            // ì£½ì—ˆì„ ë•Œì˜ ì²˜ë¦¬
         }
         else
         {
@@ -85,27 +85,27 @@ public class PlayerController : MonoBehaviour
         {
             Die();
         }
-        uiMoveDistance = Mathf.FloorToInt(movedistance); // UI¿¡ Ç¥½ÃÇÒ ÀÌµ¿ °Å¸®
-        uicurrenthealth = Mathf.FloorToInt(currenthealth); // UI¿¡ Ç¥½ÃÇÒ ÇöÀç Ã¼·Â
+        uiMoveDistance = Mathf.FloorToInt(movedistance); // UIì— í‘œì‹œí•  ì´ë™ ê±°ë¦¬
+        uicurrenthealth = Mathf.FloorToInt(currenthealth); // UIì— í‘œì‹œí•  í˜„ì¬ ì²´ë ¥
     }
 
     void Move()
     {
-        // ÀÔ·Â ¾øÀÌ ÀÚµ¿À¸·Î ÀÌµ¿
+        // ì…ë ¥ ì—†ì´ ìë™ìœ¼ë¡œ ì´ë™
         _rigidbody.velocity = new Vector2(gameManager.speed, _rigidbody.velocity.y);
         movedistance += gameManager.speed * Time.deltaTime;
     }
     void HandleJump()
     {
-            if (jumpCount == 0 && isGrounded) // ¹Ù´Ú¿¡ ´ê¾ÆÀÖÀ» ¶§¸¸ Á¡ÇÁ °¡´É
+            if (jumpCount == 0 && isGrounded) // ë°”ë‹¥ì— ë‹¿ì•„ìˆì„ ë•Œë§Œ ì í”„ ê°€ëŠ¥
         {
-                // Á¡ÇÁ
+                // ì í”„
                 jumpCount = 1;
                 _rigidbody.velocity = new Vector2(_rigidbody.velocity.x, jumpForce);
                 isJumping = true;
                 animator.SetBool("IsJump", true);
             }
-            else if (!isGrounded && jumpCount < maxJumps) // °øÁß¿¡ ÀÖÀ» ¶§¸¸ ´õºíÁ¡ÇÁ °¡´É
+            else if (!isGrounded && jumpCount < maxJumps) // ê³µì¤‘ì— ìˆì„ ë•Œë§Œ ë”ë¸”ì í”„ ê°€ëŠ¥
             {
                 jumpCount = 2;
                 _rigidbody.velocity = new Vector2(_rigidbody.velocity.x, jumpForce);
@@ -119,16 +119,16 @@ public class PlayerController : MonoBehaviour
         isSliding = true;
         animator.SetBool("IsSliding", true);
 
-        playerCollider.enabled = false; // ÇÃ·¹ÀÌ¾î Äİ¶óÀÌ´õ ºñÈ°¼ºÈ­
-        slidingCollider.enabled = true; // ½½¶óÀÌµù Äİ¶óÀÌ´õ È°¼ºÈ­
+        playerCollider.enabled = false; // í”Œë ˆì´ì–´ ì½œë¼ì´ë” ë¹„í™œì„±í™”
+        slidingCollider.enabled = true; // ìŠ¬ë¼ì´ë”© ì½œë¼ì´ë” í™œì„±í™”
     }
     void StopSlide()
     {
         isSliding = false;
         animator.SetBool("IsSliding", false);
 
-        playerCollider.enabled = true; // ÇÃ·¹ÀÌ¾î Äİ¶óÀÌ´õ È°¼ºÈ­
-        slidingCollider.enabled = false; // ½½¶óÀÌµù Äİ¶óÀÌ´õ ºñÈ°¼ºÈ­
+        playerCollider.enabled = true; // í”Œë ˆì´ì–´ ì½œë¼ì´ë” í™œì„±í™”
+        slidingCollider.enabled = false; // ìŠ¬ë¼ì´ë”© ì½œë¼ì´ë” ë¹„í™œì„±í™”
     }
     void CheckGround()
     {
@@ -152,12 +152,12 @@ public class PlayerController : MonoBehaviour
     {
         if (isDead || isUndamageable) return;
 
-        StartCoroutine(Undamageable()); // ¹«Àû »óÅÂ·Î ÀüÈ¯
-        damagedTimes++; // µ¥¹ÌÁö ÀÔÀº È½¼ö Áõ°¡
-        ObstacleComboCount = 0; // Àå¾Ö¹° ÄŞº¸ ÃÊ±âÈ­
-        currenthealth -= damage; // Ã¼·Â °¨¼Ò
+        StartCoroutine(Undamageable()); // ë¬´ì  ìƒíƒœë¡œ ì „í™˜
+        damagedTimes++; // ë°ë¯¸ì§€ ì…ì€ íšŸìˆ˜ ì¦ê°€
+        ObstacleComboCount = 0; // ì¥ì• ë¬¼ ì½¤ë³´ ì´ˆê¸°í™”
+        currenthealth -= damage; // ì²´ë ¥ ê°ì†Œ
         animator.SetTrigger("IsDamage");
-        Debug.Log("Player Damaged: " + currenthealth); // µ¥¹ÌÁö »ç¿îµå, ÀÌÆåÆ®, UI µî Ãß°¡
+        Debug.Log("Player Damaged: " + currenthealth); // ë°ë¯¸ì§€ ì‚¬ìš´ë“œ, ì´í™íŠ¸, UI ë“± ì¶”ê°€
 
         if (currenthealth <= 0)
             Die();
@@ -167,13 +167,13 @@ public class PlayerController : MonoBehaviour
         if (isDead) return;
 
         ObstacleComboCount++;
-        Debug.Log("Obstacle Combo: " + ObstacleComboCount); // ÄŞº¸ »ç¿îµå, ÀÌÆåÆ®, UI µî Ãß°¡
+        Debug.Log("Obstacle Combo: " + ObstacleComboCount); // ì½¤ë³´ ì‚¬ìš´ë“œ, ì´í™íŠ¸, UI ë“± ì¶”ê°€
     }
     public void ObstacleClear()
     {
         if (isDead) return;
         ObstacleCount++;
-        Debug.Log("Obstacle Clear: " + ObstacleCount); // Àå¾Ö¹° Å¬¸®¾î »ç¿îµå, ÀÌÆåÆ®, UI µî Ãß°¡
+        Debug.Log("Obstacle Clear: " + ObstacleCount); // ì¥ì• ë¬¼ í´ë¦¬ì–´ ì‚¬ìš´ë“œ, ì´í™íŠ¸, UI ë“± ì¶”ê°€
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -186,13 +186,13 @@ public class PlayerController : MonoBehaviour
 
         if (playerHit || slidingHit)
         {
-            TakeDamage(10f); // Àå¾Ö¹°¿¡ ´ê¾ÒÀ» ¶§ µ¥¹ÌÁö Ã³¸®
-            ObstacleComboCount = 0; // Àå¾Ö¹° ÄŞº¸ ÃÊ±âÈ­
+            TakeDamage(10f); // ì¥ì• ë¬¼ì— ë‹¿ì•˜ì„ ë•Œ ë°ë¯¸ì§€ ì²˜ë¦¬
+            ObstacleComboCount = 0; // ì¥ì• ë¬¼ ì½¤ë³´ ì´ˆê¸°í™”
             return;
         }
         if (!playerHit && !slidingHit)
         {
-            // Àå¾Ö¹°¿¡ ´êÁö ¾Ê¾ÒÀ» ¶§ ÄŞº¸ Ã³¸®
+            // ì¥ì• ë¬¼ì— ë‹¿ì§€ ì•Šì•˜ì„ ë•Œ ì½¤ë³´ ì²˜ë¦¬
             Combo();
             ObstacleClear();
         }
@@ -204,7 +204,7 @@ public class PlayerController : MonoBehaviour
         {
             yield return new WaitForSeconds(speedUpInterval);
             gameManager.speed += speedUpAmount;
-            Debug.Log("Speed Up: " + gameManager.speed); // ¼Óµµ Áõ°¡ »ç¿îµå, ÀÌÆåÆ®, UI µî Ãß°¡
+            Debug.Log("Speed Up: " + gameManager.speed); // ì†ë„ ì¦ê°€ ì‚¬ìš´ë“œ, ì´í™íŠ¸, UI ë“± ì¶”ê°€
         }
     }
 
@@ -237,12 +237,12 @@ public class PlayerController : MonoBehaviour
     {
         isDead = true;
         animator.SetTrigger("IsDead");
-        gameManager.speed = 0f; // Á×¾úÀ» ¶§ ¼Óµµ ÃÊ±âÈ­
-        playerCollider.enabled = false; // ÇÃ·¹ÀÌ¾î Äİ¶óÀÌ´õ ºñÈ°¼ºÈ­
-        slidingCollider.enabled = false; // ½½¶óÀÌµù Äİ¶óÀÌ´õ ºñÈ°¼ºÈ­
+        gameManager.speed = 0f; // ì£½ì—ˆì„ ë•Œ ì†ë„ ì´ˆê¸°í™”
+        playerCollider.enabled = false; // í”Œë ˆì´ì–´ ì½œë¼ì´ë” ë¹„í™œì„±í™”
+        slidingCollider.enabled = false; // ìŠ¬ë¼ì´ë”© ì½œë¼ì´ë” ë¹„í™œì„±í™”
         Debug.Log("Player is Dead");
-        Destroy(gameObject, 2f); // 2ÃÊ ÈÄ¿¡ ÇÃ·¹ÀÌ¾î ¿ÀºêÁ§Æ® »èÁ¦
-        // gameManager.GameOver(); // °ÔÀÓ ¿À¹ö Ã³¸®
-        // °ÔÀÓ ¿À¹ö UI È°¼ºÈ­
+        Destroy(gameObject, 2f); // 2ì´ˆ í›„ì— í”Œë ˆì´ì–´ ì˜¤ë¸Œì íŠ¸ ì‚­ì œ
+        // gameManager.GameOver(); // ê²Œì„ ì˜¤ë²„ ì²˜ë¦¬
+        // ê²Œì„ ì˜¤ë²„ UI í™œì„±í™”
     }
 }

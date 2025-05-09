@@ -4,12 +4,12 @@ using UnityEngine;
 
 public class DustParticleControl : MonoBehaviour
 {
-    public ParticleSystem dustParticle; // ´õ½ºÆ® ÆÄÆ¼Å¬ ½Ã½ºÅÛ
+    public ParticleSystem dustParticle; // ë”ìŠ¤íŠ¸ íŒŒí‹°í´ ì‹œìŠ¤í…œ
 
     public void ReplaceParticle(ParticleSystem newDustParticle)
     {
         if (newDustParticle != null)
-            Destroy(dustParticle.gameObject); // ±âÁ¸ ÆÄÆ¼Å¬ ½Ã½ºÅÛ »èÁ¦
+            Destroy(dustParticle.gameObject); // ê¸°ì¡´ íŒŒí‹°í´ ì‹œìŠ¤í…œ ì‚­ì œ
 
         dustParticle = Instantiate(newDustParticle, transform);
 

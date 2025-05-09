@@ -4,27 +4,27 @@ using UnityEngine;
 
 public class AchievementManager : MonoBehaviour
 {
-    public static AchievementManager Instance; // ½Ì±ÛÅæ ÀÎ½ºÅÏ½º
-    [SerializeField] private List<AchievementData> achievementDatas; // ¾÷Àû µ¥ÀÌÅÍ ¸®½ºÆ®
+    public static AchievementManager Instance; // ì‹±ê¸€í†¤ ì¸ìŠ¤í„´ìŠ¤
+    [SerializeField] private List<AchievementData> achievementDatas; // ì—…ì  ë°ì´í„° ë¦¬ìŠ¤íŠ¸
 
-    private Dictionary<string, Achievement> achievementDictionary; // ¾÷Àû µ¥ÀÌÅÍ µñ¼Å³Ê¸®
+    private Dictionary<string, Achievement> achievementDictionary; // ì—…ì  ë°ì´í„° ë”•ì…”ë„ˆë¦¬
 
     private class Achievement
     {
-        public AchievementData data; // ¾÷Àû µ¥ÀÌÅÍ
-        public bool isAchieved; // ¾÷Àû ´Ş¼º ¿©ºÎ
-        public float currentValue; // ÇöÀç °ª
+        public AchievementData data; // ì—…ì  ë°ì´í„°
+        public bool isAchieved; // ì—…ì  ë‹¬ì„± ì—¬ë¶€
+        public float currentValue; // í˜„ì¬ ê°’
     }
 
     private void Awake()
     {
         if (Instance == null)
         {
-            Instance = this; // ½Ì±ÛÅæ ÀÎ½ºÅÏ½º ¼³Á¤
+            Instance = this; // ì‹±ê¸€í†¤ ì¸ìŠ¤í„´ìŠ¤ ì„¤ì •
         }
         else
         {
-            Destroy(gameObject); // Áßº¹ ÀÎ½ºÅÏ½º Á¦°Å
+            Destroy(gameObject); // ì¤‘ë³µ ì¸ìŠ¤í„´ìŠ¤ ì œê±°
         }
 
             achievementDictionary = new Dictionary<string, Achievement>();
@@ -38,32 +38,32 @@ public class AchievementManager : MonoBehaviour
             };
         }
     }
-    public bool CheckAchievement(string achievementId) // ¾÷Àû ´Ş¼º Ã¼Å©
+    public bool CheckAchievement(string achievementId) // ì—…ì  ë‹¬ì„± ì²´í¬
     {
         if (achievementDictionary.TryGetValue(achievementId, out var achievement))
         {
-            return achievement.isAchieved; // ¾÷Àû ´Ş¼º ¿©ºÎ
+            return achievement.isAchieved; // ì—…ì  ë‹¬ì„± ì—¬ë¶€
         }
         return false;
     }
 
-    public void ProgressRate(string achievementId, float progress) // ¾÷Àû ÁøÇà·ü ¾÷µ¥ÀÌÆ®
+    public void ProgressRate(string achievementId, float progress) // ì—…ì  ì§„í–‰ë¥  ì—…ë°ì´íŠ¸
     {
         if (achievementDictionary.TryGetValue(achievementId, out var achievement))
         {
-            achievement.currentValue += progress; // ÇöÀç °ª ¾÷µ¥ÀÌÆ®
+            achievement.currentValue += progress; // í˜„ì¬ ê°’ ì—…ë°ì´íŠ¸
             if (achievement.currentValue >= achievement.data.achievementTarget && !achievement.isAchieved)
             {
-                achievement.isAchieved = true; // ¾÷Àû ´Ş¼º
-                UnlockAchievement(achievement.data); // ¾÷Àû ´Ş¼º ½Ã º¸»ó Áö±Ş
+                achievement.isAchieved = true; // ì—…ì  ë‹¬ì„±
+                UnlockAchievement(achievement.data); // ì—…ì  ë‹¬ì„± ì‹œ ë³´ìƒ ì§€ê¸‰
             }
         }
     }
 
     private void UnlockAchievement(AchievementData data)
     {
-        Debug.Log($"Achievement Unlocked: {data.achievementName}");// ¾÷Àû ´Ş¼º ·Î±×
-        // º¸»ó Áö±Ş ·ÎÁ÷ Ãß°¡
-        // Ä¿½ºÅÍ¸¶ÀÌÂ¡ ÇØ±İ µî
+        Debug.Log($"Achievement Unlocked: {data.achievementName}");// ì—…ì  ë‹¬ì„± ë¡œê·¸
+        // ë³´ìƒ ì§€ê¸‰ ë¡œì§ ì¶”ê°€
+        // ì»¤ìŠ¤í„°ë§ˆì´ì§• í•´ê¸ˆ ë“±
     }
 }
