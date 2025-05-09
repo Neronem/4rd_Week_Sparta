@@ -21,6 +21,10 @@ public class PlayerController : MonoBehaviour
     private int damagedTimes; // 데미지 입은 횟수
     private int ObstacleCount; // 넘은 장애물 수
     private int ObstacleComboCount; // 데미지를 입지 않고 넘은 장애물 수
+    private float movedistance = 0f; // 이동 거리
+    public int uiMoveDistance; // UI에 표시할 이동 거리
+    public int uicurrenthealth; // UI에 표시할 현재 체력
+
 
     private Animator animator;
     private Rigidbody2D _rigidbody;
@@ -53,7 +57,7 @@ public class PlayerController : MonoBehaviour
     private void FixedUpdate()
     {
         CheckGround(); // 바닥 감지
-        Move(); // 이동
+        Move(); // 이동        
     }
     void Update()
     {
@@ -81,12 +85,15 @@ public class PlayerController : MonoBehaviour
         {
             Die();
         }
+        uiMoveDistance = Mathf.FloorToInt(movedistance); // UI에 표시할 이동 거리
+        uicurrenthealth = Mathf.FloorToInt(currenthealth); // UI에 표시할 현재 체력
     }
 
     void Move()
     {
         // 입력 없이 자동으로 이동
         _rigidbody.velocity = new Vector2(gameManager.speed, _rigidbody.velocity.y);
+        movedistance += gameManager.speed * Time.deltaTime;
     }
     void HandleJump()
     {
