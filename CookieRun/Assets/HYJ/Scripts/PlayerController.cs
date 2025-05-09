@@ -9,7 +9,7 @@ public class PlayerController : MonoBehaviour
 
     public float playermaxhealth = 100f; // 최대 체력
     public float jumpForce = 5f; // 점프력
-    private float currenthealth; // 현재 플레이어 체력
+    public float currenthealth; // 현재 플레이어 체력
     private int maxJumps = 2; // 최대 점프 횟수
     private int jumpCount = 0; // 현재 점프 횟수
     private bool isUndamageable = false; // 무적 상태 여부
@@ -32,6 +32,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float undamageable = 1f; // 무적 시간
     [SerializeField] private Collider2D playerCollider; // 플레이어 콜라이더
     [SerializeField] private Collider2D slidingCollider; // 슬라이딩 콜라이더
+    [SerializeField] private Collider2D obstacleDetecter; // 장애물 감지기
     [SerializeField] private Collider2D groundDetector; // 바닥 감지기
     [SerializeField] private LayerMask ground;// 바닥 레이어
 
@@ -159,6 +160,12 @@ public class PlayerController : MonoBehaviour
 
         ObstacleComboCount++;
         Debug.Log("Obstacle Combo: " + ObstacleComboCount); // 콤보 사운드, 이펙트, UI 등 추가
+    }
+    public void ObstacleClear()
+    {
+        if (isDead) return;
+        ObstacleCount++;
+        Debug.Log("Obstacle Clear: " + ObstacleCount); // 장애물 클리어 사운드, 이펙트, UI 등 추가
     }
 
     private IEnumerator SpeedUp()
