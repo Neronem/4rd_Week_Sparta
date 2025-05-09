@@ -12,6 +12,7 @@ public class PlayerController : MonoBehaviour
     public float jumpForce = 5f; // 점프력
     private int maxJumps = 2; // 최대 점프 횟수
     private int jumpCount = 0; // 현재 점프 횟수
+    private bool isUndamageable = false; // 무적 상태 여부
     private bool isJumping = false; // 점프 중인지 여부
     private bool isDoubleJumping = false; // 더블 점프 중인지 여부
     private bool isSliding = false; // 슬라이딩 중인지 여부
@@ -21,13 +22,14 @@ public class PlayerController : MonoBehaviour
     public int ObstacleCount; // 장애물 수
     public int ObstacleComboCount; // 데미지를 입지 않고 넘은 장애물 수
 
-    private Animator animator; // 애니메이터
+    private Animator animator;
     private Rigidbody2D _rigidbody;
 
     [SerializeField] private float healthdecreaseAmount = 0.1f; // 체력 감소량
     [SerializeField] private float healthdecreaseInterval = 0.1f; // 체력 감소 시간
     [SerializeField] private float speedUpInterval = 10f; // 속도 증가 시간
     [SerializeField] private float speedUpAmount = 1f; // 속도 증가량
+    [SerializeField] private float undamageable = 1f; // 무적 시간
     [SerializeField] private Collider2D playerCollider; // 플레이어 콜라이더
     [SerializeField] private Collider2D slidingCollider; // 슬라이딩 콜라이더
     [SerializeField] private Collider2D groundDetector; // 바닥 감지기
@@ -138,8 +140,9 @@ public class PlayerController : MonoBehaviour
     }
     public void TakeDamage(float damage)
     {
-        if (isDead) return;
+        if (isDead || isUndamageable) return;
 
+        StartCoroutine(Undamageable()); // 무적 상태로 전환
         damagedTimes++; // 데미지 입은 횟수 증가
         ObstacleComboCount = 0; // 장애물 콤보 초기화
         currenthealth -= damage; // 체력 감소
@@ -178,6 +181,12 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+    private IEnumerator Undamageable()
+    {
+        isUndamageable = true;
+        yield return new WaitForSeconds(undamageable);
+        isUndamageable = false;
+    }
     public void Heal(float amount)
     {
         currenthealth += amount;
@@ -195,5 +204,7 @@ public class PlayerController : MonoBehaviour
         slidingCollider.enabled = false; // 슬라이딩 콜라이더 비활성화
         Debug.Log("Player is Dead");
         Destroy(gameObject, 2f); // 2초 후에 플레이어 오브젝트 삭제
+        // gameManager.GameOver(); // 게임 오버 처리
+        // 게임 오버 UI 활성화
     }
 }
