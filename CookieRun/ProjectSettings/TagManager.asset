@@ -6,6 +6,7 @@ TagManager:
   tags:
   - BackGround
   - TutorlalObject
+  - Obstacle
   layers:
   - Default
   - TransparentFX
