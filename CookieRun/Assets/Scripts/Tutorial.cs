@@ -63,8 +63,7 @@ public class Tutorial : MonoBehaviour
                 tu_1_Txt.SetActive(true);
                 waitingForInput = true;
             }
-
-            if (tutorial_2)
+            else if (tutorial_2)
             {
                 gameManager.speed = 0;
                 tu_2_Txt.SetActive(true);
