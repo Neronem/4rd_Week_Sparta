@@ -4,15 +4,23 @@ using UnityEngine;
 
 public class DustParticleControl : MonoBehaviour
 {
-    [SerializeField] private ParticleSystem dustParticle; // 더스트 파티클 시스템
-    [SerializeField] private bool createDustOnJump = true; // 점프 시 더스트 생성 여부
+    public ParticleSystem dustParticle; // 더스트 파티클 시스템
+
+    public void ReplaceParticle(ParticleSystem newDustParticle)
+    {
+        if (newDustParticle != null)
+            Destroy(dustParticle.gameObject); // 기존 파티클 시스템 삭제
+
+        dustParticle = Instantiate(newDustParticle, transform);
+
+    }
 
     public void CreateDust()
     {
-        if (createDustOnJump)
-        {
-            dustParticle.Stop();
-            dustParticle.Play();
-        }
+        if (dustParticle == null) return;
+
+        dustParticle.Stop();
+        dustParticle.Play();
     }
+    
 }
