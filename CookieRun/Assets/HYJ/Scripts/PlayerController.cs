@@ -142,6 +142,7 @@ public class PlayerController : MonoBehaviour
     {
         if (isDead || isUndamageable) return;
 
+        StartCoroutine(Undamageable()); // 무적 상태로 전환
         damagedTimes++; // 데미지 입은 횟수 증가
         ObstacleComboCount = 0; // 장애물 콤보 초기화
         currenthealth -= damage; // 체력 감소
