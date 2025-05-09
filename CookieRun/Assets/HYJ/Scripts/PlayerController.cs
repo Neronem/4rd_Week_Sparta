@@ -5,8 +5,8 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
+    GameManager gameManager;
 
-    public float speed = 5f; // 속도
     public float playermaxhealth = 100f; // 최대 체력
     public float jumpForce = 5f; // 점프력
     private float currenthealth; // 현재 플레이어 체력
@@ -37,6 +37,8 @@ public class PlayerController : MonoBehaviour
 
     void Start()
     {
+        gameManager = GameManager.Instance;
+
         playerCollider.enabled = true; // 플레이어 콜라이더 활성화
         slidingCollider.enabled = false; // 슬라이딩 콜라이더 비활성화
         animator = GetComponentInChildren<Animator>();
@@ -81,7 +83,7 @@ public class PlayerController : MonoBehaviour
     void Move()
     {
         // 입력 없이 자동으로 이동
-        _rigidbody.velocity = new Vector2(speed, _rigidbody.velocity.y);
+        _rigidbody.velocity = new Vector2(gameManager.speed, _rigidbody.velocity.y);
     }
     void HandleJump()
     {
@@ -164,8 +166,8 @@ public class PlayerController : MonoBehaviour
         while (!isDead)
         {
             yield return new WaitForSeconds(speedUpInterval);
-            speed += speedUpAmount;
-            Debug.Log("Speed Up: " + speed); // 속도 증가 사운드, 이펙트, UI 등 추가
+            gameManager.speed += speedUpAmount;
+            Debug.Log("Speed Up: " + gameManager.speed); // 속도 증가 사운드, 이펙트, UI 등 추가
         }
     }
 
@@ -199,7 +201,7 @@ public class PlayerController : MonoBehaviour
     {
         isDead = true;
         animator.SetTrigger("IsDead");
-        speed = 0f; // 죽었을 때 속도 초기화
+        gameManager.speed = 0f; // 죽었을 때 속도 초기화
         playerCollider.enabled = false; // 플레이어 콜라이더 비활성화
         slidingCollider.enabled = false; // 슬라이딩 콜라이더 비활성화
         Debug.Log("Player is Dead");
