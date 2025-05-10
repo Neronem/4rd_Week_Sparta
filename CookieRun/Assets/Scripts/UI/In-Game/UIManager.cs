@@ -42,9 +42,9 @@ public class UIManager : MonoBehaviour
         gameOverUIScript.GameOverUIAppear();
     }
 
-    public void GameOverUIDisappear()
+    public void GameUIDisappear()
     {
-        gameOverUIScript.GameOverUIDisappear();
+        gameUIScript.GameUIDisappear();
     }
     
     // "Exit" 선택 시 게임중단 메소드 (버튼용)

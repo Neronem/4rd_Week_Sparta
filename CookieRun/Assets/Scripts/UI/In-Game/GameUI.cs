@@ -1,40 +1,8 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
-using TMPro;
 using UnityEngine;
-using UnityEngine.UI;
 
 public class GameUI : MonoBehaviour
 {
-    public TextMeshProUGUI currentScoreText; // 현재 점수
-    public TextMeshProUGUI bestScoreText; // 최고 점수
-    
-    [SerializeField] private Slider healthSlider; // 슬라이더 컴포넌트
-    [SerializeField] private float lerpSpeed = 5f; // 부드럽게 움직이는 속도
-    
-    private PlayerHealth playerHealth; // PlayerHealth 참조
-    private float targetHealth; // Lerp에 사용될 플레이어 체력 저장 변수
-    
-    void Start()
-    {
-        // 스크립트, 컴포넌트 할당
-        playerHealth = FindObjectOfType<PlayerHealth>();
-        healthSlider = transform.Find("HealthBar").GetComponent<Slider>();
-        
-        healthSlider.maxValue = playerHealth.maxHealth; // 슬라이더의 최대 값 설정
-        healthSlider.value = playerHealth.maxHealth; 
-    }
-
-    void Update()
-    {
-        // currentScoreText.text = score; 등 구현 필요
-        
-        targetHealth = playerHealth.currentHealth; // 프레임마다 플레이어 체력 가져오고
-        healthSlider.value = Mathf.Lerp(healthSlider.value, targetHealth, lerpSpeed * Time.deltaTime); // 체력바의 체력 부드럽게 전환
-    }
-
-    void GameUIDisappear()
+    public void GameUIDisappear()
     {
         gameObject.SetActive(false);
     }
