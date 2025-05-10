@@ -11,8 +11,8 @@ public class PlayerCollisionHandler : MonoBehaviour
 
     private PlayerHealth health;
     private PlayerStatusEffects status;
-    private int ObstacleCount; // 넘은 장애물 수
-    private int ObstacleComboCount; // 데미지를 입지 않고 넘은 장애물 수
+    private int obstacleCount; // 넘은 장애물 수
+    private int obstacleComboCount; // 데미지를 입지 않고 넘은 장애물 수
     private int damagedTimes; // 데미지 입은 횟수
 
 
@@ -25,16 +25,17 @@ public class PlayerCollisionHandler : MonoBehaviour
     }
     public void ObstacleClear()
     {
-        if (health.IsDead) return;
-        ObstacleCount++;
-        Debug.Log("Obstacle Clear: " + ObstacleCount); // 장애물 클리어 사운드, 이펙트, UI 등 추가
+        if (health.isDead) return;
+        obstacleCount++;
+        AchievementManager.Instance.ProgressRate("clear_10", 1);
+        Debug.Log("Obstacle Clear: " + obstacleCount); // 장애물 클리어 사운드, 이펙트, UI 등 추가
     }
     public void Combo()
     {
-        if (health.IsDead) return;
+        if (health.isDead) return;
 
-        ObstacleComboCount++;
-        Debug.Log("Obstacle Combo: " + ObstacleComboCount); // 콤보 사운드, 이펙트, UI 등 추가
+        obstacleComboCount++;
+        Debug.Log("Obstacle Combo: " + obstacleComboCount); // 콤보 사운드, 이펙트, UI 등 추가
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -50,7 +51,7 @@ public class PlayerCollisionHandler : MonoBehaviour
         {
             health.TakeDamage(10f); // 장애물에 닿았을 때 데미지 처리
             damagedTimes++; // 데미지 입은 횟수 증가
-            ObstacleComboCount = 0; // 장애물 콤보 초기화
+            obstacleComboCount = 0; // 장애물 콤보 초기화
             return;
         }
         if (!playerHit && !slidingHit)

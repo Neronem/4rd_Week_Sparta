@@ -10670,6 +10670,7 @@ GameObject:
   - component: {fileID: 1526669021}
   - component: {fileID: 1526669020}
   - component: {fileID: 1526669023}
+  - component: {fileID: 1526669024}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -10765,6 +10766,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 1484964315}
+--- !u!114 &1526669024
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1526669019}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 52aef59a4f352d44cb2635f605ec03a4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isShaking: 0
 --- !u!1 &1545481116
 GameObject:
   m_ObjectHideFlags: 0
@@ -13479,6 +13493,18 @@ PrefabInstance:
     - target: {fileID: 6079498129900740295, guid: 531bebac825302949937d4eb9c5df2d3, type: 3}
       propertyPath: m_Name
       value: Player_MaskDude
+      objectReference: {fileID: 0}
+    - target: {fileID: 6098334431635203902, guid: 531bebac825302949937d4eb9c5df2d3, type: 3}
+      propertyPath: cameraShake
+      value: 
+      objectReference: {fileID: 1526669024}
+    - target: {fileID: 6098334431635203902, guid: 531bebac825302949937d4eb9c5df2d3, type: 3}
+      propertyPath: shakeDuration
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6098334431635203902, guid: 531bebac825302949937d4eb9c5df2d3, type: 3}
+      propertyPath: shakeMagnitude
+      value: 0.1
       objectReference: {fileID: 0}
     - target: {fileID: 7353846878638420722, guid: 531bebac825302949937d4eb9c5df2d3, type: 3}
       propertyPath: m_LocalPosition.x
@@ -16408,6 +16434,52 @@ Transform:
   - {fileID: 1195243399}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &2083978787
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2083978789}
+  - component: {fileID: 2083978788}
+  m_Layer: 0
+  m_Name: AchievementManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &2083978788
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2083978787}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1daa4abbead76de44b49dd53d99bcedf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  achievementDatas:
+  - {fileID: 11400000, guid: 96a0e9515c0ea4b4d97c92b8ebc5e273, type: 2}
+--- !u!4 &2083978789
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2083978787}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
@@ -16422,3 +16494,4 @@ SceneRoots:
   - {fileID: 1734180773}
   - {fileID: 965942504}
   - {fileID: 408019174}
+  - {fileID: 2083978789}
