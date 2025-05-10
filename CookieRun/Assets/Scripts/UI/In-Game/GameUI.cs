@@ -21,8 +21,6 @@ public class GameUI : MonoBehaviour
         // 스크립트, 컴포넌트 할당
         playerHealth = FindObjectOfType<PlayerHealth>();
         healthSlider = transform.Find("HealthBar").GetComponent<Slider>();
-        currentScoreText = transform.Find("CurrentScoreText").GetComponent<TextMeshProUGUI>(); 
-        bestScoreText = transform.Find("BestScoreText").GetComponent<TextMeshProUGUI>();
         
         healthSlider.maxValue = playerHealth.maxHealth; // 슬라이더의 최대 값 설정
         healthSlider.value = playerHealth.maxHealth; 

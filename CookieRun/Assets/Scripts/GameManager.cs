@@ -9,6 +9,7 @@ public class GameManager : MonoBehaviour
     //     [SerializeField] private GameObject scoreItemPrefab; 
     //     
     private int startScore = 0;
+    public int StartScore {get {return startScore;}}
     //
 
     public static GameManager Instance;
@@ -16,6 +17,9 @@ public class GameManager : MonoBehaviour
     public int difficulty = 0; //난이도 선언
     public float speed; //속도 선언
 
+    private int bestScore = 0;
+    public int BestScore { get { return bestScore; } }
+    
     //게임매니저 싱글톤
     private void Awake()
     {
@@ -29,6 +33,8 @@ public class GameManager : MonoBehaviour
     {
         difficulty = 0;
 
+        bestScore = PlayerPrefs.GetInt("BestScore", 0);
+        
         //난이도에 따른 속도 차이
         switch (difficulty)
         {
@@ -81,6 +87,15 @@ public class GameManager : MonoBehaviour
     {
         startScore += score;
         Debug.Log("score : " + startScore);
+
+        if (startScore > bestScore)
+        {
+            bestScore = startScore;
+            PlayerPrefs.SetInt("BestScore", bestScore);
+            PlayerPrefs.Save();
+            
+            Debug.Log("최고점수 갱신 : " + bestScore);
+        }
     }
     #endregion
     //     
