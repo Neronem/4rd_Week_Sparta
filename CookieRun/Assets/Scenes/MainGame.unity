@@ -14347,7 +14347,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6098334431635203902, guid: 531bebac825302949937d4eb9c5df2d3, type: 3}
       propertyPath: maxHealth
-      value: 10
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 6098334431635203902, guid: 531bebac825302949937d4eb9c5df2d3, type: 3}
       propertyPath: cameraShake
