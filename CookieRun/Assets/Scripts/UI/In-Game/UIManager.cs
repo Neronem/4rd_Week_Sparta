@@ -20,7 +20,7 @@ public class UIManager : MonoBehaviour
         // 싱글톤패턴
         if (instance == null)
         {
-            instance  = this;
+            instance = this;
         }
     }
 
