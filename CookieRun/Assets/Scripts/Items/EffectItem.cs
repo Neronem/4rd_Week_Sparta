@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class EffectItem : BaseItem
 {
-    protected override void HandlePlayerCollision(GameObject player = null)
+    protected override void HandlePlayerCollision(GameObject player)
     {
         // if (itemData.Type == ItemType.Heal && player != null)
         // {

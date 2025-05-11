@@ -70,7 +70,7 @@ public abstract class BaseItem : MonoBehaviour
     }
     
     // 아이템 별 각 효과 실행할 메서드
-    protected virtual void HandlePlayerCollision(GameObject player = null)
+    protected virtual void HandlePlayerCollision(GameObject player)
     {
         
     }
