@@ -5,10 +5,40 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9e921631-4357-43f4-aeee-a7f5547725f0" name="변경" comment="">
+      <change afterPath="$PROJECT_DIR$/Assets/HYJ/Scripts/CameraShake.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/HYJ/Scripts/CameraShake.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/UI.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/UI/TextImage.prefab" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/UI/TextImage.prefab.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UI/In-Game/GameOverUI.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UI/In-Game/GameOverUI/GameOverUI.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UI/In-Game/GameUI.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UI/In-Game/GameUI/GameUI.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UI/In-Game/GameUI/GameUI.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UI/In-Game/GameUI/HealthBar.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UI/In-Game/GameUI/ShowScore.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UI/In-Game/GameUI/ShowScore.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UI/Start.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.CookieRun/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.CookieRun/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Items/BaseItem.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Items/BaseItem.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Items/EffectItem.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Items/EffectItem.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Items/ScoreItem.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Items/ScoreItem.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Externals/Pixel Adventure 1/Free/Menu/Text/Text (White) (8x10).png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Externals/Pixel Adventure 1/Free/Menu/Text/Text (White) (8x10).png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Fonts/Jua,Noto_Sans_KR/Jua/Jua-Regular SDF.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Fonts/Jua,Noto_Sans_KR/Jua/Jua-Regular SDF.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/HYJ/ScriptableObject/Distance.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/HYJ/ScriptableObject/ObstacleClear_10.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/HYJ/ScriptableObject/Distance.asset.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/HYJ/ScriptableObject/ObstacleClear_10.asset.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/HYJ/Scripts/Player/PlayerCollisionHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/HYJ/Scripts/Player/PlayerCollisionHandler.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/HYJ/Scripts/Player/PlayerController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/HYJ/Scripts/Player/PlayerController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/HYJ/Scripts/Player/PlayerHealth.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/HYJ/Scripts/Player/PlayerHealth.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/HYJ/Scripts/Player/PlayerStatusEffects.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/HYJ/Scripts/Player/PlayerStatusEffects.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/MainGame.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/MainGame.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Start.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Start.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/GameManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/GameManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/In-Game/GameOverUI.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/In-Game/GameOverUI.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/In-Game/GameOverUI/GameOverUI.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/In-Game/GameUI.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/In-Game/GameUI.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/In-Game/GameUI/HealthBar.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/In-Game/UIManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/In-Game/UIManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/StartScene.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/Start/StartScene.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/StartScene.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/Start/StartScene.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -19,7 +49,8 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/UI/ScoreText.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/UI/In-Game/GameUI.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/UI/In-Game/HealthBar.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.2d.tilemap@1.0.0/Editor/GridPaletteUtility.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="ProjectColorInfo">{
@@ -35,7 +66,7 @@
     &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;YSD&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;YSD 병합 중&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
@@ -112,6 +143,11 @@
       <workItem from="1746778963740" duration="968000" />
       <workItem from="1746781740038" duration="223000" />
       <workItem from="1746792924046" duration="1817000" />
+      <workItem from="1746869331331" duration="649000" />
+      <workItem from="1746891182211" duration="25000" />
+      <workItem from="1746891221905" duration="11759000" />
+      <workItem from="1746957181500" duration="265000" />
+      <workItem from="1746957518584" duration="59000" />
     </task>
     <servers />
   </component>

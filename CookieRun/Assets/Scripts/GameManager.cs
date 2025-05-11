@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
@@ -9,15 +10,21 @@ public class GameManager : MonoBehaviour
     //     [SerializeField] private GameObject scoreItemPrefab; 
     //     
     private int startScore = 0;
-    //
-
+    public int StartScore {get {return startScore;}}
+    
+    // 최고점수 
+    private int bestScore = 0;
+    public int BestScore { get { return bestScore; } }
+    
     public static GameManager Instance;
 
     public int difficulty = 0; //난이도 선언
     public float speed; //속도 선언
-
+    
     private string scoreKey = "SavedAndLoadScore";
-
+    
+    private bool isGameOver = false; // 게임오버 여부 판단
+    
     //게임매니저 싱글톤
     private void Awake()
     {
@@ -31,6 +38,9 @@ public class GameManager : MonoBehaviour
     {
         difficulty = 0;
 
+        startScore = 0;
+        bestScore = PlayerPrefs.GetInt("BestScore", 0);
+        
         //난이도에 따른 속도 차이
         switch (difficulty)
         {
@@ -69,7 +79,17 @@ public class GameManager : MonoBehaviour
 
     private void Update()
     {
-
+        if (isGameOver)
+        {
+            if (Input.GetKeyDown(KeyCode.Space))
+            {
+                SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+            }
+            else if (Input.GetKeyDown(KeyCode.Backspace))
+            {
+                SceneManager.LoadScene("Start");
+            }
+        }
     }
     //     
     //     
@@ -87,7 +107,7 @@ public class GameManager : MonoBehaviour
     public void SaveScore()
     {
         int savedScore = PlayerPrefs.GetInt(scoreKey, 0);
-        
+
         if (startScore > savedScore)
         {
             PlayerPrefs.SetInt(scoreKey, startScore);
@@ -98,8 +118,28 @@ public class GameManager : MonoBehaviour
         else
         {
             Debug.Log("최고 점수 갱신 실패!");
+
+            Debug.Log("score : " + startScore);
+
+            if (startScore > bestScore)
+            {
+                bestScore = startScore;
+                PlayerPrefs.SetInt("BestScore", bestScore);
+                PlayerPrefs.Save();
+
+                Debug.Log("최고점수 갱신 : " + bestScore);
+
+            }
         }
     }
+
     #endregion
     //     
+
+    public void GameOver()
+    {
+        isGameOver = true;
+        UIManager.instance.GameUIDisappear();
+        UIManager.instance.GameOverUIAppear();
+    }
 }

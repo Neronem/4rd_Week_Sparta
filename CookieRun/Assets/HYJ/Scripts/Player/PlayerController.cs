@@ -48,6 +48,7 @@ public class PlayerController : MonoBehaviour
             movement.groundDetector.enabled = false;
             _rigidbody.velocity = Vector2.zero;
             health.Die();
+            GameManager.Instance.GameOver();
         }
     }
 

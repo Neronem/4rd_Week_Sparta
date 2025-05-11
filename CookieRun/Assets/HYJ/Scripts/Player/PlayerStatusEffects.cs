@@ -34,7 +34,7 @@ public class PlayerStatusEffects : MonoBehaviour
 
     public IEnumerator SpeedUpRoutine()
     {
-        while (health.IsDead)
+        while (health.isDead)
         {
             yield return new WaitForSeconds(speedUpInterval);
             movement.speed += speedUpAmount;
@@ -42,7 +42,7 @@ public class PlayerStatusEffects : MonoBehaviour
     }
     public IEnumerator HpDecrease()
     {
-        while (!health.IsDead)
+        while (!health.isDead)
         {
             yield return new WaitForSeconds(healthdecreaseInterval);
             health.currentHealth -= healthdecreaseAmount;

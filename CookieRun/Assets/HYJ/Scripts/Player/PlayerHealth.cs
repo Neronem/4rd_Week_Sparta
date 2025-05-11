@@ -4,12 +4,14 @@ using UnityEngine;
 
 public class PlayerHealth : MonoBehaviour
 {
-    [Header("Health")]
     public float maxHealth = 100f;
     public float currentHealth;
+    public CameraShake cameraShake;
+    public float shakeDuration = 1f;
+    public float shakeMagnitude = 1f;
     private Animator animator;
     private PlayerStatusEffects statusEffects;
-    public bool IsDead = false;
+    public bool isDead = false;
 
 
     void Awake()
@@ -22,18 +24,22 @@ public class PlayerHealth : MonoBehaviour
 
     public void TakeDamage(float amount)
     {
-        if (IsDead || statusEffects.isUndamageable) return;
+        if (isDead || statusEffects.isUndamageable) return;
 
         StartCoroutine(statusEffects.Undamageable());
         currentHealth -= amount;
         animator.SetTrigger("IsDamage");
+        if (cameraShake != null && !cameraShake.isShaking)
+        {
+            StartCoroutine(cameraShake.Shake(shakeDuration, shakeMagnitude));
+        }
         if (currentHealth <= 0f)
             Die();
     }
 
     public void Heal(float amount)
     {
-        if (IsDead) return;
+        if (isDead) return;
         currentHealth += amount;
         if (currentHealth > maxHealth)
         {
@@ -43,7 +49,7 @@ public class PlayerHealth : MonoBehaviour
 
     public void Die()
     {
-        IsDead = true;
+        isDead = true;
         animator.SetTrigger("IsDead");
         Destroy(gameObject, 2f); // 2초 후에 오브젝트 삭제
     }
