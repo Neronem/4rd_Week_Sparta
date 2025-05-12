@@ -33,7 +33,7 @@ public class PlayerController : MonoBehaviour
     private void FixedUpdate()
     {
         movement.CheckGround();
-        _rigidbody.velocity = new Vector2(gameManager.speed, _rigidbody.velocity.y);
+        _rigidbody.velocity = new Vector2(movement.speed, _rigidbody.velocity.y);
     }
     void Update()
     {
