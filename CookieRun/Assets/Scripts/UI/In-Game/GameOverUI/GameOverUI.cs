@@ -15,7 +15,7 @@ public class GameOverUI : MonoBehaviour
         totalScoreText.text = GameManager.Instance.StartScore.ToString();
         bestScoreText.text = GameManager.Instance.BestScore.ToString();
 
-        if (GameManager.difficulty == 1 && PlayerPrefs.GetInt("Stage1Cleared", 0) == 1)
+        if (GameManager.difficulty == 0 && PlayerPrefs.GetInt("Stage1Cleared", 0) == 1)
         {
             newStageOpenText.SetActive(true);
         }

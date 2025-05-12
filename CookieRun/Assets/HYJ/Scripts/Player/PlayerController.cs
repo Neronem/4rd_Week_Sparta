@@ -59,7 +59,7 @@ public class PlayerController : MonoBehaviour
             movement.groundDetector.enabled = false;
             health.Die();
             GameManager.Instance.GameOver();
-        }
+        }        
     }
 
 }

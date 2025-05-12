@@ -37,6 +37,7 @@ public class GameManager : MonoBehaviour
 
     private void Start()
     {
+        // PlayerPrefs.DeleteKey("Stage1Cleared"); 스테이지 오픈확인을 위한 키삭제
         int diff = difficulty;
         startScore = 0;
         bestScore = PlayerPrefs.GetInt("BestScore", 0);
@@ -79,16 +80,14 @@ public class GameManager : MonoBehaviour
 
     private void Update()
     {
-        if (difficulty == 0 && StartScore >= 2000)
+        if (difficulty == 0 && StartScore >= 3000) // HYJ폴더 합칠때 플레이어컨트롤러 쪽으로 빼기
         {
             if (PlayerPrefs.GetInt("Stage1Cleared", 0) == 0) // 스테이지1 클리어해 본 적 없었으면
             {
-                PlayerPrefs.SetInt("Stage1Cleared", 1); // 스테이지1클리어 상태로 세팅
+                PlayerPrefs.SetInt("Stage1Cleared", 1); // 스테이지1 클리어 상태로 세팅
                 PlayerPrefs.Save();
             }
-            // 게임종료
-            // 스테이지2 오픈안되어있었으면 오픈
-            // 게임 클리어 창 띄우기
+            GameOver();
         }
         if (isGameOver)
         {
