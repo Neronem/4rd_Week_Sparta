@@ -5,7 +5,6 @@ using UnityEngine;
 
 public class Tutorial : MonoBehaviour
 {
-<<<<<<< Updated upstream
     PlayerMovement movement;
 
     public GameObject tutorial;
@@ -69,41 +68,5 @@ public class Tutorial : MonoBehaviour
             }
         }
     }
-=======
-    public GameObject tutorial;
-    bool tuto;
-
-    private void Start()
-    {
-        tuto = true;
-
-        if (tuto == true)
-        {
-            tutorial.SetActive(true);
-        }
-            
-        else
-            tutorial.SetActive(false);
-    }
-
-    void PlayTutorial(Collision2D collision)
-    {
-        if (!collision.gameObject.CompareTag("Player"))
-            return;
-
-        Vector3 pos = collision.gameObject.transform.position;
-        pos.y = -3;
-        collision.gameObject.transform.position = pos;
-
-
-    }
-
-    //엔터하면
-    //플레이어 강제 이동
-    //멈추기
-
-    //특정 키 입력 시
-    //움직이기
-
->>>>>>> Stashed changes
 }
+
