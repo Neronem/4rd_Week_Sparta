@@ -70,8 +70,8 @@ public class StartUIManager : MonoBehaviour
         mainMenuPanel.SetActive(false);
         stageSelectPanel.SetActive(false);
         settingPanel.SetActive(false);
-        characterSettingPanel.SetActive(false);
-        personalSettingPanel.SetActive(false);
+        //characterSettingPanel.SetActive(false);
+        //personalSettingPanel.SetActive(false);
         
         targetPanel.SetActive(true);
         currentPanel = targetPanel;

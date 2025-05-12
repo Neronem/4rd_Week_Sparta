@@ -30,7 +30,7 @@ public class StageLoader : MonoBehaviour
         SceneManager.LoadScene(stageSceneName);
     }
 
-    public void ShowPanel()
+    public void ShowStagePanel()
     {
         MainMenuPanel.SetActive(false);
         StageSelectPanel.SetActive(true);
