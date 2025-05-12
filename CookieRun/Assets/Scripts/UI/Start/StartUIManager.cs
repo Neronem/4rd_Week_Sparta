@@ -16,12 +16,12 @@ public class StartUIManager : MonoBehaviour
     private GameObject currentPanel;
     
     private void Start()
-    {
+    { // 시작은 메인메뉴로
         ShowPanel(mainMenuPanel);
     }
 
     private void Update()
-    {
+    { // Esc 누를 시 바로 전의 메뉴로 회귀
         if (Input.GetKeyDown(KeyCode.Escape))
         {
             if (currentPanel == stageSelectPanel || currentPanel == settingPanel)
@@ -66,7 +66,7 @@ public class StartUIManager : MonoBehaviour
     }
     
     private void ShowPanel(GameObject targetPanel)
-    {
+    { // 선택한 패널만 보여주는 메소드
         mainMenuPanel.SetActive(false);
         stageSelectPanel.SetActive(false);
         settingPanel.SetActive(false);

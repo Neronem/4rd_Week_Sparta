@@ -384,7 +384,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c04291f9045af8c4d831418e5be923e1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  difficulty: 0
   speed: 0
 --- !u!114 &313714722
 MonoBehaviour:
@@ -1118,7 +1117,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   soundEffectVolume: 0.6
-  soundEffectPitchVariance: 0.6
+  soundEffectPitchVariance: 0.259
   musicVolume: 0.605
   musicClip: {fileID: 8300000, guid: 41108576aeae56f4093227fbe8f9de2e, type: 3}
   soundSourcePrefab: {fileID: 4292882943590825340, guid: 8ad257b568b72f046981bfd1ef3e40a7, type: 3}
