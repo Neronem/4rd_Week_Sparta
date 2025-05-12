@@ -8601,9 +8601,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 37cbbc99c95d4a442b7c5491c08c18b6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  totalScoreText: {fileID: 0}
-  bestScoreText: {fileID: 0}
-  newStageOpenText: {fileID: 0}
+  totalScoreText: {fileID: 863572849}
+  bestScoreText: {fileID: 1144849443}
+  newStageOpenText: {fileID: 642362626}
 --- !u!1 &1289199619
 GameObject:
   m_ObjectHideFlags: 0
