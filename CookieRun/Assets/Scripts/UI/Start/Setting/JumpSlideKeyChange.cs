@@ -24,7 +24,12 @@ public class JumpSlideKeyChange : MonoBehaviour
         {
             return;
         } // 평소엔 (버튼 안눌렀을땐) return
+        
+        KeyChanger();
+    }
 
+    public void KeyChanger()
+    {
         // 버튼 눌렀을때 
         if (Input.anyKeyDown) // 사용자가 키보드의 어떤 거라도 일단 눌렀다면 (없어도 되긴하는데 최적화용)
         {
@@ -50,7 +55,8 @@ public class JumpSlideKeyChange : MonoBehaviour
             }
         }
     }
-
+    
+    
     public void StartRebindJump()
     {
         waitingForKey = RebindAction.Jump;
