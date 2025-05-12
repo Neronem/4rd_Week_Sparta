@@ -55,7 +55,7 @@ public class PlayerMovement : MonoBehaviour
 
     public void HandleJump()
     {
-        if (jumpCount == 0 && isGrounded && Input.GetKeyDown(KeyCode.Space)) // �ٴڿ� ������� ���� ���� ����
+        if (jumpCount == 0 && isGrounded && Input.GetKeyDown(PlayerInputSettings.jumpKey)) // �ٴڿ� ������� ���� ���� ����
         {
             // ����
             jumpCount = 1;
@@ -65,7 +65,7 @@ public class PlayerMovement : MonoBehaviour
             isJumping = true;
             animator.SetBool("IsJump", true);
         }
-        else if (!isGrounded && jumpCount < maxJumps && Input.GetKeyDown(KeyCode.Space)) // ���߿� ���� ���� �������� ����
+        else if (!isGrounded && jumpCount < maxJumps && Input.GetKeyDown(PlayerInputSettings.jumpKey)) // ���߿� ���� ���� �������� ����
         {
             jumpCount = 2;
             if(doubleJumpAudio != null) 
@@ -79,7 +79,7 @@ public class PlayerMovement : MonoBehaviour
     public void HandleSlide()
     {
         // Shift ������ ���ȸ� �����̵�
-        if (isGrounded && Input.GetKey(KeyCode.LeftShift) && !isSliding)
+        if (isGrounded && Input.GetKey(PlayerInputSettings.slideKey) && !isSliding)
         {
             if(slideAudio != null) 
                 SoundManager.PlayClip(slideAudio);
@@ -88,7 +88,7 @@ public class PlayerMovement : MonoBehaviour
             playerCollider.enabled = false;
             slideCollider.enabled = true;
         }
-        else if (isSliding && Input.GetKeyUp(KeyCode.LeftShift))
+        else if (isSliding && Input.GetKeyUp(PlayerInputSettings.slideKey))
         {
             isSliding = false;
             animator.SetBool("IsSliding", false);

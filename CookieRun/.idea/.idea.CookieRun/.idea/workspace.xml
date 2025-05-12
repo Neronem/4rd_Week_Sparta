@@ -5,10 +5,49 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7d074984-35ae-4300-8539-7454dcb4648f" name="변경" comment="">
+      <change afterPath="$PROJECT_DIR$/Assets/Fonts/OTF.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Fonts/OTF/MaruBuri-Bold SDF.asset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Fonts/OTF/MaruBuri-Bold SDF.asset.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Fonts/OTF/MaruBuri-Bold.otf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Fonts/OTF/MaruBuri-Bold.otf.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Fonts/OTF/MaruBuri-ExtraLight.otf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Fonts/OTF/MaruBuri-ExtraLight.otf.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Fonts/OTF/MaruBuri-Light.otf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Fonts/OTF/MaruBuri-Light.otf.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Fonts/OTF/MaruBuri-Regular.otf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Fonts/OTF/MaruBuri-Regular.otf.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Fonts/OTF/MaruBuri-SemiBold.otf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Fonts/OTF/MaruBuri-SemiBold.otf.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Fonts/TTF.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Fonts/TTF/MaruBuri-Bold.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Fonts/TTF/MaruBuri-Bold.ttf.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Fonts/TTF/MaruBuri-ExtraLight.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Fonts/TTF/MaruBuri-ExtraLight.ttf.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Fonts/TTF/MaruBuri-Light.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Fonts/TTF/MaruBuri-Light.ttf.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Fonts/TTF/MaruBuri-Regular.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Fonts/TTF/MaruBuri-Regular.ttf.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Fonts/TTF/MaruBuri-SemiBold.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Fonts/TTF/MaruBuri-SemiBold.ttf.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/HYJ/Scripts/Player/PlayerInputSettings.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Resources/스크린샷 2025-05-12 162603.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Resources/스크린샷 2025-05-12 162603.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scenes/SGM_Scene.unity" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UI/Start/MainMenu.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.CookieRun/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.CookieRun/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Fonts/Jua,Noto_Sans_KR/Jua/Jua-Regular SDF.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Fonts/Jua,Noto_Sans_KR/Jua/Jua-Regular SDF.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/HYJ/Scripts/Player/PlayerMovement.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/HYJ/Scripts/Player/PlayerMovement.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Prefabs/Obstacles.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Prefabs/Obstacles.prefab.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/SGM_Scene.unity.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Prefabs/Obstacles_0.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Prefabs/Obstacles_0.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Prefabs/Obstacles_7.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Prefabs/Obstacles_7.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/MainGame.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/MainGame.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Start.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Start.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Tutorial.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Tutorial.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/TutorialObstacle.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/TutorialObstacle.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/HYJ/Scripts/Player/PlayerInputSettings.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/In-Game/GameUIManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/In-Game/GameUIManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/Start/InfiniteTilemapBackground.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/Start/MainMenu/InfiniteTilemapBackground.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/Start/InfiniteTilemapBackground.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/Start/MainMenu/InfiniteTilemapBackground.cs.meta" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -20,8 +59,12 @@
   </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/0abd682cf71c47b7a0a8ab90da9f508720a00/26/c54e662d/Collider2D.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/HYJ/Scripts/Player/PlayerInputSettings.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Items/SoundSettingUI.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/UI/In-Game/GameUIManager.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/UI/Start/StartUIManager.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.2d.tilemap@1.0.0/Editor/GridPaletteUtility.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.textmeshpro@3.0.6/Scripts/Runtime/TMPro_UGUI_Private.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.ugui@1.0.0/Runtime/UI/Core/Slider.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="ProjectColorInfo">{
@@ -32,19 +75,19 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "git-widget-placeholder": "YSD",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;YSD 병합 중&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RunManager" selected="Unity 에디터에 연결.Unity 에디터에 연결">
     <configuration name="유닛 테스트(배치 모드)" type="RunUnityExe" factoryName="Unity Executable">
       <option name="EXE_PATH" value="C:\Program Files\Unity\Hub\Editor\2022.3.17f1\Editor\Unity.exe" />
@@ -130,6 +173,8 @@
       <workItem from="1747037336843" duration="307000" />
       <workItem from="1747037676077" duration="329000" />
       <workItem from="1747038315190" duration="1059000" />
+      <workItem from="1747039740497" duration="87000" />
+      <workItem from="1747039852141" duration="130000" />
     </task>
     <servers />
   </component>

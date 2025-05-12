@@ -7,13 +7,12 @@ public class GameUIManager : MonoBehaviour
 {
     // 싱글톤 선언
     public static GameUIManager instance;
-
-    private GameObject canvas;
-    private GameObject gameUI;
-    private GameObject gameOverUI;
     
-    private GameOverUI gameOverUIScript;
-    private GameUI gameUIScript;
+    public GameObject gameUI;
+    public GameObject gameOverUI;
+    
+    public GameOverUI gameOverUIScript;
+    public GameUI gameUIScript;
     
     private void Awake()
     {
@@ -26,13 +25,6 @@ public class GameUIManager : MonoBehaviour
 
     private void Start()
     {
-        canvas = GameObject.Find("Canvas"); // 캔버스 찾아온 후
-        gameUI = canvas.transform.Find("GameUI")?.gameObject; // 캔버스 자식들인 UI들을 찾아옴
-        gameOverUI = canvas.transform.Find("GameOverUI")?.gameObject;
-        
-        gameOverUIScript = gameOverUI.GetComponent<GameOverUI>(); // 각자의 스크립트도 찾아옴
-        gameUIScript = gameUI.GetComponent<GameUI>();
-        
         gameUI.SetActive(true); 
         gameOverUI.SetActive(false);
     }
