@@ -5,7 +5,7 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
     GameManager gameManager;
-
+    SkinManager skinManager;
     private PlayerMovement movement;
     private PlayerHealth health;
     private PlayerStatusEffects statusEffects;
@@ -25,6 +25,7 @@ public class PlayerController : MonoBehaviour
     }
     void Start()
     {
+        skinManager = SkinManager.Instance;
         gameManager = GameManager.Instance;
 
         StartCoroutine(statusEffects.SpeedUpRoutine());
@@ -42,7 +43,7 @@ public class PlayerController : MonoBehaviour
     
         if (health.currentHealth <= 0)
         {
-            movement.speed = 0;
+            gameManager.speed = 0;
             movement.playerCollider.enabled = false;
             movement.slideCollider.enabled = false;
             movement.groundDetector.enabled = false;

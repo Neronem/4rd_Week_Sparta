@@ -7,7 +7,7 @@ public class PlayerMovement : MonoBehaviour
     public float speed = 5f;
     public float jumpForce = 20f;
     public int maxJumps = 2;
-
+   
     public Collider2D playerCollider;
     public Collider2D slideCollider;
 
