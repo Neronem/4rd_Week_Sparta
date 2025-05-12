@@ -4,12 +4,19 @@ using UnityEngine;
 
 public class EffectItem : BaseItem
 {
+    // effectAudio가 존재하면 아이템 획득 시 재생
+    public AudioClip effectAudio;
     // 속도 아이템 하나당 한 번만 적용되도록.
     private bool isActived = false;
+
     protected override void HandlePlayerCollision(GameObject player)
     {
-        // 아이템타입이 Heal이면 PlayerHealth의 Heal 발동하고 파괴
-        if (itemData.Type == ItemType.Heal && player != null)
+        if (effectAudio != null)
+        {
+            SoundManager.PlayClip(effectAudio);
+        }
+    // 아이템타입이 Heal이면 PlayerHealth의 Heal 발동하고 파괴
+    if (itemData.Type == ItemType.Heal && player != null)
         {
             var pc = player.GetComponent<PlayerHealth>();
             pc?.Heal(itemData.Effect);
