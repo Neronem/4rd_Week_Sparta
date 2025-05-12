@@ -8,7 +8,11 @@ public class StartUIManager : MonoBehaviour
     public GameObject mainMenuPanel;
     public GameObject stageSelectPanel;
     public GameObject settingPanel;
-
+    
+    // setting 패널들
+    public GameObject characterSettingPanel;
+    public GameObject personalSettingPanel;
+    
     private GameObject currentPanel;
     
     private void Start()
@@ -23,6 +27,10 @@ public class StartUIManager : MonoBehaviour
             if (currentPanel == stageSelectPanel || currentPanel == settingPanel)
             {
                 ShowPanel(mainMenuPanel);
+            }
+            else if (currentPanel == characterSettingPanel || currentPanel == personalSettingPanel)
+            {
+                ShowPanel(settingPanel);
             }
         }
     }
@@ -45,11 +53,25 @@ public class StartUIManager : MonoBehaviour
         Application.Quit();
     }
 
+    // (Setting 패널에서) CharacterSetting 누를 시
+    public void OnClickCharacterSetting()
+    {
+        ShowPanel(characterSettingPanel);
+    }
+
+    // (Setting 패널에서) PersonalSetting 누를 시
+    public void OnClickPersonalSetting()
+    {
+        ShowPanel(personalSettingPanel);
+    }
+    
     private void ShowPanel(GameObject targetPanel)
     {
         mainMenuPanel.SetActive(false);
         stageSelectPanel.SetActive(false);
         settingPanel.SetActive(false);
+        characterSettingPanel.SetActive(false);
+        personalSettingPanel.SetActive(false);
         
         targetPanel.SetActive(true);
         currentPanel = targetPanel;
