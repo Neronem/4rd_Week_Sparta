@@ -5,7 +5,7 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
     GameManager gameManager;
-
+    SkinManager skinManager;
     private PlayerMovement movement;
     private PlayerHealth health;
     private PlayerStatusEffects statusEffects;
@@ -25,7 +25,9 @@ public class PlayerController : MonoBehaviour
     }
     void Start()
     {
+        skinManager = SkinManager.Instance;
         gameManager = GameManager.Instance;
+        skinManager.ApplySkin("default");
 
         StartCoroutine(statusEffects.SpeedUpRoutine());
         StartCoroutine(statusEffects.HpDecrease());

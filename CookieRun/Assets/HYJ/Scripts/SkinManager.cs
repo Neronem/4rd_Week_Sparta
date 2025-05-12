@@ -15,13 +15,6 @@ public class SkinManager : MonoBehaviour
         public bool isUnlocked; // 스킨 해금 여부
     }
     
-    [Serializable] public class SkinData
-    {
-        public string skinId; // 스킨 ID
-        public string skinName; // 스킨 이름
-        public GameObject skinPrefab; // 스킨 프리팹
-        public bool isUnlocked; // 해금 여부
-    }
     private void Awake()
     {
         if (Instance == null)
@@ -51,12 +44,33 @@ public class SkinManager : MonoBehaviour
 
     public void ApplySkin(string skinId)
     {
-        if(!skinDictionary.TryGetValue(skinId, out var skin) || !skin.isUnlocked)
-        {
-            skinId = "default"; // 기본 스킨으로 설정
-            skin = skinDictionary[skinId]; // 기본 스킨 데이터 가져오기
-        }
         var player = GameObject.FindGameObjectWithTag("Player"); // 플레이어 오브젝트 찾기
+        if (player == null)
+        {
+            Debug.LogWarning("Player object not found!"); // 플레이어 오브젝트 미발견 메시지
+            return;
+        }
+
+        var oldSkin = player.transform.Find("MainSprite");
+        if (oldSkin != null) 
+        {
+            Destroy(oldSkin.gameObject);
+        }
+
+        if (!skinDictionary.ContainsKey(skinId) || !skinDictionary[skinId].isUnlocked)
+        {
+            skinId = "default";
+        }
+        var prefab = skinDictionary[skinId].data.skinPrefab;
+        
+
+        var go = Instantiate(prefab, player.transform);
+        go.name = "MainSprite";
+
+        currentSkinId = skinId;
+
+        PlayerPrefs.SetString("SelectedSkin", skinId);
+        PlayerPrefs.Save();
     }
     public void UnlockSkin(string skinId) // 스킨 해금
     {
