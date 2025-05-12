@@ -6,20 +6,26 @@ public class PlayerHealth : MonoBehaviour
 {
     public float maxHealth = 100f;
     public float currentHealth;
-    public CameraShake cameraShake;
+    private CameraShake cameraShake;
     public float shakeDuration = 1f;
     public float shakeMagnitude = 1f;
     private Animator animator;
     private PlayerStatusEffects statusEffects;
     public bool isDead = false;
 
+    public AudioClip damagedAudio; 
+
 
     void Awake()
     {
+        var camera = GameObject.FindGameObjectWithTag("MainCamera");
+        if (camera != null)
+        {
+            cameraShake = camera.GetComponent<CameraShake>();
+        }
         currentHealth = maxHealth;
         statusEffects = GetComponent<PlayerStatusEffects>();
         animator = GetComponentInChildren<Animator>();
-
     }
 
     public void TakeDamage(float amount)
@@ -27,6 +33,8 @@ public class PlayerHealth : MonoBehaviour
         if (isDead || statusEffects.isUndamageable) return;
 
         StartCoroutine(statusEffects.Undamageable());
+        if(damagedAudio != null)
+            SoundManager.PlayClip(damagedAudio);
         currentHealth -= amount;
         animator.SetTrigger("IsDamage");
         if (cameraShake != null && !cameraShake.isShaking)
@@ -51,6 +59,6 @@ public class PlayerHealth : MonoBehaviour
     {
         isDead = true;
         animator.SetTrigger("IsDead");
-        Destroy(gameObject, 2f); // 2ÃÊ ÈÄ¿¡ ¿ÀºêÁ§Æ® »èÁ¦
+        Destroy(gameObject, 2f); // 2ï¿½ï¿½ ï¿½Ä¿ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Æ® ï¿½ï¿½ï¿½ï¿½
     }
 }

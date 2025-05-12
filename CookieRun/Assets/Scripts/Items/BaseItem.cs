@@ -55,6 +55,7 @@ public abstract class BaseItem : MonoBehaviour
         {
             // 메서드 중복실행 방지하고, Score/Effect Item별 효과 처리 및 Item 재생성 
             isAdjusting = true;
+            
             HandlePlayerCollision(collision.gameObject);  // 자식이 override 가능
             CreateItem createItem = FindObjectOfType<CreateItem>();
             createItem?.SpawnAndCreateItem(transform.position); 

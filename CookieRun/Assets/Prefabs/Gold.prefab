@@ -121,6 +121,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1f5f2ffd2c442614cb4eda24114c21a6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  scoreAudio: {fileID: 8300000, guid: b85e521b8cb29eb47964133d7f39da03, type: 3}
 --- !u!50 &-4227726585481456917
 Rigidbody2D:
   serializedVersion: 4
