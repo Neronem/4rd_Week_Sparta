@@ -13,6 +13,7 @@ public class StageLoader : MonoBehaviour
 
     public void LoadStage()
     {
+        // PlayerPrefs.DeleteKey("Stage1Cleared"); stage2 잠겨있는지 확인용
         if (difficultyLevel == 2)
         {
             if (PlayerPrefs.GetInt("Stage1Cleared", 0) == 0)

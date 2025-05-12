@@ -5605,7 +5605,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   stageSceneName: MainGame
-  difficultyLevel: 0
+  difficultyLevel: 1
   MainMenuPanel: {fileID: 0}
   StageSelectPanel: {fileID: 0}
   SettingPanel: {fileID: 0}
@@ -9219,7 +9219,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   stageSceneName: MainGame
-  difficultyLevel: 1
+  difficultyLevel: 2
   MainMenuPanel: {fileID: 0}
   StageSelectPanel: {fileID: 0}
   SettingPanel: {fileID: 0}
