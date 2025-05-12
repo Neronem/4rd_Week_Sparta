@@ -1,21 +1,26 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using static UnityEngine.GraphicsBuffer;
 
 public class FollowCamera: MonoBehaviour
 {
-    [SerializeField] private Transform target;
+    [SerializeField] private string targetTag = "Player";
+
+    private Transform target;
     float offsetX;
 
     void Start()
     {
-        if (target == null)
-            return;
-
-        offsetX = transform.position.x - target.position.x;
+        GameObject go = GameObject.FindWithTag(targetTag);
+        if (go != null)
+        {
+            target = go.transform;
+            offsetX = transform.position.x - target.position.x;
+        }
     }
 
-    void Update()
+    void LateUpdate()
     {
         if (target == null)
             return;

@@ -4,15 +4,74 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9e921631-4357-43f4-aeee-a7f5547725f0" name="변경" comment="">
+    <list default="true" id="7d074984-35ae-4300-8539-7454dcb4648f" name="변경" comment="">
+      <change afterPath="$PROJECT_DIR$/Assets/HYJ/ScriptableObject/AchievementData/AchievementData.asset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/HYJ/ScriptableObject/AchievementData/AchievementData.asset.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/HYJ/ScriptableObject/SkinData.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/HYJ/ScriptableObject/SkinData/default.asset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/HYJ/ScriptableObject/SkinData/default.asset.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/HYJ/ScriptableObject/SkinData/skin_01.asset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/HYJ/ScriptableObject/SkinData/skin_01.asset.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/HYJ/ScriptableObject/SkinData/skin_02.asset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/HYJ/ScriptableObject/SkinData/skin_02.asset.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/HYJ/ScriptableObject/SkinData/skin_03.asset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/HYJ/ScriptableObject/SkinData/skin_03.asset.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/HYJ/Scripts/SkinData.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/HYJ/Scripts/SkinData.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/HYJ/Scripts/SkinManager.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/HYJ/Scripts/SkinManager.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/Player/Skin.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/Player/Skin/DefaultSkin.prefab" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/Player/Skin/DefaultSkin.prefab.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/Player/Skin/Skin_01.prefab" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/Player/Skin/Skin_01.prefab.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/Player/Skin/Skin_02.prefab" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/Player/Skin/Skin_02.prefab.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/Player/Skin/Skin_03.prefab" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/Player/Skin/Skin_03.prefab.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/tuto_1.prefab" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/tuto_1.prefab.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/tuto_2.prefab" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/tuto_2.prefab.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Resources/Prefabs/Obstacles.prefab" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Resources/Prefabs/Obstacles.prefab.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Tutorial.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Tutorial.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/TutorialObstacle.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/TutorialObstacle.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UI/Start/Setting.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UI/Start/Setting/JumpSlideKeyChange.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UI/Start/Setting/JumpSlideKeyChange.cs.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.CookieRun/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.CookieRun/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Fonts/Jua,Noto_Sans_KR/Jua/Jua-Regular SDF.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Fonts/Jua,Noto_Sans_KR/Jua/Jua-Regular SDF.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Bronze.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Bronze.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Gold.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Gold.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Silver.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Silver.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/HYJ/ScriptableObject/ObstacleClear_10.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/HYJ/ScriptableObject/AchievementData/ObstacleClear_10.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/HYJ/ScriptableObject/ObstacleClear_10.asset.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/HYJ/ScriptableObject/AchievementData/ObstacleClear_10.asset.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/HYJ/Scripts/AchievementData.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/HYJ/Scripts/AchievementData.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/HYJ/Scripts/AchievementManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/HYJ/Scripts/AchievementManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/HYJ/Scripts/FollowCamera.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/HYJ/Scripts/FollowCamera.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/HYJ/Scripts/Player/PlayerCollisionHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/HYJ/Scripts/Player/PlayerCollisionHandler.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/HYJ/Scripts/Player/PlayerController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/HYJ/Scripts/Player/PlayerController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/HYJ/Scripts/Player/PlayerHealth.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/HYJ/Scripts/Player/PlayerHealth.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/HYJ/Scripts/Player/PlayerMovement.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/HYJ/Scripts/Player/PlayerMovement.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/HYJ/Scripts/Player/PlayerStatusEffects.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/HYJ/Scripts/Player/PlayerStatusEffects.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Player/Player_MaskDude.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Player/Player.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Player/Player_MaskDude.prefab.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Player/Player.prefab.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Player/Player_NinjaFrog.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Player/Player_NinjaFrog.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Player/Player_PinkMan.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Player/Player_PinkMan.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Player/Player_VirtualGuy.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Player/Player_VirtualGuy.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Prefabs/Obstacles_0.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Prefabs/Obstacles_0.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Prefabs/Obstacles_0.prefab.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Prefabs/Obstacles_0.prefab.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Prefabs/obstacle.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Prefabs/obstacle.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/MainGame.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/MainGame.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/StageSelect.unity" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/StageSelect.unity.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/HYJ/ScriptableObject/AchievementData.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/Start.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Start.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Items/SoundManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Items/SoundManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/GameManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/GameManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Obstacle.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Obstacle.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/StageSelect/StageLoader.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/StageSelect/StageLoader.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/Start/StartUIManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/Start/StartUIManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Resources/Fonts &amp; Materials/LiberationSans SDF - Fallback.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/TextMesh Pro/Resources/Fonts &amp; Materials/LiberationSans SDF - Fallback.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -24,6 +83,7 @@
   </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/0abd682cf71c47b7a0a8ab90da9f508720a00/26/c54e662d/Collider2D.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/Admin/Desktop/test/4rd_Week_Sparta/CookieRun/Assets/Scenes/Start.unity" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Items/SoundSettingUI.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.2d.tilemap@1.0.0/Editor/GridPaletteUtility.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.ugui@1.0.0/Runtime/UI/Core/Slider.cs" root0="SKIP_HIGHLIGHTING" />
@@ -36,20 +96,19 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ModuleVcsDetector.initialDetectionPerformed": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "git-widget-placeholder": "YSD",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;YSD 병합 중&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RunManager" selected="Unity 에디터에 연결.Unity 에디터에 연결">
     <configuration name="유닛 테스트(배치 모드)" type="RunUnityExe" factoryName="Unity Executable">
       <option name="EXE_PATH" value="C:\Program Files\Unity\Hub\Editor\2022.3.17f1\Editor\Unity.exe" />
@@ -104,7 +163,7 @@
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="디폴트 작업">
-      <changelist id="9e921631-4357-43f4-aeee-a7f5547725f0" name="변경" comment="" />
+      <changelist id="7d074984-35ae-4300-8539-7454dcb4648f" name="변경" comment="" />
       <created>1746685646263</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
@@ -128,6 +187,12 @@
       <workItem from="1747010797721" duration="515000" />
       <workItem from="1747012641362" duration="9260000" />
       <workItem from="1747028356769" duration="7345000" />
+      <workItem from="1747036924493" duration="71000" />
+      <workItem from="1747037036603" duration="155000" />
+      <workItem from="1747037223036" duration="57000" />
+      <workItem from="1747037294675" duration="25000" />
+      <workItem from="1747037336843" duration="307000" />
+      <workItem from="1747037676077" duration="329000" />
     </task>
     <servers />
   </component>

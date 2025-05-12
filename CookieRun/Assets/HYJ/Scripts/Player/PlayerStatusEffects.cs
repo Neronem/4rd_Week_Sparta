@@ -4,18 +4,18 @@ using UnityEngine;
 
 public class PlayerStatusEffects : MonoBehaviour
 {
-    // Start is called before the first frame update
     public float unDamageable = 1f;
     public bool isUndamageable;
 
-    public float speedUpInterval = 10f;
-    public float speedUpAmount = 1f;
+    public float speedUpInterval = 2f;
+    public float speedUpAmount = 3f;
 
     [SerializeField] private float healthdecreaseAmount = 0.1f; // 체력 감소량
     [SerializeField] private float healthdecreaseInterval = 0.1f; // 체력 감소 시간
 
     private PlayerMovement movement;
     private PlayerHealth health;
+    public GameManager gameManager;
 
     void Awake()
     {
@@ -23,7 +23,11 @@ public class PlayerStatusEffects : MonoBehaviour
         health = GetComponent<PlayerHealth>();
     }
 
+    private void Start()
+    {
+        gameManager = GameManager.Instance;
 
+    }
 
     public IEnumerator Undamageable()
     {
@@ -34,10 +38,11 @@ public class PlayerStatusEffects : MonoBehaviour
 
     public IEnumerator SpeedUpRoutine()
     {
-        while (health.isDead)
+        while (!health.isDead)
         {
             yield return new WaitForSeconds(speedUpInterval);
-            movement.speed += speedUpAmount;
+            gameManager.speed += speedUpAmount;
+            Debug.Log("Speed Up: " + gameManager.speed);
         }
     }
     public IEnumerator HpDecrease()

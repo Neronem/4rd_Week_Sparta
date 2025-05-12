@@ -513,7 +513,6 @@ GameObject:
   m_Component:
   - component: {fileID: 313714720}
   - component: {fileID: 313714721}
-  - component: {fileID: 313714722}
   - component: {fileID: 336508441}
   m_Layer: 0
   m_Name: GameManager
@@ -11139,7 +11138,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 62d72f69273102045a5bee2175df3452, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  target: {fileID: 1484964315}
+  targetTag: Player
 --- !u!114 &1526669024
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13622,6 +13621,10 @@ PrefabInstance:
       propertyPath: m_GravityScale
       value: 10
       objectReference: {fileID: 0}
+    - target: {fileID: 2013317954723325396, guid: 531bebac825302949937d4eb9c5df2d3, type: 3}
+      propertyPath: gameManager
+      value: 
+      objectReference: {fileID: 313714721}
     - target: {fileID: 3791559299066722282, guid: 531bebac825302949937d4eb9c5df2d3, type: 3}
       propertyPath: jumpForce
       value: 20
