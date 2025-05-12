@@ -54,13 +54,13 @@ public class JumpSlideKeyChange : MonoBehaviour
     public void StartRebindJump()
     {
         waitingForKey = RebindAction.Jump;
-        jumpKeyBindText.text = "입력 대기..";
+        jumpKeyBindText.text = "Press Any Key..";
     }
 
     public void StartRebindSlide()
     {
         waitingForKey = RebindAction.Slide;
-        slideKeyBindText.text = "입력 대기..";
+        slideKeyBindText.text = "Press Any Key...";
     }
 }
 
