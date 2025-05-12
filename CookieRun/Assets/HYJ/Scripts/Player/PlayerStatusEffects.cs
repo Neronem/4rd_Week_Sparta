@@ -19,12 +19,15 @@ public class PlayerStatusEffects : MonoBehaviour
 
     void Awake()
     {
-        gameManager = GameManager.Instance;
         movement = GetComponent<PlayerMovement>();
         health = GetComponent<PlayerHealth>();
     }
 
+    private void Start()
+    {
+        gameManager = GameManager.Instance;
 
+    }
 
     public IEnumerator Undamageable()
     {
