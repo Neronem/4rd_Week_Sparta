@@ -19,7 +19,7 @@ public class GameManager : MonoBehaviour
     
     public static GameManager Instance;
 
-    public static int difficulty = 0; //난이도 초기화
+    public static int difficulty = 1; //난이도 초기화
     public float speed; //속도 선언
     
     private string scoreKey = "SavedAndLoadScore";
@@ -44,30 +44,53 @@ public class GameManager : MonoBehaviour
         //난이도에 따른 속도 차이
         switch (diff)
         {
-            case 0:
+            case 1:
                 speed = 5;
                 break;
-            case 1:
+            case 2:
                 speed = 15; // 속도차이의 변화를 느끼기 위한 극단적인 세팅 나중에 조절
                 break;
-            case 2:
+            case 3:
                 speed = 7;
                 break;
         }
     }
+    
+        //uiManager.UpdateScore(0);
+
+        // BaseItem[] items = GameObject.FindObjectsOfType<BaseItem>(); 
+        // itemLastPosition = items[0].transform.position;
+        // itemCount = items.Length;
+        //
+        // Debug.Log(itemCount);
+        // Debug.Log(itemLastPosition);
+        //
+        // for (int i = 0; i < itemCount; i++)
+        // {
+        //     //장애물 마지막 위치 = i번째 장애물 위치
+        //     itemLastPosition = items[i].RandomCreate(itemLastPosition);
+        // }
+        //     
+        //     int itemCount = 0;
+        //     Vector3 itemLastPosition = Vector3.zero;
+        //         
+        //
+    }
 
     private void Update()
     {
-        if (difficulty == 0 && StartScore >= 2000)
+        if (StartScore >= 3000)
         {
-            if (PlayerPrefs.GetInt("Stage1Cleared", 0) == 0) // 스테이지1 클리어해 본 적 없었으면
+            if (difficulty == 1)
             {
-                PlayerPrefs.SetInt("Stage1Cleared", 1); // 스테이지1클리어 상태로 세팅
-                PlayerPrefs.Save();
+                if (PlayerPrefs.GetInt("Stage1Cleared", 0) == 0) // 스테이지1 클리어해 본 적 없었으면
+                {
+                    PlayerPrefs.SetInt("Stage1Cleared", 1); // 스테이지1클리어 상태로 세팅
+                    PlayerPrefs.Save();
+                }
+                //게임종료
             }
-            // 게임종료
-            // 스테이지2 오픈안되어있었으면 오픈
-            // 게임 클리어 창 띄우기
+            // HYJ합쳐지면 플레이어컨트롤러쪽으로 넘기기
         }
         if (isGameOver)
         {
