@@ -6,7 +6,7 @@ public class PlayerHealth : MonoBehaviour
 {
     public float maxHealth = 100f;
     public float currentHealth;
-    public CameraShake cameraShake;
+    private CameraShake cameraShake;
     public float shakeDuration = 1f;
     public float shakeMagnitude = 1f;
     private Animator animator;
@@ -16,10 +16,14 @@ public class PlayerHealth : MonoBehaviour
 
     void Awake()
     {
+        var camera = GameObject.FindGameObjectWithTag("MainCamera");
+        if (camera != null)
+        {
+            cameraShake = camera.GetComponent<CameraShake>();
+        }
         currentHealth = maxHealth;
         statusEffects = GetComponent<PlayerStatusEffects>();
         animator = GetComponentInChildren<Animator>();
-
     }
 
     public void TakeDamage(float amount)

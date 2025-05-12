@@ -4,6 +4,12 @@ using UnityEngine;
 
 public class AchievementManager : MonoBehaviour
 {
+    public enum RewardType
+    {
+        UnlockCustomization, // 커스터마이징 해금
+        UnlockParticle, // 파티클 해금
+        UnlockPet, // 펫 해금
+    }
     public static AchievementManager Instance; // 싱글톤 인스턴스
     [SerializeField] private List<AchievementData> achievementDatas; // 업적 데이터 리스트
 
@@ -15,7 +21,12 @@ public class AchievementManager : MonoBehaviour
         public bool isAchieved; // 업적 달성 여부
         public float currentValue; // 현재 값
     }
-
+    public class AchievementReward
+    {
+        public RewardType rewardType; // 보상 타입
+        public int rewardValue; // 보상 값
+        public string itemId; // 아이템 ID
+    }
     private void Awake()
     {
         if (Instance == null)
@@ -27,7 +38,7 @@ public class AchievementManager : MonoBehaviour
             Destroy(gameObject); // 중복 인스턴스 제거
         }
 
-            achievementDictionary = new Dictionary<string, Achievement>();
+        achievementDictionary = new Dictionary<string, Achievement>();
         foreach (var data in achievementDatas)
         {
             achievementDictionary[data.achievementId] = new Achievement
@@ -62,8 +73,22 @@ public class AchievementManager : MonoBehaviour
 
     private void UnlockAchievement(AchievementData data)
     {
-        Debug.Log($"Achievement Unlocked: {data.achievementName}");// 업적 달성 로그
-        // 보상 지급 로직 추가
-        // 커스터마이징 해금 등
+        foreach (var reward in data.rewards)
+        {
+            switch (reward.rewardType)
+            {
+                case RewardType.UnlockCustomization:
+                    SkinManager.Instance.UnlockSkin(reward.itemId); // 커스터마이징 해금 로직
+                    break;
+                case RewardType.UnlockParticle:
+                    // 파티클 해금 로직
+                    break;
+                case RewardType.UnlockPet:
+                    // 펫 해금 로직
+                    break;
+            }
+        }
+        Debug.Log($"Achievement Unlocked: {data.achievementName}"); // 업적 해금 메시지
+        //달성 정보 저장 로직 추가 필요
     }
 }

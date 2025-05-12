@@ -178,7 +178,7 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 1
+  m_GravityScale: 10
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
@@ -366,7 +366,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHealth: 100
   currentHealth: 0
-  IsDead: 0
+  cameraShake: {fileID: 0}
+  shakeDuration: 0.5
+  shakeMagnitude: 0.5
+  isDead: 0
 --- !u!114 &8723952633030714968
 MonoBehaviour:
   m_ObjectHideFlags: 0

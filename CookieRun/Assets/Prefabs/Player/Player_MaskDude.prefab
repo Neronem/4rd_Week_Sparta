@@ -366,7 +366,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHealth: 100
   currentHealth: 0
-  IsDead: 0
+  cameraShake: {fileID: 0}
+  shakeDuration: 0.1
+  shakeMagnitude: 0.1
+  isDead: 0
 --- !u!114 &5428007778207556584
 MonoBehaviour:
   m_ObjectHideFlags: 0
