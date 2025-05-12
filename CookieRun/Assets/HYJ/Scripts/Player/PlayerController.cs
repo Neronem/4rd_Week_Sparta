@@ -50,6 +50,16 @@ public class PlayerController : MonoBehaviour
             health.Die();
             GameManager.Instance.GameOver();
         }
+
+        if (transform.position.y < -6)
+        {
+            movement.speed = 0;
+            movement.playerCollider.enabled = false;
+            movement.slideCollider.enabled = false;
+            movement.groundDetector.enabled = false;
+            health.Die();
+            GameManager.Instance.GameOver();
+        }
     }
 
 }
