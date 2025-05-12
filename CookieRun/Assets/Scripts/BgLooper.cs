@@ -5,26 +5,32 @@ using UnityEngine.UIElements;
 
 public class BgLooper : MonoBehaviour
 {
+    ObstacleManager obstacleManager;
+
     int numOfBg = 5; //백그라운드 개수
-    int obstacleCount = 0; //장애물 개수 선언
-    Vector3 obstacleLastPosition = Vector3.zero; //마지막 장애물 위치 선언
-    
+    Vector3 obstacleLastPosition = Vector3.zero;
+
     void Start()
     {
-        Obstacle[] obstacles = GameObject.FindObjectsOfType<Obstacle>(); //장애물 찾아오기
-        obstacleLastPosition = obstacles[0].transform.position; //마지막 장애물 위치 초기화
-        obstacleCount = obstacles.Length; //장애물 개수 초기화
-
-        for (int i = 0; i < obstacleCount; i++)
-        {
-            //장애물 마지막 위치 = i번째 장애물 위치
-            obstacleLastPosition = obstacles[i].RandomPosition(obstacleLastPosition);
-        }
+        obstacleManager = ObstacleManager.Instance;
+        obstacleLastPosition = new Vector3(-5, -3);
     }
 
     void Update()
     {
 
+    }
+
+    public void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.CompareTag("Obstacle"))
+        {
+            float widthOfObstacle = ((BoxCollider2D)collision).size.x;
+            Vector3 pos = collision.transform.position;
+
+            pos.x += widthOfObstacle;
+            ObstacleManager.Instance.CreateObstacle(pos);
+        }
     }
 
     public void OnTriggerExit2D(Collider2D collision)
@@ -39,12 +45,11 @@ public class BgLooper : MonoBehaviour
             return;
         }
 
-
-        Obstacle obstacle = collision.GetComponent<Obstacle>();
-        if (obstacle)
+        if (collision.CompareTag("Obstacle"))
         {
-            Debug.Log("Trigger");
-            obstacleLastPosition = obstacle.RandomPosition(obstacleLastPosition);
+            Destroy(collision.gameObject);
         }
     }
+
+
 }
