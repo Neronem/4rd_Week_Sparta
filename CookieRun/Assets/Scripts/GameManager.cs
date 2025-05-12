@@ -75,7 +75,7 @@ public class GameManager : MonoBehaviour
         //     Vector3 itemLastPosition = Vector3.zero;
         //         
         //
-    }
+    
 
     private void Update()
     {
