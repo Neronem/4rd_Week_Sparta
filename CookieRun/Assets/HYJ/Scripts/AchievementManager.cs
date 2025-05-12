@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -21,7 +22,7 @@ public class AchievementManager : MonoBehaviour
         public bool isAchieved; // 업적 달성 여부
         public float currentValue; // 현재 값
     }
-    public class AchievementReward
+    [Serializable] public class AchievementReward
     {
         public RewardType rewardType; // 보상 타입
         public int rewardValue; // 보상 값

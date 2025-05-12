@@ -42,7 +42,7 @@ public class PlayerController : MonoBehaviour
     
         if (health.currentHealth <= 0)
         {
-            movement.speed = 0;
+            gameManager.speed = 0;
             movement.playerCollider.enabled = false;
             movement.slideCollider.enabled = false;
             movement.groundDetector.enabled = false;
