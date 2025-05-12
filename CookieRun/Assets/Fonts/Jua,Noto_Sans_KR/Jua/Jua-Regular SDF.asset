@@ -2229,6 +2229,13 @@ MonoBehaviour:
       m_HorizontalBearingY: 73.265625
       m_HorizontalAdvance: 74.703125
     m_GlyphRect:
+      m_X: 0
+      m_Y: 0
+      m_Width: 0
+      m_Height: 0
+    m_Scale: 1
+    m_AtlasIndex: 0
+    m_ClassDefinitionType: 0
   - m_Index: 1990
     m_Metrics:
       m_Width: 68.03125
