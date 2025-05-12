@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -7,17 +8,18 @@ public class SkinManager : MonoBehaviour
     public static SkinManager Instance; // 싱글톤 인스턴스
     [SerializeField] private List<SkinData> skinDatas; // 스킨 데이터 리스트
     private Dictionary<string, Skin> skinDictionary; // 스킨 데이터 딕셔너리
+    private string currentSkinId; // 현재 스킨 ID
     private class Skin
     {
         public SkinData data; // 스킨 데이터
         public bool isUnlocked; // 스킨 해금 여부
     }
-    public class SkinData
+    
+    [Serializable] public class SkinData
     {
         public string skinId; // 스킨 ID
         public string skinName; // 스킨 이름
-        public string skinDescription; // 스킨 설명
-        public int price; // 가격
+        public GameObject skinPrefab; // 스킨 프리팹
         public bool isUnlocked; // 해금 여부
     }
     private void Awake()
@@ -41,6 +43,20 @@ public class SkinManager : MonoBehaviour
                 isUnlocked = data.isUnlocked
             };
         }
+    }
+    private void Start()
+    {
+        currentSkinId = PlayerPrefs.GetString("CurrentSkinId", skinDatas[0].skinId); // 기본 스킨 설정
+    }
+
+    public void ApplySkin(string skinId)
+    {
+        if(!skinDictionary.TryGetValue(skinId, out var skin) || !skin.isUnlocked)
+        {
+            skinId = "default"; // 기본 스킨으로 설정
+            skin = skinDictionary[skinId]; // 기본 스킨 데이터 가져오기
+        }
+        var player = GameObject.FindGameObjectWithTag("Player"); // 플레이어 오브젝트 찾기
     }
     public void UnlockSkin(string skinId) // 스킨 해금
     {
