@@ -27,7 +27,6 @@ public class PlayerController : MonoBehaviour
     {
         skinManager = SkinManager.Instance;
         gameManager = GameManager.Instance;
-        skinManager.ApplySkin("default");
 
         StartCoroutine(statusEffects.SpeedUpRoutine());
         StartCoroutine(statusEffects.HpDecrease());
