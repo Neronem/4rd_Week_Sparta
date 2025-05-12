@@ -19,10 +19,13 @@ public class PlayerMovement : MonoBehaviour
     private int jumpCount;
     private bool isGrounded;
     private bool isSliding;
-    private bool isJumping = false; // Á¡ÇÁ ÁßÀÎÁö ¿©ºÎ
-    private bool isDoubleJumping = false; // ´õºí Á¡ÇÁ ÁßÀÎÁö ¿©ºÎ
+    private bool isJumping = false; // ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
+    private bool isDoubleJumping = false; // ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
 
-
+    public AudioClip jumpAudio;
+    public AudioClip doubleJumpAudio;
+    public AudioClip slideAudio;
+    
     void Awake()
     {
         _rigidbody = GetComponent<Rigidbody2D>();
@@ -52,17 +55,21 @@ public class PlayerMovement : MonoBehaviour
 
     public void HandleJump()
     {
-        if (jumpCount == 0 && isGrounded && Input.GetKeyDown(KeyCode.Space)) // ¹Ù´Ú¿¡ ´ê¾ÆÀÖÀ» ¶§¸¸ Á¡ÇÁ °¡´É
+        if (jumpCount == 0 && isGrounded && Input.GetKeyDown(KeyCode.Space)) // ï¿½Ù´Ú¿ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
         {
-            // Á¡ÇÁ
+            // ï¿½ï¿½ï¿½ï¿½
             jumpCount = 1;
+            if(jumpAudio != null) 
+                SoundManager.PlayClip(jumpAudio);
             _rigidbody.velocity = new Vector2(_rigidbody.velocity.x, jumpForce);
             isJumping = true;
             animator.SetBool("IsJump", true);
         }
-        else if (!isGrounded && jumpCount < maxJumps && Input.GetKeyDown(KeyCode.Space)) // °øÁß¿¡ ÀÖÀ» ¶§¸¸ ´õºíÁ¡ÇÁ °¡´É
+        else if (!isGrounded && jumpCount < maxJumps && Input.GetKeyDown(KeyCode.Space)) // ï¿½ï¿½ï¿½ß¿ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
         {
             jumpCount = 2;
+            if(doubleJumpAudio != null) 
+                SoundManager.PlayClip(doubleJumpAudio);
             _rigidbody.velocity = new Vector2(_rigidbody.velocity.x, jumpForce);
             isDoubleJumping = true;
             animator.SetTrigger("IsDoubleJump");
@@ -71,9 +78,11 @@ public class PlayerMovement : MonoBehaviour
 
     public void HandleSlide()
     {
-        // Shift ´©¸£´Â µ¿¾È¸¸ ½½¶óÀÌµå
+        // Shift ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½È¸ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ìµï¿½
         if (isGrounded && Input.GetKey(KeyCode.LeftShift) && !isSliding)
         {
+            if(slideAudio != null) 
+                SoundManager.PlayClip(slideAudio);
             isSliding = true;
             animator.SetBool("IsSliding", true);
             playerCollider.enabled = false;
