@@ -2733,6 +2733,8 @@ MonoBehaviour:
   mainMenuPanel: {fileID: 974941344}
   stageSelectPanel: {fileID: 1809090566}
   settingPanel: {fileID: 1226206193}
+  characterSettingPanel: {fileID: 0}
+  personalSettingPanel: {fileID: 0}
 --- !u!4 &308497841
 Transform:
   m_ObjectHideFlags: 0
