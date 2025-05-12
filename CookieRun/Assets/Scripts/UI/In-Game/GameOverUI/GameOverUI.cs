@@ -14,9 +14,17 @@ public class GameOverUI : MonoBehaviour
     {
         totalScoreText.text = GameManager.Instance.StartScore.ToString();
         bestScoreText.text = GameManager.Instance.BestScore.ToString();
-        
-        // 스테이지 클리어 여부 따져서 텍스트 활성화 여부 판단로직 추가
-        newStageOpenText.SetActive(false);
+
+        if (GameManager.difficulty == 1 && PlayerPrefs.GetInt("Stage1Cleared", 0) == 1)
+        {
+            newStageOpenText.SetActive(true);
+        }
+        else
+        {
+            newStageOpenText.SetActive(false);
+        }
+        //// 스테이지 클리어 여부 따져서 텍스트 활성화 여부 판단로직 추가
+        //newStageOpenText.SetActive(false);
         
         gameObject.SetActive(true);
     }
