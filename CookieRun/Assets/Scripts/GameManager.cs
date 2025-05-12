@@ -44,18 +44,18 @@ public class GameManager : MonoBehaviour
         //난이도에 따른 속도 차이
         switch (diff)
         {
-            case 0:
+            case 1:
                 speed = 5;
                 break;
-            case 1:
+            case 2:
                 speed = 15; // 속도차이의 변화를 느끼기 위한 극단적인 세팅 나중에 조절
                 break;
-            case 2:
+            case 3:
                 speed = 7;
                 break;
         }
-
-
+    }
+    
         //uiManager.UpdateScore(0);
 
         // BaseItem[] items = GameObject.FindObjectsOfType<BaseItem>(); 

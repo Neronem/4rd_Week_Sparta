@@ -4,7 +4,65 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9e921631-4357-43f4-aeee-a7f5547725f0" name="변경" comment="" />
+    <list default="true" id="9e921631-4357-43f4-aeee-a7f5547725f0" name="변경" comment="">
+      <change afterPath="$PROJECT_DIR$/Assets/Externals/2D Bright buttons.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Externals/2D Bright buttons/Blue.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Externals/2D Bright buttons/Blue/blueDown.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Externals/2D Bright buttons/Blue/blueDown.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Externals/2D Bright buttons/Blue/blueNormal.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Externals/2D Bright buttons/Blue/blueNormal.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Externals/2D Bright buttons/Disabled.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Externals/2D Bright buttons/Disabled/disabled.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Externals/2D Bright buttons/Disabled/disabled.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Externals/2D Bright buttons/Green.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Externals/2D Bright buttons/Green/greenDown.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Externals/2D Bright buttons/Green/greenDown.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Externals/2D Bright buttons/Green/greenNormal.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Externals/2D Bright buttons/Green/greenNormal.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Externals/2D Bright buttons/Red.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Externals/2D Bright buttons/Red/redDown.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Externals/2D Bright buttons/Red/redDown.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Externals/2D Bright buttons/Red/redNormal.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Externals/2D Bright buttons/Red/redNormal.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Externals/2D Bright buttons/White.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Externals/2D Bright buttons/White/whiteDown.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Externals/2D Bright buttons/White/whiteDown.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Externals/2D Bright buttons/White/whiteNormal.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Externals/2D Bright buttons/White/whiteNormal.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Externals/2D Bright buttons/Yellow.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Externals/2D Bright buttons/Yellow/yellowDown.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Externals/2D Bright buttons/Yellow/yellowDown.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Externals/2D Bright buttons/Yellow/yellowNormal.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Externals/2D Bright buttons/Yellow/yellowNormal.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Externals/2D Bright buttons/buttons.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Externals/2D Bright buttons/buttons.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Externals/2D Bright buttons/buttons.xcf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Externals/2D Bright buttons/buttons.xcf.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Externals/Logo.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Externals/Logo.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scenes/StageSelect.unity" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scenes/StageSelect.unity.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UI/StageSelect.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UI/StageSelect/StageLoader.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UI/StageSelect/StageLoader.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UI/Start/StartUIManager.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UI/Start/StartUIManager.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.CookieRun/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.CookieRun/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Fonts/Jua,Noto_Sans_KR/Jua/Jua-Regular SDF.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Fonts/Jua,Noto_Sans_KR/Jua/Jua-Regular SDF.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/HYJ/Scripts/Player/PlayerController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/HYJ/Scripts/Player/PlayerController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Prefabs/Obstacles_7.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Prefabs/Obstacles_7.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Start.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Start.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/GameManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/GameManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/In-Game/GameOverUI/GameOverUI.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/In-Game/GameOverUI/GameOverUI.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/In-Game/UIManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/In-Game/GameUIManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/In-Game/UIManager.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/In-Game/GameUIManager.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/Start/StartScene.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/Start/InfiniteTilemapBackground.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/Start/StartScene.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/Start/InfiniteTilemapBackground.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Packages/manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/manifest.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Packages/packages-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/packages-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -14,8 +72,6 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/UI/In-Game/GameUIManager.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/UI/Start/StartUIManager.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.2d.tilemap@1.0.0/Editor/GridPaletteUtility.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="ProjectColorInfo">{
@@ -26,20 +82,20 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ModuleVcsDetector.initialDetectionPerformed": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "git-widget-placeholder": "main",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;YSD 병합 중&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RunManager" selected="Unity 에디터에 연결.Unity 에디터에 연결">
     <configuration name="유닛 테스트(배치 모드)" type="RunUnityExe" factoryName="Unity Executable">
       <option name="EXE_PATH" value="C:\Program Files\Unity\Hub\Editor\2022.3.17f1\Editor\Unity.exe" />
@@ -114,7 +170,9 @@
       <workItem from="1746957181500" duration="265000" />
       <workItem from="1746957518584" duration="59000" />
       <workItem from="1746957978336" duration="6072000" />
+      <workItem from="1747010777891" duration="1113000" />
       <workItem from="1747010797721" duration="515000" />
+      <workItem from="1747012641362" duration="9260000" />
     </task>
     <servers />
   </component>
