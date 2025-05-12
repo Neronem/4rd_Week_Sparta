@@ -3,10 +3,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class UIManager : MonoBehaviour
+public class GameUIManager : MonoBehaviour
 {
     // 싱글톤 선언
-    public static UIManager instance;
+    public static GameUIManager instance;
 
     private GameObject canvas;
     private GameObject gameUI;

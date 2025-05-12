@@ -150,7 +150,7 @@ public class GameManager : MonoBehaviour
     public void GameOver()
     {
         isGameOver = true;
-        UIManager.instance.GameUIDisappear();
-        UIManager.instance.GameOverUIAppear();
+        GameUIManager.instance.GameUIDisappear();
+        GameUIManager.instance.GameOverUIAppear();
     }
 }
