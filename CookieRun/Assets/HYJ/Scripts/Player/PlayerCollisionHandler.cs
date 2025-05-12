@@ -40,8 +40,8 @@ public class PlayerCollisionHandler : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        //Obstacle obstacle = collision.GetComponent<Obstacle>();
-        //if (!obstacle) 05.12 10am 수정예정
+        Obstacle obstacle = collision.GetComponent<Obstacle>();
+        if (!obstacle)
             return;
 
         bool playerHit = playerCollider.IsTouching(collision);

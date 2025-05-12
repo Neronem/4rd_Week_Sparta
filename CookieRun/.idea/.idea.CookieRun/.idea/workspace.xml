@@ -4,65 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9e921631-4357-43f4-aeee-a7f5547725f0" name="변경" comment="">
-      <change afterPath="$PROJECT_DIR$/Assets/Externals/2D Bright buttons.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Externals/2D Bright buttons/Blue.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Externals/2D Bright buttons/Blue/blueDown.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Externals/2D Bright buttons/Blue/blueDown.png.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Externals/2D Bright buttons/Blue/blueNormal.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Externals/2D Bright buttons/Blue/blueNormal.png.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Externals/2D Bright buttons/Disabled.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Externals/2D Bright buttons/Disabled/disabled.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Externals/2D Bright buttons/Disabled/disabled.png.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Externals/2D Bright buttons/Green.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Externals/2D Bright buttons/Green/greenDown.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Externals/2D Bright buttons/Green/greenDown.png.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Externals/2D Bright buttons/Green/greenNormal.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Externals/2D Bright buttons/Green/greenNormal.png.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Externals/2D Bright buttons/Red.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Externals/2D Bright buttons/Red/redDown.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Externals/2D Bright buttons/Red/redDown.png.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Externals/2D Bright buttons/Red/redNormal.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Externals/2D Bright buttons/Red/redNormal.png.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Externals/2D Bright buttons/White.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Externals/2D Bright buttons/White/whiteDown.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Externals/2D Bright buttons/White/whiteDown.png.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Externals/2D Bright buttons/White/whiteNormal.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Externals/2D Bright buttons/White/whiteNormal.png.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Externals/2D Bright buttons/Yellow.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Externals/2D Bright buttons/Yellow/yellowDown.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Externals/2D Bright buttons/Yellow/yellowDown.png.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Externals/2D Bright buttons/Yellow/yellowNormal.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Externals/2D Bright buttons/Yellow/yellowNormal.png.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Externals/2D Bright buttons/buttons.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Externals/2D Bright buttons/buttons.png.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Externals/2D Bright buttons/buttons.xcf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Externals/2D Bright buttons/buttons.xcf.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Externals/Logo.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Externals/Logo.png.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scenes/StageSelect.unity" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scenes/StageSelect.unity.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UI/StageSelect.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UI/StageSelect/StageLoader.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UI/StageSelect/StageLoader.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UI/Start/StartUIManager.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UI/Start/StartUIManager.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.CookieRun/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.CookieRun/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Fonts/Jua,Noto_Sans_KR/Jua/Jua-Regular SDF.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Fonts/Jua,Noto_Sans_KR/Jua/Jua-Regular SDF.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/HYJ/Scripts/Player/PlayerController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/HYJ/Scripts/Player/PlayerController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Prefabs/Obstacles_7.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Prefabs/Obstacles_7.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Start.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Start.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/GameManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/GameManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/In-Game/GameOverUI/GameOverUI.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/In-Game/GameOverUI/GameOverUI.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/In-Game/UIManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/In-Game/GameUIManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/In-Game/UIManager.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/In-Game/GameUIManager.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/Start/StartScene.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/Start/InfiniteTilemapBackground.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/Start/StartScene.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/Start/InfiniteTilemapBackground.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Packages/manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/manifest.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Packages/packages-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/packages-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" afterDir="false" />
-    </list>
+    <list default="true" id="7d074984-35ae-4300-8539-7454dcb4648f" name="변경" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -72,7 +14,14 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/0abd682cf71c47b7a0a8ab90da9f508720a00/26/c54e662d/Collider2D.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/HYJ/Scripts/Player/PlayerInputSettings.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Items/SoundSettingUI.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/UI/In-Game/GameUIManager.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/UI/Start/StartUIManager.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.2d.tilemap@1.0.0/Editor/GridPaletteUtility.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.textmeshpro@3.0.6/Scripts/Runtime/TMPro_UGUI_Private.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.ugui@1.0.0/Runtime/UI/Core/Slider.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 5
@@ -84,10 +33,9 @@
   </component>
   <component name="PropertiesComponent">{
   &quot;keyToString&quot;: {
-    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;YSD 병합 중&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;SGM__Branch&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
@@ -150,7 +98,7 @@
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="디폴트 작업">
-      <changelist id="9e921631-4357-43f4-aeee-a7f5547725f0" name="변경" comment="" />
+      <changelist id="7d074984-35ae-4300-8539-7454dcb4648f" name="변경" comment="" />
       <created>1746685646263</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
@@ -173,6 +121,19 @@
       <workItem from="1747010777891" duration="1113000" />
       <workItem from="1747010797721" duration="515000" />
       <workItem from="1747012641362" duration="9260000" />
+      <workItem from="1747028356769" duration="7345000" />
+      <workItem from="1747036924493" duration="71000" />
+      <workItem from="1747037036603" duration="155000" />
+      <workItem from="1747037223036" duration="57000" />
+      <workItem from="1747037294675" duration="25000" />
+      <workItem from="1747037336843" duration="307000" />
+      <workItem from="1747037676077" duration="329000" />
+      <workItem from="1747038315190" duration="1059000" />
+      <workItem from="1747039740497" duration="87000" />
+      <workItem from="1747039852141" duration="130000" />
+      <workItem from="1747040035058" duration="2000" />
+      <workItem from="1747047956623" duration="691000" />
+      <workItem from="1747056322110" duration="562000" />
     </task>
     <servers />
   </component>
