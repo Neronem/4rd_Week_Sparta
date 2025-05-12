@@ -4363,7 +4363,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 269.2, y: 127}
+  m_AnchoredPosition: {x: 79, y: 125}
   m_SizeDelta: {x: 295.0833, y: 55.3717}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &863572849
@@ -8098,7 +8098,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 269.2, y: 52.1}
+  m_AnchoredPosition: {x: 222, y: 49}
   m_SizeDelta: {x: 295.0833, y: 55.3717}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1144849443
@@ -8578,7 +8578,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: -96.7, y: 127}
-  m_SizeDelta: {x: 295.0833, y: 55.3717}
+  m_SizeDelta: {x: 400, y: 55.3717}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1201018347
 MonoBehaviour:
@@ -8600,7 +8600,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\uCD5C\uC885 \uC810\uC218 -\n\uCD5C\uACE0 \uC810\uC218 -"
+  m_text: 'Score :
+
+    Best Score :'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 51ab98c534c52d343b01b9f566849103, type: 2}
   m_sharedMaterial: {fileID: 2353345537944771844, guid: 51ab98c534c52d343b01b9f566849103, type: 2}
@@ -8920,7 +8922,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1265236389
 RectTransform:
   m_ObjectHideFlags: 0
