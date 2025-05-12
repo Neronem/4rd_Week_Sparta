@@ -17,10 +17,13 @@ public class Tutorial : MonoBehaviour
 
     float speed;
 
+    private void Awake()
+    {
+        movement = GameObject.FindWithTag("Player").GetComponent<PlayerMovement>();
+    }
+
     private void Start()
     {
-        speed = movement.speed;
-
         if (tuto_1 || tuto_2)
         {
             tutorial.SetActive(true);
@@ -29,11 +32,13 @@ public class Tutorial : MonoBehaviour
         {
             tutorial.SetActive(false);
         }
+
+        speed = movement.speed;
     }
 
     private void Update()
     {
-        if (waitingForInput && tuto_1 && Input.GetKey(KeyCode.Space))
+        if (waitingForInput && tuto_1 && Input.GetKeyDown(KeyCode.Space))
         {
             movement.speed = speed;
             tutoTxt_1.SetActive(false);
@@ -41,7 +46,7 @@ public class Tutorial : MonoBehaviour
             waitingForInput = false;
         }
 
-        if (waitingForInput && tuto_2 && Input.GetKey(KeyCode.LeftShift))
+        if (waitingForInput && tuto_2 && Input.GetKeyDown(KeyCode.LeftShift))
         {
             movement.speed = speed;
             tutoTxt_2.SetActive(false);
@@ -50,17 +55,20 @@ public class Tutorial : MonoBehaviour
         }
     }
 
-    public void TutorialTrigger(Collider2D collision)
+    public void TutorialTrigger(string triggername, Collider2D collision)
     {
+
+
         if (collision.CompareTag("Player"))
         {
-            if (tuto_1)
+
+            if (triggername == "tuto_1")
             {
                 movement.speed = 0;
                 tutoTxt_1.SetActive(true);
                 waitingForInput = true;
             }
-            else if (tuto_2)
+            else if (triggername == "tuto_2")
             {
                 movement.speed = 0;
                 tutoTxt_2.SetActive(true);

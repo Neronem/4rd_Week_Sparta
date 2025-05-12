@@ -6,7 +6,7 @@
 //{
 //    GameManager gameManager;
 //    Collider2D collider;
-    
+
 //    float widthPadding = 10f;
 
 //    void Start()
