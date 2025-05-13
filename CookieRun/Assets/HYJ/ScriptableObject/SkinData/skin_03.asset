@@ -15,4 +15,5 @@ MonoBehaviour:
   skinId: skin_03
   skinName: VirtualGuy
   skinPrefab: {fileID: 8805180855355067875, guid: c20d78f073e3ea04d94955a7d6b989f7, type: 3}
-  isUnlocked: 0
+  isUnlocked: 1
+  animatorOverride: {fileID: 22100000, guid: 7306422c1e1810e4ea71afbfae839323, type: 2}

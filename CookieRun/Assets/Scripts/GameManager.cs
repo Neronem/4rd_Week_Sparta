@@ -9,7 +9,6 @@ public class GameManager : MonoBehaviour
     //     [SerializeField] private UIManager uiManager;
     //     [SerializeField] private GameObject scoreItemPrefab; 
     //     
-
     private int startScore = 0;
     public int StartScore {get {return startScore;}}
     

@@ -76,20 +76,41 @@ public class SkinManager : MonoBehaviour
 
     private void ApplySkin(GameObject player, string skinId)
     {
-        if ((!skinDictionary.TryGetValue(skinId, out var skin) || !skin.isUnlocked || skin.data.skinPrefab == null))
+        if (!skinDictionary.TryGetValue(skinId, out var skin)
+            || !skin.isUnlocked
+            || skin.data.skinPrefab == null)
+            return;
+
+        var skinHolder = player.transform.Find("SkinHolder");
+        if (skinHolder == null)
         {
+            Debug.LogError("Player prefab에 SkinHolder가 없습니다!");
             return;
         }
-        var existing = player.transform.Find($"Skin_{skinId}");
-        if (existing != null)
+
+        for (int i = skinHolder.childCount - 1; i >= 0; i--)
+            Destroy(skinHolder.GetChild(i).gameObject);
+
+        var goSkin = Instantiate(skin.data.skinPrefab, skinHolder);
+        goSkin.name = skin.data.skinPrefab.name;
+        goSkin.transform.localPosition = Vector3.zero;
+        goSkin.transform.localRotation = Quaternion.identity;
+
+        var newAnim = goSkin.GetComponent<Animator>();
+        if (newAnim != null)
         {
-            Destroy(existing.gameObject); // 기존 스킨 제거
+            var movement = player.GetComponent<PlayerMovement>();
+            movement.animator = newAnim;
+
+            var health = player.GetComponent<PlayerHealth>();
+            if (health != null)
+                health.AssignAnimator(newAnim);
+
+
+            if (skin.data.animatorOverride != null)
+                newAnim.runtimeAnimatorController = skin.data.animatorOverride;
         }
-
-        var go = Instantiate(skin.data.skinPrefab, player.transform);
-        go.name = $"Skin_{skinId}"; // 스킨 이름 설정
     }
-
     public void OnPlayerSpawn(GameObject player)
     {
         if (string.IsNullOrEmpty(savedSkinId))
