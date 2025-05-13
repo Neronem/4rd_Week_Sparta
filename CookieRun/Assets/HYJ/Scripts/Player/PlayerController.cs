@@ -34,7 +34,7 @@ public class PlayerController : MonoBehaviour
     private void FixedUpdate()
     {
         movement.CheckGround();
-        _rigidbody.velocity = new Vector2(movement.speed, _rigidbody.velocity.y);
+        _rigidbody.velocity = new Vector2(gameManager.speed, _rigidbody.velocity.y);
     }
     void Update()
     {
@@ -43,7 +43,7 @@ public class PlayerController : MonoBehaviour
     
         if (health.currentHealth <= 0)
         {
-            gameManager.speed = 0;
+            gameManager.speed = 0f;
             movement.playerCollider.enabled = false;
             movement.slideCollider.enabled = false;
             movement.groundDetector.enabled = false;
@@ -54,7 +54,7 @@ public class PlayerController : MonoBehaviour
 
         if (transform.position.y < -6)
         {
-            movement.speed = 0;
+            gameManager.speed = 0f;
             movement.playerCollider.enabled = false;
             movement.slideCollider.enabled = false;
             movement.groundDetector.enabled = false;

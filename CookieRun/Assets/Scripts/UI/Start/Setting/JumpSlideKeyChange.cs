@@ -8,7 +8,6 @@ public class JumpSlideKeyChange : MonoBehaviour
 {
     public TextMeshProUGUI jumpKeyBindText; // 점프 키바인딩 버튼의 텍스트
     public TextMeshProUGUI slideKeyBindText; // 슬라이드 키바인딩 버튼의 텍스트
-
     private enum RebindAction
     {
         None,
@@ -24,7 +23,12 @@ public class JumpSlideKeyChange : MonoBehaviour
         {
             return;
         } // 평소엔 (버튼 안눌렀을땐) return
+        
+        KeyChanger();
+    }
 
+    public void KeyChanger()
+    {
         // 버튼 눌렀을때 
         if (Input.anyKeyDown) // 사용자가 키보드의 어떤 거라도 일단 눌렀다면 (없어도 되긴하는데 최적화용)
         {
@@ -32,35 +36,59 @@ public class JumpSlideKeyChange : MonoBehaviour
             {
                 if (Input.GetKeyDown(key)) // 이거 눌렀네?
                 {
+                    bool isDuplicateKey = false; // 중복키 입력했는지 판단하는 bool값
+                    
                     switch (waitingForKey) // enum 타입에 따라 바꾸는 키 종류가 다름 (점프, 슬라이드)
                     {
                         case RebindAction.Jump: // 점프 버튼 누른거였으면
-                            PlayerInputSettings.jumpKey = key; // 점프키에 키 할당
-                            jumpKeyBindText.text = key.ToString(); // 버튼에 텍스트로 키 표시
+                            if (key == PlayerInputSettings.slideKey)
+                            {
+                                isDuplicateKey = true; // 슬라이드랑 똑같은거 입력시 : true시킴
+                                jumpKeyBindText.text = "Already Used in SlideKey";
+                            }
+                            else
+                            {
+                                PlayerInputSettings.jumpKey = key; // 점프키에 키 할당
+                                jumpKeyBindText.text = key.ToString(); // 버튼에 텍스트로 키 표시
+                            }
                             break;
                         case RebindAction.Slide: // 슬라이드 버튼 누른거였으면
-                            PlayerInputSettings.slideKey = key; // 슬라이드키에 키 할당
-                            slideKeyBindText.text = key.ToString(); // 버튼에 텍스트로 키 표시
+                            if (key == PlayerInputSettings.jumpKey)
+                            {
+                                isDuplicateKey = true; // 점프랑 똑같은거 입력시 : true시킴
+                                slideKeyBindText.text = "Already Used in JumpKey";
+                            }
+                            else
+                            {
+                                PlayerInputSettings.slideKey = key; // 슬라이드키에 키 할당
+                                slideKeyBindText.text = key.ToString(); // 버튼에 텍스트로 키 표시
+                            }
                             break;
                     }
-
-                    waitingForKey = RebindAction.None; // 바꾸는거 끝나면 다시 None으로
+                    if (!isDuplicateKey)
+                    {
+                        waitingForKey = RebindAction.None;
+                        StartUIManager.isKeyBinding = false;
+                    }
                     break;
                 }
             }
         }
     }
-
+    
+    
     public void StartRebindJump()
     {
         waitingForKey = RebindAction.Jump;
-        jumpKeyBindText.text = "입력 대기..";
+        jumpKeyBindText.text = "Press Any Key..";
+        StartUIManager.isKeyBinding = true;
     }
 
     public void StartRebindSlide()
     {
         waitingForKey = RebindAction.Slide;
-        slideKeyBindText.text = "입력 대기..";
+        slideKeyBindText.text = "Press Any Key...";
+        StartUIManager.isKeyBinding = true;
     }
 }
 
