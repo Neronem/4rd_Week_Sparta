@@ -30,15 +30,8 @@ public class PlayerMovement : MonoBehaviour
     {
         _rigidbody = GetComponent<Rigidbody2D>();
         animator = GetComponentInChildren<Animator>();
-        AssignAnimator();
         playerCollider.enabled = true;
         slideCollider.enabled = false;
-    }
-    public void AssignAnimator()
-    {
-        animator = GetComponentInChildren<Animator>();
-        if (animator == null)
-            Debug.LogError("Animator를 찾을 수 없습니다!");
     }
     public void CheckGround()
     {
