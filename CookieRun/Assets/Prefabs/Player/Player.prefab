@@ -389,7 +389,7 @@ BoxCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: -0.38}
@@ -454,6 +454,13 @@ MonoBehaviour:
   player: {fileID: 7353846878638420722}
   followSpeed: 5
   stopDistance: 1.5
+  itemData:
+    type: 0
+    prefab: {fileID: 0}
+    weight: 0
+    score: 0
+    effect: 0
+  ItemGiveInterval: 20
 --- !u!212 &9061145780026509829
 SpriteRenderer:
   m_ObjectHideFlags: 0

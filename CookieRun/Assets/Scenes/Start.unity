@@ -243,19 +243,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 18110358}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 210057684}
-        m_TargetAssemblyTypeName: SkinManager, Assembly-CSharp
-        m_MethodName: SelectSkin
-        m_Mode: 5
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: default
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!114 &18110358
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6164,7 +6152,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &471692951
 RectTransform:
   m_ObjectHideFlags: 0
@@ -7323,19 +7311,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 727543521}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 210057684}
-        m_TargetAssemblyTypeName: SkinManager, Assembly-CSharp
-        m_MethodName: SelectSkin
-        m_Mode: 5
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: skin_02
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!114 &727543521
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9265,8 +9241,6 @@ MonoBehaviour:
   settingPanel: {fileID: 1226206193}
   personalSettingPanel: {fileID: 815272372}
   characterSelectPanel: {fileID: 471692950}
-  playerPrefab: {fileID: 0}
-  spawnPoint: {fileID: 0}
 --- !u!114 &1385726535
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9481,19 +9455,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1436053681}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 210057684}
-        m_TargetAssemblyTypeName: SkinManager, Assembly-CSharp
-        m_MethodName: SelectSkin
-        m_Mode: 5
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: skin_01
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!114 &1436053681
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9838,19 +9800,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1535635796}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 210057684}
-        m_TargetAssemblyTypeName: SkinManager, Assembly-CSharp
-        m_MethodName: SelectSkin
-        m_Mode: 5
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: skin_03
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!114 &1535635796
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10454,8 +10404,6 @@ MonoBehaviour:
   settingPanel: {fileID: 0}
   personalSettingPanel: {fileID: 0}
   characterSelectPanel: {fileID: 0}
-  playerPrefab: {fileID: 6079498129900740295, guid: 531bebac825302949937d4eb9c5df2d3, type: 3}
-  spawnPoint: {fileID: 758553011}
 --- !u!114 &1593697672
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11110,7 +11058,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1809090567
 RectTransform:
   m_ObjectHideFlags: 0
@@ -11202,10 +11150,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 296d1c9129f00904792ec8f50a4b8e3f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  soundEffectVolume: 0.5
-  soundEffectPitchVariance: 0.5
-  musicVolume: 0.5
-  masterVolume: 0.5
   musicClip: {fileID: 8300000, guid: 41108576aeae56f4093227fbe8f9de2e, type: 3}
   soundSourcePrefab: {fileID: 4292882943590825340, guid: 8ad257b568b72f046981bfd1ef3e40a7, type: 3}
 --- !u!82 &1812614206
@@ -11898,8 +11842,6 @@ MonoBehaviour:
   settingPanel: {fileID: 0}
   personalSettingPanel: {fileID: 0}
   characterSelectPanel: {fileID: 0}
-  playerPrefab: {fileID: 6079498129900740295, guid: 531bebac825302949937d4eb9c5df2d3, type: 3}
-  spawnPoint: {fileID: 758553011}
 --- !u!114 &2070697747
 MonoBehaviour:
   m_ObjectHideFlags: 0

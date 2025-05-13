@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -12,10 +13,14 @@ public class CharacterSelectUI : MonoBehaviour
     private void Awake()
     {
         _button = GetComponent<Button>();
+        _button.onClick.AddListener(OnClick);
     }
     private void Start()
     {
-        _button.interactable = SkinManager.Instance.CheckSkinUnlocked(skinId);
+        bool unlocked = SkinManager.Instance.CheckSkinUnlocked(skinId);
+        gameObject.SetActive(unlocked);
+        _button.interactable = unlocked;
+
         SkinManager.Instance.OnSkinUnlocked += SkinUnlocked;
     }
     private void SkinUnlocked(string unlockedSkinId)
@@ -27,8 +32,16 @@ public class CharacterSelectUI : MonoBehaviour
         }
     }
 
+    private void OnClick()
+    {
+        SkinManager.Instance.SelectSkin(skinId);
+        Debug.Log($"Selected skin: {skinId}");
+    }
     private void OnDestroy()
     {
-        SkinManager.Instance.OnSkinUnlocked -= SkinUnlocked;
+        if (SkinManager.Instance != null)
+            SkinManager.Instance.OnSkinUnlocked -= SkinUnlocked;
+
+        _button.onClick.RemoveListener(OnClick);
     }
 }

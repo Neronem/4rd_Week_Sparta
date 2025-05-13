@@ -89,7 +89,7 @@ public class AchievementManager : MonoBehaviour
                     break;
             }
         }
-        Debug.Log($"Achievement Unlocked: {data.achievementName}"); // 업적 해금 메시지
+        Debug.Log($"도전과제 달성 {data.achievementName}"); // 업적 해금 메시지
         //달성 정보 저장 로직 추가 필요
     }
 }
