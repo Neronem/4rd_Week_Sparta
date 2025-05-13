@@ -13,7 +13,8 @@ public class StartUIManager : MonoBehaviour
     public GameObject characterSettingPanel;
     public GameObject personalSettingPanel;
     
-    public static bool isKeyBinding = false;
+    public static bool isKeyBinding = false; // 키 바인딩 중이면 Esc버튼 봉쇄
+    
     private GameObject currentPanel;
     
     private void Start()

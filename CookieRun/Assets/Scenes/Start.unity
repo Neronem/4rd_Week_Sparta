@@ -6015,7 +6015,6 @@ GameObject:
   - component: {fileID: 388667909}
   - component: {fileID: 388667908}
   - component: {fileID: 388667907}
-  - component: {fileID: 388667910}
   m_Layer: 5
   m_Name: Play
   m_TagString: Untagged
@@ -6087,9 +6086,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 388667910}
-        m_TargetAssemblyTypeName: StageLoader, Assembly-CSharp
-        m_MethodName: ShowPanel
+      - m_Target: {fileID: 308497840}
+        m_TargetAssemblyTypeName: StartUIManager, Assembly-CSharp
+        m_MethodName: OnClickPlay
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -6137,23 +6136,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 388667905}
   m_CullTransparentMesh: 1
---- !u!114 &388667910
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 388667905}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a3df347b3503db340ac1b6eaccc5e3eb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  stageSceneName: 
-  difficultyLevel: 0
-  MainMenuPanel: {fileID: 974941344}
-  StageSelectPanel: {fileID: 1809090566}
-  SettingPanel: {fileID: 1226206193}
 --- !u!1 &471692950
 GameObject:
   m_ObjectHideFlags: 0
@@ -10356,9 +10338,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   stageSceneName: MainGame
   difficultyLevel: 2
-  MainMenuPanel: {fileID: 0}
-  StageSelectPanel: {fileID: 0}
-  SettingPanel: {fileID: 0}
 --- !u!114 &1581709977
 MonoBehaviour:
   m_ObjectHideFlags: 0
