@@ -4,13 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7d074984-35ae-4300-8539-7454dcb4648f" name="변경" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.CookieRun/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.CookieRun/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Player/Player.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Player/Player.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Items/SoundManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Items/SoundManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Items/SoundSettingUI.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Items/SoundSettingUI.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Items/SoundSource.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Items/SoundSource.cs" afterDir="false" />
-    </list>
+    <list default="true" id="7d074984-35ae-4300-8539-7454dcb4648f" name="변경" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -147,7 +141,7 @@
       <workItem from="1747097757223" duration="1991000" />
       <workItem from="1747104710604" duration="10101000" />
       <workItem from="1747119279541" duration="32000" />
-      <workItem from="1747123775561" duration="2715000" />
+      <workItem from="1747123775561" duration="3465000" />
     </task>
     <servers />
   </component>
