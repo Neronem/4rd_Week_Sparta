@@ -13,9 +13,9 @@ MonoBehaviour:
   m_Name: ObstacleClear_100
   m_EditorClassIdentifier: 
   achievementId: ObstacleClear_100
-  achievementName: "1000m \uC774\uB3D9"
-  achievementDescription: "1000m\uB97C \uC774\uB3D9\uD558\uC600\uC2B5\uB2C8\uB2E4"
-  achievementTarget: 1000
+  achievementName: "\uC7A5\uC560\uBB3C 100\uAC1C \uD074\uB9AC\uC5B4"
+  achievementDescription: "\uCD1D 100\uAC1C\uC758 \uC7A5\uC560\uBB3C\uC744 \uB118\uC5C8\uC2B5\uB2C8\uB2E4!"
+  achievementTarget: 100
   achievemetIcon: {fileID: 0}
   rewards:
   - rewardType: 0
