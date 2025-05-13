@@ -463,6 +463,13 @@ MonoBehaviour:
     score: 0
     effect: 0
   ItemGiveInterval: 20
+  itemData:
+    type: 3
+    prefab: {fileID: 1805527564110227108, guid: 51e9c4a2519db634183c9544475a34db, type: 3}
+    weight: 0
+    score: 0
+    effect: 5
+  ItemGiveInterval: 5
 --- !u!212 &9061145780026509829
 SpriteRenderer:
   m_ObjectHideFlags: 0
