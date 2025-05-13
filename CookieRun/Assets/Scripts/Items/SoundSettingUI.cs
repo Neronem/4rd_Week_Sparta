@@ -9,7 +9,7 @@ public class SoundSettingUI : MonoBehaviour
     [SerializeField] private Slider seVolumeSlider;
     [SerializeField] private Slider sePitchSlider;
     [SerializeField] private Slider musicVolumeSlider;
-
+    
     private void Start()
     {
         if (SoundManager.Instance == null) return;
@@ -51,6 +51,4 @@ public class SoundSettingUI : MonoBehaviour
             SoundManager.Instance.MusicVolume = value;
         });
     }
-    
-    
 }
