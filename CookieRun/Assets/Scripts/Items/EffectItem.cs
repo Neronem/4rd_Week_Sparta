@@ -27,6 +27,8 @@ public class EffectItem : BaseItem
         {
             // 사실 pc 가져올 필요는 없긴 한데 
             var pc = player.GetComponent<PlayerMovement>();
+            var status = player.GetComponent<PlayerStatusEffects>();
+
             if (GameManager.Instance.speed < 15)
             {
                 StartCoroutine(SpeedBuffCoroutine(pc, itemData.Effect, 5));
@@ -35,6 +37,8 @@ public class EffectItem : BaseItem
             {
                 StartCoroutine(SpeedBuffCoroutine(pc, -itemData.Effect, 5));
             }
+            if (status != null)
+                StartCoroutine(status.SuperRoutine());
         }
     }
 
