@@ -1,14 +1,16 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 public class SkinManager : MonoBehaviour
 {
-    public static SkinManager Instance; // 싱글톤 인스턴스
+    public static SkinManager Instance; 
     [SerializeField] private List<SkinData> skinDatas; // 스킨 데이터 리스트
     private Dictionary<string, Skin> skinDictionary; // 스킨 데이터 딕셔너리
-    private string currentSkinId; // 현재 스킨 ID
+    private string savedSkinId;
+    public event Action<string> OnSkinUnlocked; // 스킨 해금 이벤트
     private class Skin
     {
         public SkinData data; // 스킨 데이터
@@ -27,70 +29,73 @@ public class SkinManager : MonoBehaviour
             Destroy(gameObject); // 중복 인스턴스 제거
             return;
         }
-        skinDictionary = new Dictionary<string, Skin>();
-        foreach (var data in skinDatas)
-        {
-            skinDictionary[data.skinId] = new Skin
+        skinDictionary = skinDatas.ToDictionary(
+            d => d.skinId,
+            d => new Skin
             {
-                data = data,
-                isUnlocked = data.isUnlocked
-            };
-        }
-    }
-    private void Start()
-    {
-        currentSkinId = PlayerPrefs.GetString("CurrentSkinId", skinDatas[0].skinId); // 기본 스킨 설정
+                data = d,
+                isUnlocked = PlayerPrefs.GetInt($"Skin_{d.skinId}_Unlocked", d.isUnlocked ? 1 : 0) == 1
+            }
+        );
+        foreach (var kv in skinDictionary)
+            kv.Value.data.isUnlocked = kv.Value.isUnlocked;
+
+        savedSkinId = PlayerPrefs.GetString("SelectedSkin", null);
     }
 
-    public void ApplySkin(string skinId)
+    public void UnlockSkin(string skinId) // 스킨 해금
     {
-        var player = GameObject.FindGameObjectWithTag("Player"); // 플레이어 오브젝트 찾기
-        if (player == null)
+        if (skinDictionary.TryGetValue(skinId, out var skin) && !skin.isUnlocked)
         {
-            Debug.LogWarning("Player object not found!"); // 플레이어 오브젝트 미발견 메시지
+            skin.isUnlocked = true;
+            PlayerPrefs.SetInt($"Skin_{skinId}_Unlocked", 1);
+            PlayerPrefs.Save();
+            OnSkinUnlocked?.Invoke(skinId);
+        }
+    }
+
+    public void SelectSkin(string skinId)
+    {
+        if (!skinDictionary.TryGetValue(skinId, out var skin) || !skin.isUnlocked)
+        {
             return;
         }
-
-        var oldSkin = player.transform.Find("MainSprite");
-        if (oldSkin != null) 
-        {
-            Destroy(oldSkin.gameObject);
-        }
-
-        if (!skinDictionary.ContainsKey(skinId) || !skinDictionary[skinId].isUnlocked)
-        {
-            skinId = "default";
-        }
-        var prefab = skinDictionary[skinId].data.skinPrefab;
-        
-
-        var go = Instantiate(prefab, player.transform);
-        go.name = "MainSprite";
-
-        currentSkinId = skinId;
-
+        savedSkinId = skinId; // 선택한 스킨 저장
         PlayerPrefs.SetString("SelectedSkin", skinId);
         PlayerPrefs.Save();
     }
-    public void UnlockSkin(string skinId) // 스킨 해금
-    {
-        if (skinDictionary.TryGetValue(skinId, out var skin))
-        {
-            skin.isUnlocked = true; // 스킨 해금
-            skin.data.isUnlocked = true; // 스킨 데이터 업데이트
-            // 저장 로직 추가 필요
-        }
-        else
-        {
-            Debug.LogWarning($"Skin with ID {skinId} not found!"); // 스킨 미발견 메시지
-        }
-    }
-    public bool CheckSkinUnlocked(string skinId) // 스킨 해금 여부 체크
+
+    public bool CheckSkinUnlocked(string skinId) // 스킨 해금 체크
     {
         if (skinDictionary.TryGetValue(skinId, out var skin))
         {
             return skin.isUnlocked; // 스킨 해금 여부
         }
         return false;
+    }
+
+    private void ApplySkin(GameObject player, string skinId)
+    {
+        if ((!skinDictionary.TryGetValue(skinId, out var skin) || !skin.isUnlocked || skin.data.skinPrefab == null))
+        {
+            return;
+        }
+        var existing = player.transform.Find($"Skin_{skinId}");
+        if (existing != null)
+        {
+            Destroy(existing.gameObject); // 기존 스킨 제거
+        }
+
+        var go = Instantiate(skin.data.skinPrefab, player.transform);
+        go.name = $"Skin_{skinId}"; // 스킨 이름 설정
+    }
+
+    public void OnPlayerSpawn(GameObject player)
+    {
+        if (string.IsNullOrEmpty(savedSkinId))
+        {
+            return; // 선택된 스킨이 없으면 종료
+        }
+        ApplySkin(player, savedSkinId); // 선택된 스킨 적용
     }
 }

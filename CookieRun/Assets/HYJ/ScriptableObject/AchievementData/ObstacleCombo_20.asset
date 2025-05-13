@@ -14,10 +14,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   achievementId: combo_20
   achievementName: "\uC7A5\uC560\uBB3C 20\uAC1C \uCF64\uBCF4 \uB2EC\uC131"
-  achievementDescription: 
+  achievementDescription: "\uC7A5\uC560\uBB3C\uC5D0 \uB9DE\uC9C0 \uC54A\uACE0 20\uAC1C\uB97C
+    \uB118\uC5C8\uC2B5\uB2C8\uB2E4!"
   achievementTarget: 20
   achievemetIcon: {fileID: 0}
   rewards:
   - rewardType: 0
     rewardValue: 0
-    itemId: Skin_02
+    itemId: skin_02
