@@ -29,7 +29,7 @@ public class PlayerController : MonoBehaviour
         gameManager = GameManager.Instance;
 
         if (skinManager != null)
-            skinManager.OnPlayerSpawn(gameObject);
+            SkinManager.Instance?.OnPlayerSpawn(gameObject);
         else
             Debug.LogWarning("PlayerController: SkinManager.Instance가 null입니다. 스킨이 적용되지 않습니다.");
 

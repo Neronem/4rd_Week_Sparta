@@ -9265,8 +9265,6 @@ MonoBehaviour:
   settingPanel: {fileID: 1226206193}
   personalSettingPanel: {fileID: 815272372}
   characterSelectPanel: {fileID: 471692950}
-  playerPrefab: {fileID: 0}
-  spawnPoint: {fileID: 0}
 --- !u!114 &1385726535
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10454,8 +10452,6 @@ MonoBehaviour:
   settingPanel: {fileID: 0}
   personalSettingPanel: {fileID: 0}
   characterSelectPanel: {fileID: 0}
-  playerPrefab: {fileID: 6079498129900740295, guid: 531bebac825302949937d4eb9c5df2d3, type: 3}
-  spawnPoint: {fileID: 758553011}
 --- !u!114 &1593697672
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11898,8 +11894,6 @@ MonoBehaviour:
   settingPanel: {fileID: 0}
   personalSettingPanel: {fileID: 0}
   characterSelectPanel: {fileID: 0}
-  playerPrefab: {fileID: 6079498129900740295, guid: 531bebac825302949937d4eb9c5df2d3, type: 3}
-  spawnPoint: {fileID: 758553011}
 --- !u!114 &2070697747
 MonoBehaviour:
   m_ObjectHideFlags: 0

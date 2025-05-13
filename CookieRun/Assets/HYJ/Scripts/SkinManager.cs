@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class SkinManager : MonoBehaviour
 {
@@ -41,6 +42,7 @@ public class SkinManager : MonoBehaviour
             kv.Value.data.isUnlocked = kv.Value.isUnlocked;
 
         savedSkinId = PlayerPrefs.GetString("SelectedSkin", null);
+        SceneManager.sceneLoaded += (_, __) => TryApplyToExistingPlayer();
     }
 
     public void UnlockSkin(string skinId) // 스킨 해금
@@ -63,6 +65,7 @@ public class SkinManager : MonoBehaviour
         savedSkinId = skinId; // 선택한 스킨 저장
         PlayerPrefs.SetString("SelectedSkin", skinId);
         PlayerPrefs.Save();
+        TryApplyToExistingPlayer();
     }
 
     public bool CheckSkinUnlocked(string skinId) // 스킨 해금 체크
@@ -118,5 +121,17 @@ public class SkinManager : MonoBehaviour
             return; // 선택된 스킨이 없으면 종료
         }
         ApplySkin(player, savedSkinId); // 선택된 스킨 적용
+        Debug.Log($"OnPlayerSpawn: applying {savedSkinId} to {player.name}");
+    }
+    private void OnDestroy()
+    {
+        SceneManager.sceneLoaded -= (_, __) => TryApplyToExistingPlayer();
+    }
+    private void TryApplyToExistingPlayer()
+    {
+        if (string.IsNullOrEmpty(savedSkinId)) return;
+        var player = GameObject.FindWithTag("Player");
+        if (player != null)
+            ApplySkin(player, savedSkinId);
     }
 }
