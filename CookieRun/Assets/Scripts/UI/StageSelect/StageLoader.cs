@@ -7,18 +7,14 @@ public class StageLoader : MonoBehaviour
 {
     [SerializeField] private string stageSceneName;
     [SerializeField] private int difficultyLevel;
-    [SerializeField] GameObject MainMenuPanel;
-    [SerializeField] GameObject StageSelectPanel;
-    [SerializeField] GameObject SettingPanel;
-
     public void LoadStage()
     {
-        // PlayerPrefs.DeleteKey("Stage1Cleared"); stage2 Àá°ÜÀÖ´ÂÁö È®ÀÎ¿ë
+        // PlayerPrefs.DeleteKey("Stage1Cleared"); stage2 ï¿½ï¿½ï¿½ï¿½Ö´ï¿½ï¿½ï¿½ È®ï¿½Î¿ï¿½
         if (difficultyLevel == 2)
         {
             if (PlayerPrefs.GetInt("Stage1Cleared", 0) == 0)
             {
-                Debug.Log("Stage 1À» ¸ÕÀú Å¬¸®¾îÇØ¾ß ÇÕ´Ï´Ù.");
+                Debug.Log("Stage 1ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ Å¬ï¿½ï¿½ï¿½ï¿½ï¿½Ø¾ï¿½ ï¿½Õ´Ï´ï¿½.");
                 return;
             }
         }
@@ -29,19 +25,5 @@ public class StageLoader : MonoBehaviour
     public void LoadStart()
     {
         SceneManager.LoadScene(stageSceneName);
-    }
-
-    public void ShowPanel()
-    {
-        MainMenuPanel.SetActive(false);
-        StageSelectPanel.SetActive(true);
-        SettingPanel.SetActive(false);
-    }
-
-    public void ShowMainMenu()
-    {
-        MainMenuPanel.SetActive(true);
-        StageSelectPanel.SetActive(false);
-        SettingPanel.SetActive(false);
     }
 }
