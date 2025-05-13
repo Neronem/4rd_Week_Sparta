@@ -1,61 +1,68 @@
 using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class PetFollow : MonoBehaviour
 {
-    public Transform player; // 쫓을 플레이어
-    public float followSpeed = 5f; // 따라가는 속도
-    public float stopDistance = 1.5f; // 너무 가까우면 멈춤
-    private bool isGoingtoGiveItem = false;
+    public Transform player; // 따라다닐 플레이어 위치
+    public float followSpeed = 10f; // 따라다니는 속도
     
-    public ItemData itemData;
-    public float ItemGiveInterval = 20f;
+    public ItemData itemData; // 주는 아이템 종류
+    public float ItemGiveInterval = 20f; // 아이템 지급 주기
+
+    private Vector3 giveItemPosition = Vector3.zero; // 주는 아이템 위치
+    private Vector3 followOffset = new Vector3(-1.5f, 0.5f, 0); // 플레이어 기준으로 따라다니는 위치
+    private float givingItemSpeed = 15f; // 아이템주러 갔다올때 속도
     
-    private Vector3 targetPosition;
-    
+    private enum PetState { Idle, GoingToGive, Returning } // 펫 상태 enum (평소, 주러갈때, 돌아올떄)
+    private PetState state = PetState.Idle; // 기본 상태로 시작
+
     private void Start()
     {
-        InvokeRepeating("GiveItem", 1f, ItemGiveInterval);
+        InvokeRepeating(nameof(HandleItemPosition), 1f, ItemGiveInterval); // 20초마다 아이템 지급
     }
 
     private void Update()
     {
-        if (player == null) return;
-        if (!isGoingtoGiveItem)
-        {
-            float distance = Vector3.Distance(transform.position, player.position); // 둘 사이 거리 구함
+        if (player == null) return; 
 
-            if (distance > stopDistance) // 멈춰야 하는 거리보다 더 벌려져 있을 때만
-            { // 플레이어한테 이동
-                Vector3 direction = (player.position - transform.position).normalized;
-                transform.position += direction * followSpeed * Time.deltaTime;
-            }
-        }
-        else
+        switch (state) // 펫 상태에 따라 움직임 다름
         {
-            transform.position = Vector3.MoveTowards(transform.position, targetPosition, followSpeed * Time.deltaTime);
+            case PetState.Idle: // 평소
+                // 항상 고정된 위치에 붙도록
+                transform.position = Vector3.MoveTowards(transform.position, player.position + followOffset, followSpeed * Time.deltaTime);
+                break;
 
-            if (Vector3.Distance(transform.position, targetPosition) < 0.1f)
-            {
-                isGoingtoGiveItem = false;
-            }
+            case PetState.GoingToGive: // 아이템 주러 갈때
+                transform.position = Vector3.MoveTowards(transform.position, giveItemPosition, givingItemSpeed * Time.deltaTime);
+                if (Vector3.Distance(transform.position, giveItemPosition) < 0.01f)
+                { // 아이템 주는 위치에 도착하면
+                    SpawnItem(); // 아이템 생성
+                    state = PetState.Returning; // 돌아가기 상태로 변경
+                }
+                break;
+
+            case PetState.Returning: // 주고 돌아올 때
+                transform.position = Vector3.MoveTowards(transform.position, player.position + followOffset, givingItemSpeed * Time.deltaTime);
+                if (Vector3.Distance(transform.position, player.position + followOffset) < 0.01f)
+                { // 평소 위치에 도착하면
+                    state = PetState.Idle; // 평소 상태로 변경
+                }
+                break;
         }
     }
-    
-    public void GiveItem()
+
+    private void HandleItemPosition() // 아이템 위치 세팅 & 펫 상태 변경
     {
         if (player == null || itemData == null) return;
-     
-        isGoingtoGiveItem = true;
-        targetPosition = player.transform.position + new Vector3(1.5f, 0, 0);
-        
-        GameObject go = Instantiate(itemData.Prefab, targetPosition, Quaternion.identity);
-        
-        BaseItem baseItem = go.GetComponent<BaseItem>();
-        baseItem?.SetItemData(itemData);
-        
-        isGoingtoGiveItem = false;
+
+        giveItemPosition = player.position + new Vector3(15.5f, 0f, 0f); // 아이템 생성 위치
+        state = PetState.GoingToGive; // 펫에게 주러가라고 명령
+    }
+
+    private void SpawnItem() // 아이템 생성
+    {
+        GameObject go = Instantiate(itemData.Prefab, giveItemPosition, Quaternion.identity); //아이템 지정위치에 생성 
+        BaseItem baseItem = go.GetComponent<BaseItem>(); 
+        baseItem?.SetItemData(itemData); // 베이스아이템에 데이터 넣기 (베이스아이템 참고)
     }
 }
