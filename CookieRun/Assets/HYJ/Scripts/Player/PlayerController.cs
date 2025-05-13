@@ -41,6 +41,7 @@ public class PlayerController : MonoBehaviour
     {
         movement.CheckGround();
         _rigidbody.velocity = new Vector2(gameManager.speed, _rigidbody.velocity.y);
+        
     }
     void Update()
     {

@@ -15,7 +15,7 @@ MonoBehaviour:
   achievementId: clear_50
   achievementName: "\uC7A5\uC560\uBB3C 50\uAC1C \uD074\uB9AC\uC5B4"
   achievementDescription: "\uCD1D 50\uAC1C\uC758 \uC7A5\uC560\uBB3C\uC744 \uB118\uC5C8\uC2B5\uB2C8\uB2E4!"
-  achievementTarget: 50
+  achievementTarget: 10
   achievemetIcon: {fileID: 0}
   rewards:
   - rewardType: 0
