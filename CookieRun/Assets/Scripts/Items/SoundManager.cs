@@ -6,10 +6,11 @@ public class SoundManager : MonoBehaviour
 {
     public static SoundManager Instance;
 
-    [SerializeField][Range(0f, 1f)] private float soundEffectVolume = 0.5f;
-    [SerializeField][Range(0f, 1f)] private float soundEffectPitchVariance = 0.5f;
-    [SerializeField][Range(0f, 1f)] private float musicVolume = 0.5f;
-    [SerializeField][Range(0f, 1f)] private float masterVolume = 0.5f;
+    // Slider(최소 0, 최대 1f)를 적용할 실제 볼륨 크기값들.
+    [Range(0f, 1f)] private float soundEffectVolume = 0.5f;
+    [Range(0f, 1f)] private float soundEffectPitchVariance = 0.5f;
+    [Range(0f, 1f)] private float musicVolume = 0.5f;
+    [Range(0f, 1f)] private float masterVolume = 0.5f;
     
     public float MasterVolume { get => masterVolume; set => masterVolume = Mathf.Clamp01(value); }
 

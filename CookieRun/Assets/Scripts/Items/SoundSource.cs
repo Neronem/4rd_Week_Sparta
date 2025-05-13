@@ -11,15 +11,16 @@ public class SoundSource : MonoBehaviour
         if (_audioSource == null)
             _audioSource = GetComponent<AudioSource>();
 
-        CancelInvoke();
-        _audioSource.clip = clip; ;
+        CancelInvoke(); //유지되는 게임오브젝트에서 오디오클립 반복 시 Invoke 취소.
+        _audioSource.clip = clip;
         _audioSource.volume = soundEffectVolume;
         _audioSource.Play();
         _audioSource.pitch = 1f + Random.Range(-soundEffectPitchVariance, soundEffectPitchVariance);
 
-        Invoke("Disable", clip.length);
+        Invoke("Disable", clip.length + 5);
     }
 
+    // 해당 clip 재생 끝나면 멈추고 파괴
     public void Disable()
     {
         _audioSource.Stop();

@@ -21,10 +21,15 @@ public class PlayerMovement : MonoBehaviour
     private bool isSliding;
     private bool isJumping = false; // ���� ������ ����
     private bool isDoubleJumping = false; // ���� ���� ������ ����
-
-    public AudioClip jumpAudio;
-    public AudioClip doubleJumpAudio;
-    public AudioClip slideAudio;
+    
+    public AudioClip jumpAudio; // 점프 시 재생할 효과음
+    public AudioClip doubleJumpAudio; // 더블점프 시 재생할 효과음
+    public AudioClip slideAudio; // 슬라이드 시 재생할 효과음
+    
+    // 아이템 중첩 획득 시 지속시간 갱신하기 위한 값 
+    public bool isSpeedBuffRunning = false; // 스피드아이템 적용여부
+    public Coroutine speedBuffCoroutine = null; // 스피드아이템 로직 코루틴
+    public float speedBuffAmount = 0f; // 스피드아이템 적용값
     
     void Awake()
     {

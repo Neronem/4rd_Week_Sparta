@@ -48,7 +48,7 @@ public class GameManager : MonoBehaviour
                 speed = 5f;
                 break;
             case 2:
-                speed = 15f; // 속도차이의 변화를 느끼기 위한 극단적인 세팅 나중에 조절
+                speed = 10f; // 속도차이의 변화를 느끼기 위한 극단적인 세팅 나중에 조절
                 break;
             case 3:
                 speed = 7f;
