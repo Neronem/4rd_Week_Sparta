@@ -11,6 +11,8 @@ public class SkinData : ScriptableObject
 
     public GameObject skinPrefab;
 
+    public bool defaultUnlocked = false;
+
     public bool isUnlocked = false;
 
     public AnimatorOverrideController animatorOverride;
