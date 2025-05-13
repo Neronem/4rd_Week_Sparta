@@ -26,11 +26,14 @@ public class PlayerHealth : MonoBehaviour
         {
             cameraShake = camera.GetComponent<CameraShake>();
         }
-        currentHealth = maxHealth;
         statusEffects = GetComponent<PlayerStatusEffects>();
         animator = GetComponentInChildren<Animator>();
     }
 
+    public void hpReset()
+    {
+        currentHealth = maxHealth;
+    }
     public void TakeDamage(float amount)
     {
         if (isDead || statusEffects.isUndamageable || statusEffects.isSuper) return;
@@ -46,6 +49,11 @@ public class PlayerHealth : MonoBehaviour
         }
         if (currentHealth <= 0f)
             Die();
+    }
+    public void SetMaxHealth(float hp)
+    {
+        maxHealth = hp;
+        currentHealth = Mathf.Min(currentHealth, maxHealth);
     }
 
     public void Heal(float amount)

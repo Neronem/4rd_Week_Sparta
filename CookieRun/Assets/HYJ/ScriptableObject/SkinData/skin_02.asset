@@ -15,5 +15,8 @@ MonoBehaviour:
   skinId: skin_02
   skinName: NinjaFrog
   skinPrefab: {fileID: 402988870398761646, guid: f6c5360c398237e4e99d02c12f98c3e6, type: 3}
+  defaultUnlocked: 0
   isUnlocked: 0
+  maxHealth: 150
+  jumpForce: 22
   animatorOverride: {fileID: 22100000, guid: 06bb75cb5f1e57b4cb905874ee2bb85b, type: 2}
