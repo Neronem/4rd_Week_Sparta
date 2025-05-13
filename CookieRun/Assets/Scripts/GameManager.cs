@@ -21,7 +21,7 @@ public class GameManager : MonoBehaviour
     public static int difficulty = 1; //난이도 초기화
     public float speed; //속도 선언
     
-    private string scoreKey = "SavedAndLoadScore";
+    private readonly string scoreKey = $"BestScore{difficulty}";
     
     private bool isGameOver = false; // 게임오버 여부 판단
     
@@ -38,7 +38,7 @@ public class GameManager : MonoBehaviour
     {
         int diff = difficulty;
         startScore = 0;
-        bestScore = PlayerPrefs.GetInt("BestScore", 0);
+        bestScore = PlayerPrefs.GetInt(scoreKey, 0);
         
         //난이도에 따른 속도 차이
         switch (diff)
@@ -118,30 +118,16 @@ public class GameManager : MonoBehaviour
 
     public void SaveScore()
     {
-        int savedScore = PlayerPrefs.GetInt(scoreKey, 0);
-
-        if (startScore > savedScore)
+        if (startScore > bestScore)
         {
-            PlayerPrefs.SetInt(scoreKey, startScore);
-            PlayerPrefs.Save();
-            Debug.Log("최고점수?" + PlayerPrefs.GetInt(scoreKey, 0));
             Debug.Log("최고 점수 갱신 성공!");
+            bestScore = startScore;
+            PlayerPrefs.SetInt(scoreKey, bestScore);
+            PlayerPrefs.Save();
         }
         else
         {
             Debug.Log("최고 점수 갱신 실패!");
-
-            Debug.Log("score : " + startScore);
-
-            if (startScore > bestScore)
-            {
-                bestScore = startScore;
-                PlayerPrefs.SetInt("BestScore", bestScore);
-                PlayerPrefs.Save();
-
-                Debug.Log("최고점수 갱신 : " + bestScore);
-
-            }
         }
     }
 
@@ -150,8 +136,22 @@ public class GameManager : MonoBehaviour
 
     public void GameOver()
     {
+        SaveScore();
         isGameOver = true;
         GameUIManager.instance.GameUIDisappear();
         GameUIManager.instance.GameOverUIAppear();
     }
+    
+    #region PlayerPrefsReset
+    
+#if UNITY_EDITOR
+    [ContextMenu("초기화: PlayerPrefs Delete All")]
+    private void ResetPlayerPrefs()
+    {
+        PlayerPrefs.DeleteAll();
+        PlayerPrefs.Save();
+        Debug.Log("PlayerPrefs가 초기화되었습니다.");
+    }
+#endif
+    #endregion
 }

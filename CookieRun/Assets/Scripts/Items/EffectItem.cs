@@ -45,11 +45,17 @@ public class EffectItem : BaseItem
             pc.speedBuffCoroutine = StartCoroutine(SpeedBuffCoroutine(pc, currentEffect, 5f));
 
             if (status != null)
-                StartCoroutine(status.SuperRoutine());
+            {
+                if (status.isSuper && status.speedBuffCoroutine != null)
+                {
+                    status.StopCoroutine(status.speedBuffCoroutine);
+                    status.speedBuffCoroutine = null;
+                }
+                status.speedBuffCoroutine = StartCoroutine(status.SuperRoutine());
+            }
         }
     }
-
-
+    
     private IEnumerator SpeedBuffCoroutine(PlayerMovement pc, float effect, float duration)
     {
         // 제한 걸고, 아이템 지속시간동안 파괴되지 않으니 사라진 것처럼 충돌과 이미지를 제거하고 속도 증감 지속시간 적용 후 감증 후 제한 해제하고 아이템 파괴 해제

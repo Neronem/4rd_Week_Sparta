@@ -7,18 +7,20 @@ public class PlayerStatusEffects : MonoBehaviour
     public float unDamageable = 1f;
     public bool isUndamageable;
 
-    public bool isSuper = false; // ½´ÆÛ¸ðµå : ¾ÆÀÌÅÛ¸Ô°í ÀÏÁ¤½Ã°£ ¹«Àû, Àå¾Ö¹°ÆÄ±«°¡´É»óÅÂ
+    public bool isSuper = false; // ï¿½ï¿½ï¿½Û¸ï¿½ï¿½ : ï¿½ï¿½ï¿½ï¿½ï¿½Û¸Ô°ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ã°ï¿½ ï¿½ï¿½ï¿½ï¿½, ï¿½ï¿½Ö¹ï¿½ï¿½Ä±ï¿½ï¿½ï¿½ï¿½É»ï¿½ï¿½ï¿½
     public float superDuration = 5f;
 
     public float speedUpInterval = 2f;
     public float speedUpAmount = 3f;
 
-    [SerializeField] private float healthdecreaseAmount = 0.1f; // Ã¼·Â °¨¼Ò·®
-    [SerializeField] private float healthdecreaseInterval = 0.1f; // Ã¼·Â °¨¼Ò ½Ã°£
+    [SerializeField] private float healthdecreaseAmount = 0.1f; // Ã¼ï¿½ï¿½ ï¿½ï¿½ï¿½Ò·ï¿½
+    [SerializeField] private float healthdecreaseInterval = 0.1f; // Ã¼ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½Ã°ï¿½
 
     private PlayerMovement movement;
     private PlayerHealth health;
     public GameManager gameManager;
+    
+    public Coroutine speedBuffCoroutine;
 
     void Awake()
     {
@@ -62,16 +64,15 @@ public class PlayerStatusEffects : MonoBehaviour
     {
         isSuper = true;
 
-        // ¿©±â¼­ ÆÄÆ¼Å¬, ÀÌÆåÆ®, ¾Ö´Ï¸ÞÀÌ¼Ç µî ÄÑµµ µÊ
+        // ï¿½ï¿½ï¿½â¼­ ï¿½ï¿½Æ¼Å¬, ï¿½ï¿½ï¿½ï¿½Æ®, ï¿½Ö´Ï¸ï¿½ï¿½Ì¼ï¿½ ï¿½ï¿½ ï¿½Ñµï¿½ ï¿½ï¿½
         // ex: effect.SetActive(true);
 
         yield return new WaitForSeconds(superDuration);
 
         isSuper = false;
-
-        // È¿°ú ²ô±â
+        speedBuffCoroutine = null;
+        // È¿ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
         // ex: effect.SetActive(false);
     }
-
 }
 
