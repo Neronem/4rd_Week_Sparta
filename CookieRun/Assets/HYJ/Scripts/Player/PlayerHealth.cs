@@ -13,8 +13,11 @@ public class PlayerHealth : MonoBehaviour
     private PlayerStatusEffects statusEffects;
     public bool isDead = false;
 
-    public AudioClip damagedAudio; 
-
+    public AudioClip damagedAudio;
+    public void AssignAnimator(Animator newAnimator)
+    {
+        animator = newAnimator;
+    }
 
     void Awake()
     {

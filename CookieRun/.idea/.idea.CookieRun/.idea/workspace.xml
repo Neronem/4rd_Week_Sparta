@@ -5,14 +5,56 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7d074984-35ae-4300-8539-7454dcb4648f" name="변경" comment="">
+      <change afterPath="$PROJECT_DIR$/Assets/Animations/Pet.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Animations/Pet/Pet.controller" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Animations/Pet/Pet.controller.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Animations/Pet/idle.anim" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Animations/Pet/idle.anim.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Externals/PetImage.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Externals/PetImage/angel_idle_anim_f0.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Externals/PetImage/angel_idle_anim_f0.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Externals/PetImage/angel_idle_anim_f1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Externals/PetImage/angel_idle_anim_f1.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Externals/PetImage/angel_idle_anim_f2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Externals/PetImage/angel_idle_anim_f2.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Externals/PetImage/angel_idle_anim_f3.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Externals/PetImage/angel_idle_anim_f3.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/HYJ/ScriptableObject/AchievementData/Distance_1000.asset.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/HYJ/ScriptableObject/AchievementData/ObstacleCombo_20.asset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/HYJ/Scripts/CharacterSelectUI.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/HYJ/Scripts/CharacterSelectUI.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/HYJ/Scripts/Player/GameStarter.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/HYJ/Scripts/Player/GameStarter.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Pet.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Pet/PetFollow.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Pet/PetFollow.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Pet/PetGiveItem.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Pet/PetGiveItem.cs.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.CookieRun/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.CookieRun/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Bronze.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Bronze.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Gold.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Gold.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Silver.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Silver.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/HYJ/ScriptableObject/AchievementData/AchievementData.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/HYJ/ScriptableObject/AchievementData/Distance_1000.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/HYJ/ScriptableObject/AchievementData/AchievementData.asset.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/HYJ/ScriptableObject/AchievementData/ObstacleCombo_20.asset.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/HYJ/ScriptableObject/AchievementData/ObstacleClear_10.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/HYJ/ScriptableObject/AchievementData/ObstacleClear_50.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/HYJ/ScriptableObject/AchievementData/ObstacleClear_10.asset.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/HYJ/ScriptableObject/AchievementData/ObstacleClear_50.asset.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/HYJ/ScriptableObject/SkinData/default.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/HYJ/ScriptableObject/SkinData/default.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/HYJ/ScriptableObject/SkinData/skin_01.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/HYJ/ScriptableObject/SkinData/skin_01.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/HYJ/ScriptableObject/SkinData/skin_02.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/HYJ/ScriptableObject/SkinData/skin_02.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/HYJ/ScriptableObject/SkinData/skin_03.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/HYJ/ScriptableObject/SkinData/skin_03.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/HYJ/Scripts/Player/PlayerController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/HYJ/Scripts/Player/PlayerController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/HYJ/Scripts/Player/PlayerHealth.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/HYJ/Scripts/Player/PlayerHealth.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/HYJ/Scripts/Player/PlayerMovement.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/HYJ/Scripts/Player/PlayerMovement.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/HYJ/Scripts/SkinData.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/HYJ/Scripts/SkinData.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/HYJ/Scripts/SkinManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/HYJ/Scripts/SkinManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Player/Player.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Player/Player.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Player/Skin/DefaultSkin.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Player/Skin/DefaultSkin.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Player/Skin/Skin_01.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Player/Skin/Skin_01.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Player/Skin/Skin_02.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Player/Skin/Skin_02.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Player/Skin/Skin_03.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Player/Skin/Skin_03.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/MainGame.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/MainGame.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/SGM_Scene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/SGM_Scene.unity" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/Start.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Start.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Items/BaseItem.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Items/BaseItem.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/Start/StartUIManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/Start/StartUIManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/GameManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/GameManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Items/CreateItem.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Items/CreateItem.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/StageSelect/StageLoader.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/StageSelect/StageLoader.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -44,7 +86,7 @@
   &quot;keyToString&quot;: {
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;SGM__Branch&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;YSD 병합 중&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
@@ -148,7 +190,8 @@
       <workItem from="1747056322110" duration="2087000" />
       <workItem from="1747058450509" duration="111000" />
       <workItem from="1747097757223" duration="1991000" />
-      <workItem from="1747104706938" duration="9000" />
+      <workItem from="1747104710604" duration="10101000" />
+      <workItem from="1747119279541" duration="32000" />
     </task>
     <servers />
   </component>

@@ -16,3 +16,4 @@ MonoBehaviour:
   skinName: PinkMan
   skinPrefab: {fileID: 1843840873671435026, guid: 0857defd8eff0124891435c8be392dd2, type: 3}
   isUnlocked: 1
+  animatorOverride: {fileID: 22100000, guid: 58b1270a10c824c49935c693e866d3f4, type: 2}
