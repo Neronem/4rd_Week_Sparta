@@ -11,7 +11,7 @@ public class PetFollow : MonoBehaviour
 
     private Vector3 giveItemPosition = Vector3.zero; // 주는 아이템 위치
     private Vector3 followOffset = new Vector3(-1.5f, 0.5f, 0); // 플레이어 기준으로 따라다니는 위치
-    private float givingItemSpeed = 15f; // 아이템주러 갔다올때 속도
+    private float givingItemSpeed = 25f; // 아이템주러 갔다올때 속도
     
     private enum PetState { Idle, GoingToGive, Returning } // 펫 상태 enum (평소, 주러갈때, 돌아올떄)
     private PetState state = PetState.Idle; // 기본 상태로 시작
@@ -55,7 +55,7 @@ public class PetFollow : MonoBehaviour
     {
         if (player == null || itemData == null) return;
 
-        giveItemPosition = player.position + new Vector3(15.5f, 0f, 0f); // 아이템 생성 위치
+        giveItemPosition = player.position + new Vector3(12.5f, 0f, 0f); // 아이템 생성 위치
         state = PetState.GoingToGive; // 펫에게 주러가라고 명령
     }
 
