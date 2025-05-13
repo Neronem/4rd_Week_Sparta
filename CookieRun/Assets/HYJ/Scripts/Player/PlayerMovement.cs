@@ -19,8 +19,8 @@ public class PlayerMovement : MonoBehaviour
     private int jumpCount;
     private bool isGrounded;
     private bool isSliding;
-    private bool isJumping = false; // ���� ������ ����
-    private bool isDoubleJumping = false; // ���� ���� ������ ����
+    private bool isJumping = false; 
+    private bool isDoubleJumping = false;
     
     public AudioClip jumpAudio; // 점프 시 재생할 효과음
     public AudioClip doubleJumpAudio; // 더블점프 시 재생할 효과음
@@ -30,7 +30,14 @@ public class PlayerMovement : MonoBehaviour
     public bool isSpeedBuffRunning = false; // 스피드아이템 적용여부
     public Coroutine speedBuffCoroutine = null; // 스피드아이템 로직 코루틴
     public float speedBuffAmount = 0f; // 스피드아이템 적용값
-    
+    public void SetMoveSpeed(float newSpeed)
+    {
+        speed = newSpeed;
+    }
+    public void SetJumpForce(float newJump)
+    {
+        jumpForce = newJump;
+    }
     void Awake()
     {
         _rigidbody = GetComponent<Rigidbody2D>();
@@ -58,9 +65,8 @@ public class PlayerMovement : MonoBehaviour
 
     public void HandleJump()
     {
-        if (jumpCount == 0 && isGrounded && Input.GetKeyDown(PlayerInputSettings.jumpKey)) // �ٴڿ� ������� ���� ���� ����
+        if (jumpCount == 0 && isGrounded && Input.GetKeyDown(PlayerInputSettings.jumpKey)) 
         {
-            // ����
             jumpCount = 1;
             if(jumpAudio != null) 
                 SoundManager.PlayClip(jumpAudio);
@@ -68,7 +74,7 @@ public class PlayerMovement : MonoBehaviour
             isJumping = true;
             animator.SetBool("IsJump", true);
         }
-        else if (!isGrounded && jumpCount < maxJumps && Input.GetKeyDown(PlayerInputSettings.jumpKey)) // ���߿� ���� ���� �������� ����
+        else if (!isGrounded && jumpCount < maxJumps && Input.GetKeyDown(PlayerInputSettings.jumpKey))
         {
             jumpCount = 2;
             if(doubleJumpAudio != null) 
@@ -81,7 +87,6 @@ public class PlayerMovement : MonoBehaviour
 
     public void HandleSlide()
     {
-        // Shift ������ ���ȸ� �����̵�
         if (isGrounded && Input.GetKey(PlayerInputSettings.slideKey) && !isSliding)
         {
             if(slideAudio != null) 

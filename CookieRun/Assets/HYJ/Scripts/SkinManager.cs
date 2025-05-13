@@ -11,7 +11,9 @@ public class SkinManager : MonoBehaviour
     [SerializeField] private List<SkinData> skinDatas; // 스킨 데이터 리스트
     private Dictionary<string, Skin> skinDictionary; // 스킨 데이터 딕셔너리
     private string savedSkinId;
+    public string SavedSkinId => savedSkinId;
     public event Action<string> OnSkinUnlocked; // 스킨 해금 이벤트
+    public event Action<string> OnSkinSelected; // 스킨 선택 이벤트
     private class Skin
     {
         public SkinData data; // 스킨 데이터
@@ -42,7 +44,6 @@ public class SkinManager : MonoBehaviour
             kv.Value.data.isUnlocked = kv.Value.isUnlocked;
 
         savedSkinId = PlayerPrefs.GetString("SelectedSkin", null);
-        SceneManager.sceneLoaded += (_, __) => TryApplyToExistingPlayer();
     }
 
     public void UnlockSkin(string skinId) // 스킨 해금
@@ -65,7 +66,7 @@ public class SkinManager : MonoBehaviour
         savedSkinId = skinId; // 선택한 스킨 저장
         PlayerPrefs.SetString("SelectedSkin", skinId);
         PlayerPrefs.Save();
-        TryApplyToExistingPlayer();
+        OnSkinSelected?.Invoke(skinId);
     }
 
     public bool CheckSkinUnlocked(string skinId) // 스킨 해금 체크
@@ -114,6 +115,12 @@ public class SkinManager : MonoBehaviour
                 newAnim.runtimeAnimatorController = skin.data.animatorOverride;
         }
     }
+    public SkinData GetSkinData(string skinId)
+    {
+        if (skinDictionary.TryGetValue(skinId, out var skin))
+            return skin.data;
+        return null;
+    }
     public void OnPlayerSpawn(GameObject player)
     {
         if (string.IsNullOrEmpty(savedSkinId))
@@ -123,25 +130,12 @@ public class SkinManager : MonoBehaviour
         ApplySkin(player, savedSkinId); // 선택된 스킨 적용
         Debug.Log($"OnPlayerSpawn: applying {savedSkinId} to {player.name}");
     }
-    private void OnDestroy()
-    {
-        SceneManager.sceneLoaded -= (_, __) => TryApplyToExistingPlayer();
-    }
-    private void TryApplyToExistingPlayer()
-    {
-        if (string.IsNullOrEmpty(savedSkinId)) return;
-        var player = GameObject.FindWithTag("Player");
-        if (player != null)
-            ApplySkin(player, savedSkinId);
-    }
     public void ResetAllPlayerPrefs()
     {
-        // 1) PlayerPrefs 전부 삭제
         PlayerPrefs.DeleteAll();
         PlayerPrefs.Save();
         Debug.Log("PlayerPrefs가 모두 리셋되었습니다.");
 
-        // 2) 내부 상태(예: skinDictionary)도 원래 상태로 되돌리려면 여기에 추가 초기화 로직
         foreach (var kv in skinDictionary)
         {
             var skin = kv.Value;

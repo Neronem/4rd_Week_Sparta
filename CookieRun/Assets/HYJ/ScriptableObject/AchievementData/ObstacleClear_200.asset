@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a46cb8c32b57be448b8b1e9e62eef8c4, type: 3}
   m_Name: ObstacleClear_200
   m_EditorClassIdentifier: 
-  achievementId: ObstacleClear_200
+  achievementId: clear_200
   achievementName: "\uC7A5\uC560\uBB3C 200\uAC1C \uD074\uB9AC\uC5B4"
   achievementDescription: "\uCD1D 200\uAC1C\uC758 \uC7A5\uC560\uBB3C\uC744 \uB118\uC5C8\uC2B5\uB2C8\uB2E4!"
   achievementTarget: 200
