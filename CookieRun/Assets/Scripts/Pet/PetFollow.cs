@@ -4,13 +4,12 @@ using UnityEngine;
 public class PetFollow : MonoBehaviour
 {
     public Transform player; // 따라다닐 플레이어 위치
+    private Vector3 followOffset = new Vector3(-1.5f, 0.5f, 0); // 플레이어 기준으로 따라다니는 위치
     public float followSpeed = 10f; // 따라다니는 속도
     
     public ItemData itemData; // 주는 아이템 종류
-    public float ItemGiveInterval = 20f; // 아이템 지급 주기
-
     private Vector3 giveItemPosition = Vector3.zero; // 주는 아이템 위치
-    private Vector3 followOffset = new Vector3(-1.5f, 0.5f, 0); // 플레이어 기준으로 따라다니는 위치
+    public float ItemGiveInterval = 20f; // 아이템 지급 주기
     private float givingItemSpeed = 25f; // 아이템주러 갔다올때 속도
     
     private enum PetState { Idle, GoingToGive, Returning } // 펫 상태 enum (평소, 주러갈때, 돌아올떄)
