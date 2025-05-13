@@ -455,6 +455,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 7353846878638420722}
   followSpeed: 5
+  stopDistance: 1.5
+  itemData:
+    type: 0
+    prefab: {fileID: 0}
+    weight: 0
+    score: 0
+    effect: 0
+  ItemGiveInterval: 20
   itemData:
     type: 3
     prefab: {fileID: 1805527564110227108, guid: 51e9c4a2519db634183c9544475a34db, type: 3}

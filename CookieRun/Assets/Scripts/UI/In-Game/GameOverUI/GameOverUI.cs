@@ -15,16 +15,15 @@ public class GameOverUI : MonoBehaviour
         totalScoreText.text = GameManager.Instance.StartScore.ToString();
         bestScoreText.text = GameManager.Instance.BestScore.ToString();
 
-        if (GameManager.difficulty == 1 && PlayerPrefs.GetInt("Stage1Cleared", 0) == 1)
-        {
+        if (GameManager.difficulty == 1 && PlayerPrefs.GetInt("Stage1Cleared", 0) == 1 && PlayerPrefs.GetInt("Stage1ClearedTextShowed", 0) == 0)
+        { // 조건 1. 1단계일것 , 조건 2. 스테이지를 클리어한 상태일것 , 조건 3. 스테이지 클리어 문구를 한번도 못본 상태일 것
             newStageOpenText.SetActive(true);
+            PlayerPrefs.SetInt("Stage1ClearedTextShowed", 1);
         }
         else
         {
             newStageOpenText.SetActive(false);
-        }
-        //// 스테이지 클리어 여부 따져서 텍스트 활성화 여부 판단로직 추가
-        //newStageOpenText.SetActive(false);
+        } 
         
         gameObject.SetActive(true);
     }
