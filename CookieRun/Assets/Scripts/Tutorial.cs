@@ -5,9 +5,18 @@ using UnityEngine;
 
 public class Tutorial : MonoBehaviour
 {
+
+    [SerializeField] int isFirst;
+
     private void Start()
     {
-        if (PlayerPrefs.GetInt("isFirst", 1) != 1)
+
+        PlayerPrefs.SetInt("isFirst", 1);
+        PlayerPrefs.Save();
+
+        isFirst = PlayerPrefs.GetInt("isFirst", 1);
+
+        if (isFirst != 1)
         {
             this.gameObject.SetActive(false);
         }
