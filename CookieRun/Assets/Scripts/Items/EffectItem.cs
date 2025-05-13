@@ -25,18 +25,25 @@ public class EffectItem : BaseItem
         // 아니고 Speed이고 아이템 효과가 적용되지 않았으면
         else if(itemData.Type == ItemType.Speed && player != null && !isActived)
         {
-            // 사실 pc 가져올 필요는 없긴 한데 
             var pc = player.GetComponent<PlayerMovement>();
             var status = player.GetComponent<PlayerStatusEffects>();
+            
+            // 꼭 pc일 이유는 없음. status, GameManager 등 다 가능. item은 개별 코루틴이 적용되어 이전 코루틴을 기억하지 못해서 불가능.
+            // 스피드 아이템 중복획득 시 지속시간만 갱신하기 위한 로직. (버프 적용중이고, 코루틴이 존재하면 = 현재 적용 중이면)
+            if (pc.isSpeedBuffRunning && pc.speedBuffCoroutine != null)
+            {
+                //현재 적용중인 코루틴을 멈추고 원래 속도로 초기화 후 현재 적용중인 코루틴을 null로
+                pc.StopCoroutine(pc.speedBuffCoroutine);
+                GameManager.Instance.speed -= pc.speedBuffAmount;
+                pc.speedBuffCoroutine = null;
+            }
+            
+            // 초기 혹은 중첩 아이템 획득 시 속도에 따른 값으로 코루틴 실행하고 해당 값 저장(15 전후로 변할 것 대비)
+            float currentEffect = GameManager.Instance.speed < 15 ? itemData.Effect : -itemData.Effect;
+            
+            pc.speedBuffAmount = currentEffect;
+            pc.speedBuffCoroutine = StartCoroutine(SpeedBuffCoroutine(pc, currentEffect, 5f));
 
-            if (GameManager.Instance.speed < 15)
-            {
-                StartCoroutine(SpeedBuffCoroutine(pc, itemData.Effect, 5));
-            }
-            else
-            {
-                StartCoroutine(SpeedBuffCoroutine(pc, -itemData.Effect, 5));
-            }
             if (status != null)
                 StartCoroutine(status.SuperRoutine());
         }
@@ -47,11 +54,16 @@ public class EffectItem : BaseItem
     {
         // 제한 걸고, 아이템 지속시간동안 파괴되지 않으니 사라진 것처럼 충돌과 이미지를 제거하고 속도 증감 지속시간 적용 후 감증 후 제한 해제하고 아이템 파괴 해제
         isActived = true;
+        pc.isSpeedBuffRunning = true;
         GetComponent<SpriteRenderer>().enabled = false;
         GetComponent<Collider2D>().enabled = false;
         GameManager.Instance.speed += effect;
         yield return new WaitForSeconds(duration);
         GameManager.Instance.speed -= effect;
+        // 초기화
+        pc.isSpeedBuffRunning = false;
+        pc.speedBuffAmount = 0f; 
+        pc.speedBuffCoroutine = null;
         isActived = false;
         Destroy(gameObject);
     }

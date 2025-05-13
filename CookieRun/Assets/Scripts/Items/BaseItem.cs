@@ -118,12 +118,11 @@ public abstract class BaseItem : MonoBehaviour
         }
     }
     
-    
     IEnumerator AdjustYPositionStepByStep()
     {
         isAdjusting = true;
     
-        float[] yLevels = { -2f, -1f }; // 처음엔 -2f, 한 번 더 검사해서 충돌하면 -1f로 이동 예정.
+        float[] yLevels = { -2f, -1f}; // 처음엔 -2f, 한 번 더 검사해서 충돌하면 -1f로 이동 예정.
         foreach (float targetY in yLevels)
         {
             // 위치 이동
@@ -135,11 +134,10 @@ public abstract class BaseItem : MonoBehaviour
             yield return new WaitForFixedUpdate();
             
             // Physics2D.OverlapCircle = trnasform.position 위치에서 radius 반경 안에 Obstacle 레이어와 충돌 여부 확인.
-            Collider2D hit = Physics2D.OverlapCircle(transform.position, 0.4f, LayerMask.GetMask("Obstacle"));
+            Collider2D hit = Physics2D.OverlapCircle(transform.position, 0.3f, LayerMask.GetMask("Obstacle", "Ground"));
             if (hit == null)
-            {
                 break; // 충돌이 없으면 멈춤
-            }
+
             // 충돌하면 foreach 다시 실행하여 y = -1f로 이동
         }
     

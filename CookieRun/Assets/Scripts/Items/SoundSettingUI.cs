@@ -20,7 +20,7 @@ public class SoundSettingUI : MonoBehaviour
         sePitchSlider.value = SoundManager.Instance.SoundEffectPitchVariance;
         musicVolumeSlider.value = SoundManager.Instance.MusicVolume;
 
-        // 이벤트 연결
+        // 이벤트 연결 - 마스터 하나 조절 시 나머지도 전부 조절되도록.
         masterVolumeSlider.onValueChanged.AddListener((value) =>
         {
             SoundManager.Instance.MasterVolume = value;
