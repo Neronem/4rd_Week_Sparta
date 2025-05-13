@@ -141,4 +141,17 @@ public class GameManager : MonoBehaviour
         GameUIManager.instance.GameUIDisappear();
         GameUIManager.instance.GameOverUIAppear();
     }
+    
+    #region PlayerPrefsReset
+    
+#if UNITY_EDITOR
+    [ContextMenu("초기화: PlayerPrefs Delete All")]
+    private void ResetPlayerPrefs()
+    {
+        PlayerPrefs.DeleteAll();
+        PlayerPrefs.Save();
+        Debug.Log("PlayerPrefs가 초기화되었습니다.");
+    }
+#endif
+    #endregion
 }
