@@ -13,6 +13,7 @@ public class StartUIManager : MonoBehaviour
     public GameObject characterSettingPanel;
     public GameObject personalSettingPanel;
     
+    public static bool isKeyBinding = false;
     private GameObject currentPanel;
     
     private void Start()
@@ -22,17 +23,21 @@ public class StartUIManager : MonoBehaviour
 
     private void Update()
     { // Esc 누를 시 바로 전의 메뉴로 회귀
-        if (Input.GetKeyDown(KeyCode.Escape))
+        if (!isKeyBinding)
         {
-            if (currentPanel == stageSelectPanel || currentPanel == settingPanel)
+            if (Input.GetKeyDown(KeyCode.Escape))
             {
-                ShowPanel(mainMenuPanel);
-            }
-            else if (currentPanel == characterSettingPanel || currentPanel == personalSettingPanel)
-            {
-                ShowPanel(settingPanel);
+                if (currentPanel == stageSelectPanel || currentPanel == settingPanel)
+                {
+                    ShowPanel(mainMenuPanel);
+                }
+                else if (currentPanel == characterSettingPanel || currentPanel == personalSettingPanel)
+                {
+                    ShowPanel(settingPanel);
+                }
             }
         }
+        
     }
 
     // Play 누를 시
