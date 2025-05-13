@@ -6152,7 +6152,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &471692951
 RectTransform:
   m_ObjectHideFlags: 0
@@ -11058,7 +11058,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1809090567
 RectTransform:
   m_ObjectHideFlags: 0
@@ -11150,10 +11150,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 296d1c9129f00904792ec8f50a4b8e3f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  soundEffectVolume: 0.5
-  soundEffectPitchVariance: 0.5
-  musicVolume: 0.5
-  masterVolume: 0.5
   musicClip: {fileID: 8300000, guid: 41108576aeae56f4093227fbe8f9de2e, type: 3}
   soundSourcePrefab: {fileID: 4292882943590825340, guid: 8ad257b568b72f046981bfd1ef3e40a7, type: 3}
 --- !u!82 &1812614206

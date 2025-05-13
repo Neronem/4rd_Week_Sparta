@@ -134,4 +134,23 @@ public class SkinManager : MonoBehaviour
         if (player != null)
             ApplySkin(player, savedSkinId);
     }
+    public void ResetAllPlayerPrefs()
+    {
+        // 1) PlayerPrefs 전부 삭제
+        PlayerPrefs.DeleteAll();
+        PlayerPrefs.Save();
+        Debug.Log("PlayerPrefs가 모두 리셋되었습니다.");
+
+        // 2) 내부 상태(예: skinDictionary)도 원래 상태로 되돌리려면 여기에 추가 초기화 로직
+        foreach (var kv in skinDictionary)
+        {
+            var skin = kv.Value;
+            skin.isUnlocked = skin.data.defaultUnlocked;
+            skin.data.isUnlocked = skin.isUnlocked;
+            PlayerPrefs.SetInt($"Skin_{skin.data.skinId}_Unlocked", skin.isUnlocked ? 1 : 0);
+        }
+        PlayerPrefs.Save();
+        Debug.Log("SkinManager 내부 해금 상태도 기본값으로 복원되었습니다.");
+    }
+
 }

@@ -29,6 +29,7 @@ public class PlayerCollisionHandler : MonoBehaviour
         obstacleCount++;
         AchievementManager.Instance.ProgressRate("clear_50", 1);
         AchievementManager.Instance.ProgressRate("clear_100", 1);
+        AchievementManager.Instance.ProgressRate("clear_200", 1);
         Debug.Log("Obstacle Clear: " + obstacleCount); // 장애물 클리어 사운드, 이펙트, UI 등 추가
     }
     public void Combo()
@@ -36,7 +37,6 @@ public class PlayerCollisionHandler : MonoBehaviour
         if (health.isDead) return;
 
         obstacleComboCount++;
-        AchievementManager.Instance.ProgressRate("combo_20", 1);
         Debug.Log("Obstacle Combo: " + obstacleComboCount); // 콤보 사운드, 이펙트, UI 등 추가
     }
 

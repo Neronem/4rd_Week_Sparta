@@ -20,4 +20,4 @@ MonoBehaviour:
   rewards:
   - rewardType: 0
     rewardValue: 0
-    itemId: skin_03
+    itemId: skin_02
