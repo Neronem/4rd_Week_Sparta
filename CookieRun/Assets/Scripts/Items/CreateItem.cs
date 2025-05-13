@@ -28,7 +28,6 @@ public class CreateItem : MonoBehaviour
             SpawnAndCreateItem(lastPosition);
         }
     }
-
     
     private GameObject SpawnRandomItem(Vector3 position)
     {
@@ -57,7 +56,6 @@ public class CreateItem : MonoBehaviour
                 return go;
             }
         }
-
         return null;
     }
     
