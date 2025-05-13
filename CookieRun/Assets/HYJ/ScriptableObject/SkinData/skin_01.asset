@@ -15,5 +15,8 @@ MonoBehaviour:
   skinId: skin_01
   skinName: MaskDude
   skinPrefab: {fileID: 4337906897128545498, guid: bd942b3c856ac5f48a946f4d3eff4bb7, type: 3}
-  isUnlocked: 0
+  defaultUnlocked: 0
+  isUnlocked: 1
+  maxHealth: 120
+  jumpForce: 21
   animatorOverride: {fileID: 22100000, guid: fb59924e6609b494aa99b567a1cf099f, type: 2}

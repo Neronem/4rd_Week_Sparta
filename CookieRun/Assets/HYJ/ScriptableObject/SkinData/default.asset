@@ -17,4 +17,6 @@ MonoBehaviour:
   skinPrefab: {fileID: 1843840873671435026, guid: 0857defd8eff0124891435c8be392dd2, type: 3}
   defaultUnlocked: 1
   isUnlocked: 1
+  maxHealth: 100
+  jumpForce: 20
   animatorOverride: {fileID: 22100000, guid: 58b1270a10c824c49935c693e866d3f4, type: 2}

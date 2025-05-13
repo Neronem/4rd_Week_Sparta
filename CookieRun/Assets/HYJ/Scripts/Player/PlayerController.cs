@@ -22,6 +22,7 @@ public class PlayerController : MonoBehaviour
         health = GetComponent<PlayerHealth>();
         statusEffects = GetComponent<PlayerStatusEffects>();
         collisionHandler = GetComponent<PlayerCollisionHandler>();
+        SkinManager.Instance.OnSkinSelected += ApplyStatsForSkin;
     }
     void Start()
     {
@@ -32,7 +33,8 @@ public class PlayerController : MonoBehaviour
             SkinManager.Instance?.OnPlayerSpawn(gameObject);
         else
             Debug.LogWarning("PlayerController: SkinManager.Instance가 null입니다. 스킨이 적용되지 않습니다.");
-
+        ApplyStatsForSkin(skinManager.SavedSkinId);
+        health.hpReset();
 
         StartCoroutine(statusEffects.SpeedUpRoutine());
         StartCoroutine(statusEffects.HpDecrease());
@@ -69,5 +71,19 @@ public class PlayerController : MonoBehaviour
             GameManager.Instance.GameOver();
         }
     }
+    private void ApplyStatsForSkin(string skinId)
+    {
+        if (string.IsNullOrEmpty(skinId)) return;
 
+        var data = SkinManager.Instance.GetSkinData(skinId);
+        if (data == null) return;
+
+        health.SetMaxHealth(data.maxHealth);
+        movement.SetJumpForce(data.jumpForce);
+        Debug.Log($"Applied stats for {skinId}: HP={data.maxHealth}, Jump={data.jumpForce}");
+    }
+    private void OnDestroy()
+    {
+        SkinManager.Instance.OnSkinSelected -= ApplyStatsForSkin;
+    }
 }

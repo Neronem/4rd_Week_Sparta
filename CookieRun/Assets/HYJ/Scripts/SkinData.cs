@@ -15,6 +15,10 @@ public class SkinData : ScriptableObject
 
     public bool isUnlocked = false;
 
+    public float maxHealth = 100f;
+
+    public float jumpForce = 20f;
+
     public AnimatorOverrideController animatorOverride;
 
 }
