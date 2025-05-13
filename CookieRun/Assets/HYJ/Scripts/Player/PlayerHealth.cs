@@ -30,7 +30,7 @@ public class PlayerHealth : MonoBehaviour
 
     public void TakeDamage(float amount)
     {
-        if (isDead || statusEffects.isUndamageable) return;
+        if (isDead || statusEffects.isUndamageable || statusEffects.isSuper) return;
 
         StartCoroutine(statusEffects.Undamageable());
         if(damagedAudio != null)

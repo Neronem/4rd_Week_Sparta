@@ -7,6 +7,9 @@ public class PlayerStatusEffects : MonoBehaviour
     public float unDamageable = 1f;
     public bool isUndamageable;
 
+    public bool isSuper = false; // 슈퍼모드 : 아이템먹고 일정시간 무적, 장애물파괴가능상태
+    public float superDuration = 5f;
+
     public float speedUpInterval = 2f;
     public float speedUpAmount = 3f;
 
@@ -54,6 +57,20 @@ public class PlayerStatusEffects : MonoBehaviour
             if (health.currentHealth <= 0)
                 health.Die();
         }
+    }
+    public IEnumerator SuperRoutine()
+    {
+        isSuper = true;
+
+        // 여기서 파티클, 이펙트, 애니메이션 등 켜도 됨
+        // ex: effect.SetActive(true);
+
+        yield return new WaitForSeconds(superDuration);
+
+        isSuper = false;
+
+        // 효과 끄기
+        // ex: effect.SetActive(false);
     }
 
 }
