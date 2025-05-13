@@ -15,7 +15,7 @@ public class PlayerMovement : MonoBehaviour
     public LayerMask groundLayer;
 
     private Rigidbody2D _rigidbody;
-    private Animator animator;
+    public Animator animator;
     private int jumpCount;
     private bool isGrounded;
     private bool isSliding;
@@ -30,11 +30,9 @@ public class PlayerMovement : MonoBehaviour
     {
         _rigidbody = GetComponent<Rigidbody2D>();
         animator = GetComponentInChildren<Animator>();
-
         playerCollider.enabled = true;
         slideCollider.enabled = false;
     }
-
     public void CheckGround()
     {
         isGrounded = groundDetector.IsTouchingLayers(groundLayer);

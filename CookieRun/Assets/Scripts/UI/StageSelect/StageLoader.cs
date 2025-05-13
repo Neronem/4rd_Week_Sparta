@@ -14,7 +14,7 @@ public class StageLoader : MonoBehaviour
     [SerializeField] GameObject characterSelectPanel;
     public void LoadStage()
     {
-        // PlayerPrefs.DeleteKey("Stage1Cleared"); stage2 ����ִ��� Ȯ�ο�
+        // PlayerPrefs.DeleteKey("Stage1Cleared"); stage2
         if (difficultyLevel == 2)
         {
             if (PlayerPrefs.GetInt("Stage1Cleared", 0) == 0)
