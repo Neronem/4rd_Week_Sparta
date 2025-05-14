@@ -1,6 +1,8 @@
 # 📌 카메라(Camera)
 
-BgLooper.cs
+# BgLooper.cs
+
+배경과 장애물의 순환을 담당합니다
 
 Start
 장애물 호출
@@ -16,14 +18,18 @@ OnTriggerExit2D
 
 
 
-CameraShake.cs
+# CameraShake.cs
+
+카메라 진동 효과를 담당합니다
 
 Shake
 카메라 진동 효과 재생
 
 
 
-FollowCamera.cs
+# FollowCamera.cs
+
+카메라 이동을 담당합니다
 
 Start
 타겟 지정 밑 초기 위치 지정
