@@ -79,6 +79,13 @@ public class AchievementManager : MonoBehaviour
             UnlockAchievement(achievement.data);
         }
     }
+    public void ProgressReset()
+    {
+        foreach (var kv in achievementDictionary)
+        {
+            kv.Value.currentValue = 0f;
+        }
+    }
     private void UnlockAchievement(AchievementData data)
     {
         foreach (var reward in data.rewards)

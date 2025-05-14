@@ -11,6 +11,7 @@ public class PlayerHealth : MonoBehaviour
     public float shakeMagnitude = 1f;
     private Animator animator;
     private PlayerStatusEffects statusEffects;
+    private PlayerCollisionHandler collisionHandler;
     public bool isDead = false;
 
     public AudioClip damagedAudio;
@@ -27,6 +28,7 @@ public class PlayerHealth : MonoBehaviour
             cameraShake = camera.GetComponent<CameraShake>();
         }
         statusEffects = GetComponent<PlayerStatusEffects>();
+        collisionHandler = GetComponent<PlayerCollisionHandler>();
         animator = GetComponentInChildren<Animator>();
     }
 
