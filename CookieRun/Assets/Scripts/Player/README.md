@@ -42,5 +42,5 @@
 
 ### DustParticleControl
 - 달리기, 착지, 슬라이드 시 바닥에서 발생하는 더스트 파티클을 관리합니다.
-- `ReplaceParticle(ParticleSystem newDustParticle)` : 기존 `dustParticle` 오브젝트를 삭제 후 `newDustParticle` 프리팹으로 교체합니다. **미구현 상태**
-- `CreateDust()` : 현재 동작 중인 파티클을 멈추고 재생합니다.
+  - `ReplaceParticle(ParticleSystem newDustParticle)` : 기존 `dustParticle` 오브젝트를 삭제 후 `newDustParticle` 프리팹으로 교체합니다. **미구현 상태**
+  - `CreateDust()` : 현재 동작 중인 파티클을 멈추고 재생합니다.
