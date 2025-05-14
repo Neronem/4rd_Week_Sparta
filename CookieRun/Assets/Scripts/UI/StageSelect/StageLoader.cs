@@ -12,6 +12,7 @@ public class StageLoader : MonoBehaviour
     [SerializeField] GameObject settingPanel;
     [SerializeField] GameObject personalSettingPanel;
     [SerializeField] GameObject characterSelectPanel;
+    [SerializeField] GameObject stageLockedMessage;
     public void LoadStage()
     {
         // PlayerPrefs.DeleteKey("Stage1Cleared"); stage2
@@ -19,6 +20,7 @@ public class StageLoader : MonoBehaviour
         {
             if (PlayerPrefs.GetInt("Stage1Cleared", 0) == 0)
             {
+                stageLocked();
                 return;
             }
         }
@@ -37,5 +39,10 @@ public class StageLoader : MonoBehaviour
         personalSettingPanel.SetActive(false); 
         characterSelectPanel.SetActive(false); 
         mainMenuPanel.SetActive(true);
+    }
+
+    public void stageLocked()
+    {
+        stageLockedMessage.SetActive(!stageLockedMessage.activeSelf);
     }
 }
