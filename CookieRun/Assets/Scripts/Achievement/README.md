@@ -8,7 +8,7 @@
   - `achievementName` : 도전과제 이름
   - `achievementDescription` : 도전과제 내용
   - `achievementTarget` : 도전과제 목표 값
-  - `achievemetIcon` : 도전과제 아이콘
+  - `achievementIcon` : 도전과제 아이콘
   - `rewards` = new List<AchievementReward>() : 도전과제 달성 보상
  
 ### AchievementManager
