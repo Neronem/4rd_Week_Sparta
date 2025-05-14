@@ -32,11 +32,12 @@ public class AchievementManager : MonoBehaviour
     {
         if (Instance == null)
         {
-            Instance = this; // 싱글톤 인스턴스 설정
+            Instance = this;
+            DontDestroyOnLoad(gameObject);
         }
         else
         {
-            Destroy(gameObject); // 중복 인스턴스 제거
+            Destroy(gameObject);
         }
 
 
@@ -99,5 +100,15 @@ public class AchievementManager : MonoBehaviour
             AchievementUI.Instance.ShowAchievementText($"{data.achievementName} 달성!");
         else
             Debug.LogError("AchievementUI.Instance가 null입니다");
+    }
+    public void ResetAchievement() // 업적 초기화
+    {
+        foreach (var kv in achievementDictionary)
+        {
+            PlayerPrefs.SetInt($"Achieve_{kv.Key}", 0);
+            kv.Value.isAchieved = false;
+            kv.Value.currentValue = 0;
+        }
+        PlayerPrefs.Save();
     }
 }

@@ -156,8 +156,11 @@ public class GameManager : MonoBehaviour
     {
         PlayerPrefs.DeleteAll();
         PlayerPrefs.Save();
+        SkinManager.Instance.ResetSkinData();
+        AchievementManager.Instance.ResetAchievement();
         Debug.Log("PlayerPrefs가 초기화되었습니다.");
     }
+
 #endif
     #endregion
 }
