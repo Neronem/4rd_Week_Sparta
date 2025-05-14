@@ -89,6 +89,9 @@ public class AchievementManager : MonoBehaviour
                     break;
             }
         }
-        Debug.Log($"도전과제 달성 {data.achievementName}"); // 업적 해금 메시지
+        if (AchievementUI.Instance != null)
+            AchievementUI.Instance.ShowAchievementText($"{data.achievementName} 달성!");
+        else
+            Debug.LogError("AchievementUI.Instance가 null입니다");
     }
 }
