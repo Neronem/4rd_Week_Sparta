@@ -32,12 +32,13 @@ public class PlayerCollisionHandler : MonoBehaviour
         AchievementManager.Instance.ProgressRate("clear_200", 1);
         Debug.Log("Obstacle Clear: " + obstacleCount);
     }
-    public void Combo()
+
+    public void ObstacleReset()
     {
         if (health.isDead) return;
-
-        obstacleComboCount++;
-        Debug.Log("Obstacle Combo: " + obstacleComboCount); // 콤보 사운드, 이펙트, UI 등 추가
+        obstacleCount = 0;
+        damagedTimes = 0; // 데미지 입은 횟수 초기화
+        Debug.Log("Obstacle Reset: " + obstacleCount);
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -59,7 +60,6 @@ public class PlayerCollisionHandler : MonoBehaviour
         if (!playerHit && !slidingHit)
         {
             // 장애물에 닿지 않았을 때 콤보 처리
-            Combo();
             ObstacleClear();
         }
     }
