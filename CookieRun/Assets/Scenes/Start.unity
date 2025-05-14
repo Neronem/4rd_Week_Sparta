@@ -11878,6 +11878,54 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1821538322}
   m_CullTransparentMesh: 1
+--- !u!1 &1864171717
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1864171719}
+  - component: {fileID: 1864171718}
+  m_Layer: 0
+  m_Name: AchievementManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1864171718
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1864171717}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1daa4abbead76de44b49dd53d99bcedf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  achievementDatas:
+  - {fileID: 11400000, guid: 96a0e9515c0ea4b4d97c92b8ebc5e273, type: 2}
+  - {fileID: 11400000, guid: 85b83993c569a3149afd03bf01d69d43, type: 2}
+  - {fileID: 11400000, guid: e8bc3506292650f4c977ee0238141309, type: 2}
+--- !u!4 &1864171719
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1864171717}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1970330806
 GameObject:
   m_ObjectHideFlags: 0
@@ -13143,3 +13191,4 @@ SceneRoots:
   - {fileID: 1812614207}
   - {fileID: 1663308701}
   - {fileID: 758553011}
+  - {fileID: 1864171719}

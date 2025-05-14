@@ -130,12 +130,8 @@ public class SkinManager : MonoBehaviour
         ApplySkin(player, savedSkinId); // 선택된 스킨 적용
         Debug.Log($"OnPlayerSpawn: applying {savedSkinId} to {player.name}");
     }
-    public void ResetAllPlayerPrefs()
+    public void ResetSkinData()
     {
-        PlayerPrefs.DeleteAll();
-        PlayerPrefs.Save();
-        Debug.Log("PlayerPrefs가 모두 리셋되었습니다.");
-
         foreach (var kv in skinDictionary)
         {
             var skin = kv.Value;
