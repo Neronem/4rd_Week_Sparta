@@ -10,10 +10,6 @@ public class Tutorial : MonoBehaviour
 
     private void Start()
     {
-
-        PlayerPrefs.SetInt("isFirst", 1);
-        PlayerPrefs.Save();
-
         isFirst = PlayerPrefs.GetInt("isFirst", 1);
 
         if (isFirst != 1)
