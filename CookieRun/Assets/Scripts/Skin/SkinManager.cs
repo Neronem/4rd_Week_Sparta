@@ -144,7 +144,6 @@ public class SkinManager : MonoBehaviour
             PlayerPrefs.SetInt($"Skin_{skin.data.skinId}_Unlocked", skin.isUnlocked ? 1 : 0);
         }
         PlayerPrefs.Save();
-        Debug.Log("SkinManager 내부 해금 상태도 기본값으로 복원되었습니다.");
     }
 
 }
