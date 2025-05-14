@@ -30,7 +30,7 @@ public class PlayerCollisionHandler : MonoBehaviour
         AchievementManager.Instance.ProgressRate("clear_50", 1);
         AchievementManager.Instance.ProgressRate("clear_100", 1);
         AchievementManager.Instance.ProgressRate("clear_200", 1);
-        Debug.Log("Obstacle Clear: " + obstacleCount); // 장애물 클리어 사운드, 이펙트, UI 등 추가
+        Debug.Log("Obstacle Clear: " + obstacleCount);
     }
     public void Combo()
     {
