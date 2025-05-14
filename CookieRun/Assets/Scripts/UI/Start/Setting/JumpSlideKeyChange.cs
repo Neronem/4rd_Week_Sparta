@@ -17,6 +17,22 @@ public class JumpSlideKeyChange : MonoBehaviour
 
     private RebindAction waitingForKey = RebindAction.None; // 설정 안하면 (버튼 안누르면) None
 
+    private void Start() // 저장 로직 - 기존에 저장된 값이 있으면 불러오기
+    {
+        if (PlayerPrefs.HasKey("JumpKey"))
+        {
+            PlayerInputSettings.jumpKey = (KeyCode)System.Enum.Parse(typeof(KeyCode), PlayerPrefs.GetString("JumpKey"));
+            jumpKeyBindText.text = PlayerInputSettings.jumpKey.ToString();
+        }
+
+        if (PlayerPrefs.HasKey("SlideKey"))
+        {
+            PlayerInputSettings.slideKey = (KeyCode)System.Enum.Parse(typeof(KeyCode), PlayerPrefs.GetString("SlideKey"));
+            slideKeyBindText.text = PlayerInputSettings.slideKey.ToString();
+        }
+    }
+
+    
     private void Update()
     {
         if (waitingForKey == RebindAction.None)
@@ -50,6 +66,8 @@ public class JumpSlideKeyChange : MonoBehaviour
                             {
                                 PlayerInputSettings.jumpKey = key; // 점프키에 키 할당
                                 jumpKeyBindText.text = key.ToString(); // 버튼에 텍스트로 키 표시
+                                PlayerPrefs.SetString("JumpKey", key.ToString());
+                                PlayerPrefs.Save();
                             }
                             break;
                         case RebindAction.Slide: // 슬라이드 버튼 누른거였으면
@@ -62,6 +80,8 @@ public class JumpSlideKeyChange : MonoBehaviour
                             {
                                 PlayerInputSettings.slideKey = key; // 슬라이드키에 키 할당
                                 slideKeyBindText.text = key.ToString(); // 버튼에 텍스트로 키 표시
+                                PlayerPrefs.SetString("SlideKey", key.ToString());
+                                PlayerPrefs.Save();
                             }
                             break;
                     }

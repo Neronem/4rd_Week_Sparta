@@ -5,9 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7d074984-35ae-4300-8539-7454dcb4648f" name="변경" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.CookieRun/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.CookieRun/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Fonts/Jua,Noto_Sans_KR/Jua/Jua-Regular SDF.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Fonts/Jua,Noto_Sans_KR/Jua/Jua-Regular SDF.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/MainGame.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/MainGame.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/Start/Setting/JumpSlideKeyChange.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/Start/Setting/JumpSlideKeyChange.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
