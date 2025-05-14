@@ -1,6 +1,8 @@
 # 📌 게임 매니저(GameManager)
 
-GameManager.cs
+# GameManager.cs
+
+게임 전체의 흐름을 담당합니다
 
 Awake
 싱글톤
