@@ -43,7 +43,6 @@ public class StageLoader : MonoBehaviour
 
     public void stageLocked()
     {
-       
         stageLockedMessage.SetActive(!stageLockedMessage.activeSelf);
     }
 }
