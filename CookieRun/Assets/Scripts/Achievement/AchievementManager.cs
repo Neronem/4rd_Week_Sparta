@@ -12,8 +12,8 @@ public class AchievementManager : MonoBehaviour
         UnlockPet, // 펫 해금
     }
     public static AchievementManager Instance; // 싱글톤 인스턴스
-    [SerializeField] private List<AchievementData> achievementDatas; // 업적 데이터 리스트
 
+    [SerializeField] private List<AchievementData> achievementDatas; // 업적 데이터 리스트
     private Dictionary<string, Achievement> achievementDictionary; // 업적 데이터 딕셔너리
 
     private class Achievement
@@ -39,13 +39,15 @@ public class AchievementManager : MonoBehaviour
             Destroy(gameObject); // 중복 인스턴스 제거
         }
 
+
         achievementDictionary = new Dictionary<string, Achievement>();
         foreach (var data in achievementDatas)
         {
+            bool unlocked = PlayerPrefs.GetInt($"Achieve_{data.achievementId}", 0) == 1;
             achievementDictionary[data.achievementId] = new Achievement
             {
                 data = data,
-                isAchieved = false,
+                isAchieved = unlocked,
                 currentValue = 0
             };
         }
@@ -59,19 +61,23 @@ public class AchievementManager : MonoBehaviour
         return false;
     }
 
-    public void ProgressRate(string achievementId, float progress) // 업적 진행률 업데이트
+    public void ProgressRate(string achievementId, float progress)
     {
-        if (achievementDictionary.TryGetValue(achievementId, out var achievement))
+        if (!achievementDictionary.TryGetValue(achievementId, out var achievement)) return;
+
+        if (achievement.isAchieved)
+            return; 
+
+        achievement.currentValue += progress;
+        if (achievement.currentValue >= achievement.data.achievementTarget)
         {
-            achievement.currentValue += progress; // 현재 값 업데이트
-            if (achievement.currentValue >= achievement.data.achievementTarget && !achievement.isAchieved)
-            {
-                achievement.isAchieved = true; // 업적 달성
-                UnlockAchievement(achievement.data); // 업적 달성 시 보상 지급
-            }
+            achievement.isAchieved = true;
+            PlayerPrefs.SetInt($"Achieve_{achievement.data.achievementId}", 1);
+            PlayerPrefs.Save();
+
+            UnlockAchievement(achievement.data);
         }
     }
-
     private void UnlockAchievement(AchievementData data)
     {
         foreach (var reward in data.rewards)
