@@ -22,9 +22,31 @@ Delete : 파일 삭제
 
 Obstacle - 담당자 송민권
 
-ObstacleManager
+ObstacleManager.cs
 
 Awake
 싱글톤
 
 Start
+초기 장애물(발판) 생성
+
+LoadObstacles
+장애물 프리팹 리스트 저장
+
+CreateObstacle
+장애물 생성 위치 지정 밑 생성
+
+
+Obstacle.cs
+
+Awake
+각종 컴포넌트 호출
+
+OnTriggerEnter2D
+플레이어와 충돌 확인
+
+BreakAndFly
+파괴 파티클 생성
+
+FlyAndDestroy
+파괴 애니메이션 생성 밑 장애물 파괴
