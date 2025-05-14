@@ -36,6 +36,9 @@ public class GameManager : MonoBehaviour
 
     private void Start()
     {
+        Application.targetFrameRate = 60;
+        Debug.Log("FrameRate : " + Application.targetFrameRate);
+
         int diff = difficulty;
         startScore = 0;
         bestScore = PlayerPrefs.GetInt(scoreKey, 0);
@@ -136,10 +139,13 @@ public class GameManager : MonoBehaviour
 
     public void GameOver()
     {
-        SaveScore();
-        isGameOver = true;
-        GameUIManager.instance.GameUIDisappear();
-        GameUIManager.instance.GameOverUIAppear();
+        if (!isGameOver)
+        {
+            SaveScore();
+            isGameOver = true;
+            GameUIManager.instance.GameUIDisappear();
+            GameUIManager.instance.GameOverUIAppear();
+        }
     }
     
     #region PlayerPrefsReset
