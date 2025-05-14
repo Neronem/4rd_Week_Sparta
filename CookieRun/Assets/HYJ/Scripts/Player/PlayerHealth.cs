@@ -70,6 +70,6 @@ public class PlayerHealth : MonoBehaviour
     {
         isDead = true;
         animator.SetTrigger("IsDead");
-        Destroy(gameObject, 2f); // 2�� �Ŀ� ������Ʈ ����
+        Destroy(gameObject, 2f);
     }
 }
