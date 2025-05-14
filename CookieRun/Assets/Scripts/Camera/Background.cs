@@ -1,16 +1,15 @@
 using System.Collections;
 using System.Collections.Generic;
-using UnityEditor.Tilemaps;
 using UnityEngine;
 using UnityEngine.Tilemaps;
 
 public class Background : MonoBehaviour
 {
     Tilemap bg;
-    Color morningColor = new Color(1.0f, 0.7f, 0.5f); // ¿¬ÇÑ ÁÖÈ²
-    Color noonColor = new Color(1.0f, 1.0f, 1.0f);     // ÇÏ¾á»ö
-    Color eveningColor = new Color(0.5f, 0.3f, 0.7f);  // º¸¶ùºû
-    Color nightColor = new Color(0.1f, 0.1f, 0.2f);    // ¾îµÎ¿î ¹ã
+    Color morningColor = new Color(1.0f, 0.7f, 0.5f); // ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½È²
+    Color noonColor = new Color(1.0f, 1.0f, 1.0f);     // ï¿½Ï¾ï¿½ï¿½
+    Color eveningColor = new Color(0.5f, 0.3f, 0.7f);  // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+    Color nightColor = new Color(0.1f, 0.1f, 0.2f);    // ï¿½ï¿½Î¿ï¿½ ï¿½ï¿½
 
     float timeCycleDuration = 60f;
 
@@ -28,22 +27,22 @@ public class Background : MonoBehaviour
 
         Color currentColor;
 
-        if (t < 0.25f) // ¾ÆÄ§ ¡æ ³·
+        if (t < 0.25f) // ï¿½ï¿½Ä§ ï¿½ï¿½ ï¿½ï¿½
         {
             float localT = t / 0.25f;
             currentColor = Color.Lerp(morningColor, noonColor, localT);
         }
-        else if (t < 0.5f) // ³· ¡æ Àú³á
+        else if (t < 0.5f) // ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
         {
             float localT = (t - 0.25f) / 0.25f;
             currentColor = Color.Lerp(noonColor, eveningColor, localT);
         }
-        else if (t < 0.75f) // Àú³á ¡æ ¹ã
+        else if (t < 0.75f) // ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½
         {
             float localT = (t - 0.5f) / 0.25f;
             currentColor = Color.Lerp(eveningColor, nightColor, localT);
         }
-        else // ¹ã ¡æ ¾ÆÄ§
+        else // ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½Ä§
         {
             float localT = (t - 0.75f) / 0.25f;
             currentColor = Color.Lerp(nightColor, morningColor, localT);
