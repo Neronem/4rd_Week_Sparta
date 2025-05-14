@@ -83,6 +83,7 @@ public class SoundManager : MonoBehaviour
     
     public void ChangeBackGroundMusic(AudioClip clip)
     {
+        if (clip == null) return;
         musicAudioSource.Stop();
         musicAudioSource.clip = clip;
         musicAudioSource.Play();
