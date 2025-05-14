@@ -11,7 +11,7 @@ public enum ItemType
     Heal,
     Speed,
 }
-[System.Serializable]
+[Serializable]
 public class ItemData
 {
     [SerializeField] private ItemType type;
@@ -28,8 +28,6 @@ public class ItemData
 }
 public abstract class BaseItem : MonoBehaviour
 {
-    // protected Collider2D Collirder;
-
     //Item 하나 당 포함되는 데이터.
     protected ItemData itemData;
     
@@ -38,14 +36,10 @@ public abstract class BaseItem : MonoBehaviour
 
     private bool isAdjusting = false;
     
-    // protected virtual void Awake()
-    // {
-    //     Collirder = GetComponent<Collider2D>();
-    // }
-    
     // Player랑 충돌 시 처리는 각 아이템별로.
     
-    protected virtual void OnTriggerEnter2D(Collider2D collision)
+    private void OnTriggerEnter2D(Collider2D collision)
+    // protected virtual void OnTriggerEnter2D(Collider2D collision)
     {
         // 한 아이템에 해당 메서드가 여러 번 실행되는 경우가 있어 방지용
         if (isAdjusting) return;
@@ -92,7 +86,7 @@ public abstract class BaseItem : MonoBehaviour
         if (hit != null)
         {
             // 충돌 시 y 위치 변경 (ex. 위로 띄우기)
-            placePosition.y = -1f;
+            placePosition.y = -2f;
             transform.position = placePosition;
         }
         
@@ -137,8 +131,6 @@ public abstract class BaseItem : MonoBehaviour
             Collider2D hit = Physics2D.OverlapCircle(transform.position, 0.3f, LayerMask.GetMask("Obstacle", "Ground"));
             if (hit == null)
                 break; // 충돌이 없으면 멈춤
-
-            // 충돌하면 foreach 다시 실행하여 y = -1f로 이동
         }
     
         isAdjusting = false;
