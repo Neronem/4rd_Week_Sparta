@@ -1,5 +1,4 @@
 # 📌 장애물(Obstacle)
-**🎇 Made By 송민권**
 
 ObstacleManager.cs
 

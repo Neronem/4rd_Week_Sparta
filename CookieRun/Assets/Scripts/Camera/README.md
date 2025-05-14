@@ -1,5 +1,4 @@
 # 📌 카메라(Camera)
-**🎇 Made By 송민권, **
 
 BgLooper.cs
 
