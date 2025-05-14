@@ -7,14 +7,14 @@ public class PlayerStatusEffects : MonoBehaviour
     public float unDamageable = 1f;
     public bool isUndamageable;
 
-    public bool isSuper = false; // ���۸�� : �����۸԰� �����ð� ����, ��ֹ��ı����ɻ���
+    public bool isSuper = false; 
     public float superDuration = 5f;
 
     public float speedUpInterval = 2f;
     public float speedUpAmount = 3f;
 
-    [SerializeField] private float healthdecreaseAmount = 0.1f; // ü�� ���ҷ�
-    [SerializeField] private float healthdecreaseInterval = 0.1f; // ü�� ���� �ð�
+    [SerializeField] private float healthdecreaseAmount = 0.1f; 
+    [SerializeField] private float healthdecreaseInterval = 0.1f; 
 
     private PlayerMovement movement;
     private PlayerHealth health;
@@ -64,16 +64,11 @@ public class PlayerStatusEffects : MonoBehaviour
     {
         isSuper = true;
 
-        // ���⼭ ��ƼŬ, ����Ʈ, �ִϸ��̼� �� �ѵ� ��
-        // ex: effect.SetActive(true);
-
         yield return new WaitForSeconds(superDuration);
 
         isSuper = false;
         speedBuffCoroutine = null;
         StartCoroutine(Undamageable());
-        // ȿ�� ����
-        // ex: effect.SetActive(false);
     }
 }
 

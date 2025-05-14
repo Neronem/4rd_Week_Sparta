@@ -30,10 +30,6 @@ public class PlayerMovement : MonoBehaviour
     public bool isSpeedBuffRunning = false; // 스피드아이템 적용여부
     public Coroutine speedBuffCoroutine = null; // 스피드아이템 로직 코루틴
     public float speedBuffAmount = 0f; // 스피드아이템 적용값
-    public void SetMoveSpeed(float newSpeed)
-    {
-        speed = newSpeed;
-    }
     public void SetJumpForce(float newJump)
     {
         jumpForce = newJump;

@@ -12,9 +12,6 @@ public class PlayerCollisionHandler : MonoBehaviour
     private PlayerHealth health;
     private PlayerStatusEffects status;
     private int obstacleCount; // 넘은 장애물 수
-    private int obstacleComboCount; // 데미지를 입지 않고 넘은 장애물 수
-    private int damagedTimes; // 데미지 입은 횟수
-
 
 
     void Awake()
@@ -37,7 +34,6 @@ public class PlayerCollisionHandler : MonoBehaviour
     {
         if (health.isDead) return;
         obstacleCount = 0;
-        damagedTimes = 0; // 데미지 입은 횟수 초기화
         Debug.Log("Obstacle Reset: " + obstacleCount);
     }
 
@@ -53,13 +49,10 @@ public class PlayerCollisionHandler : MonoBehaviour
         if (playerHit || slidingHit)
         {
             health.TakeDamage(10f); // 장애물에 닿았을 때 데미지 처리
-            damagedTimes++; // 데미지 입은 횟수 증가
-            obstacleComboCount = 0; // 장애물 콤보 초기화
             return;
         }
         if (!playerHit && !slidingHit)
         {
-            // 장애물에 닿지 않았을 때 콤보 처리
             ObstacleClear();
         }
     }
