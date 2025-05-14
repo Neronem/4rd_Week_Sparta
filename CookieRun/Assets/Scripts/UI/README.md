@@ -17,7 +17,7 @@
              - 프레임마다 실행하며, Esc 키가 입력될 시 바로 전단계의 패널로 회귀하도록 만듭니다.
 
 
-<br>
+
 - **``GameUIManager``**
 
       - GameUI와 GameOverUI의 On/Off상태를 조절하는 메소드들로 이루어져 있습니다.
