@@ -52,11 +52,15 @@ public class StartUIManager : MonoBehaviour
     {
         ShowPanel(settingPanel);
     }
-    
-    // Exit 누를 시
+
+    // "Exit" 선택 시 게임중단
     public void OnClickExit()
     {
+#if UNITY_EDITOR
+        UnityEditor.EditorApplication.isPlaying = false;
+#else
         Application.Quit();
+#endif
     }
 
     // (Setting 패널에서) CharacterSetting 누를 시
