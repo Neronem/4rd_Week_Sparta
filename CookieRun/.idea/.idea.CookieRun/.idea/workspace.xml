@@ -4,9 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7d074984-35ae-4300-8539-7454dcb4648f" name="변경" comment="">
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/Start/Setting/JumpSlideKeyChange.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/Start/Setting/JumpSlideKeyChange.cs" afterDir="false" />
-    </list>
+    <list default="true" id="7d074984-35ae-4300-8539-7454dcb4648f" name="변경" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
