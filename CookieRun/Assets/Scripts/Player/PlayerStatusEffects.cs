@@ -71,6 +71,7 @@ public class PlayerStatusEffects : MonoBehaviour
 
         isSuper = false;
         speedBuffCoroutine = null;
+        StartCoroutine(Undamageable());
         // ȿ�� ����
         // ex: effect.SetActive(false);
     }
