@@ -39,16 +39,6 @@ public class GameUIManager : MonoBehaviour
         gameUIScript.GameUIDisappear();
     }
     
-    // "Exit" 선택 시 게임중단 메소드 (버튼용)
-    public void OnClickExit()
-    {
-#if UNITY_EDITOR
-        UnityEditor.EditorApplication.isPlaying = false;
-#else
-        Application.Quit();
-#endif
-    }
-    
     public void UpdateScore(int score)
     {
         Debug.Log($"score가 들어왔습니다. {score}");

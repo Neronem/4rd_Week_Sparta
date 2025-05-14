@@ -139,10 +139,13 @@ public class GameManager : MonoBehaviour
 
     public void GameOver()
     {
-        SaveScore();
-        isGameOver = true;
-        GameUIManager.instance.GameUIDisappear();
-        GameUIManager.instance.GameOverUIAppear();
+        if (!isGameOver)
+        {
+            SaveScore();
+            isGameOver = true;
+            GameUIManager.instance.GameUIDisappear();
+            GameUIManager.instance.GameOverUIAppear();
+        }
     }
     
     #region PlayerPrefsReset
