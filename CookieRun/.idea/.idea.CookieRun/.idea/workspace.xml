@@ -6,7 +6,6 @@
   <component name="ChangeListManager">
     <list default="true" id="7d074984-35ae-4300-8539-7454dcb4648f" name="변경" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.CookieRun/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.CookieRun/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Items/BaseItem.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Items/BaseItem.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Trouble Shooting/트러블 슈팅 - 양성대.md" beforeDir="false" afterPath="$PROJECT_DIR$/Trouble Shooting/트러블 슈팅 - 양성대.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -147,6 +146,7 @@
       <workItem from="1747119279541" duration="32000" />
       <workItem from="1747123775561" duration="3465000" />
       <workItem from="1747135747655" duration="3557000" />
+      <workItem from="1747210479326" duration="15000" />
     </task>
     <servers />
   </component>
