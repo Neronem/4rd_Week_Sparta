@@ -32,7 +32,6 @@ public class EffectItem : BaseItem
             // 스피드 아이템 중복획득 시 지속시간만 갱신하기 위한 로직. (버프 적용중이고, 코루틴이 존재하면 = 현재 적용 중이면)
             if (pc.isSpeedBuffRunning && pc.speedBuffCoroutine != null)
             {
-                Debug.Log("스피드 중첩 해제 시간 : " + Time.time);
                 //현재 적용중인 코루틴을 멈추고 원래 속도로 초기화 후 현재 적용중인 코루틴을 null로
                 pc.StopCoroutine(pc.speedBuffCoroutine);
                 GameManager.Instance.speed -= pc.speedBuffAmount;
@@ -60,7 +59,6 @@ public class EffectItem : BaseItem
     private IEnumerator SpeedBuffCoroutine(PlayerMovement pc, float effect, float duration)
     {
         // 제한 걸고, 아이템 지속시간동안 파괴되지 않으니 사라진 것처럼 충돌과 이미지를 제거하고 속도 증감 지속시간 적용 후 감증 후 제한 해제하고 아이템 파괴 해제
-        Debug.Log("스피드 적용 시간 : " + Time.time);
         isActived = true;
         pc.isSpeedBuffRunning = true;
         GetComponent<SpriteRenderer>().enabled = false;
@@ -69,7 +67,6 @@ public class EffectItem : BaseItem
         yield return new WaitForSeconds(duration);
         GameManager.Instance.speed -= effect;
         // 초기화
-        Debug.Log("스피드 일반 해제 시간 : " + Time.time);
         pc.isSpeedBuffRunning = false;
         pc.speedBuffAmount = 0f; 
         pc.speedBuffCoroutine = null;
