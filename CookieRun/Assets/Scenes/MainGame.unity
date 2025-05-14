@@ -2199,6 +2199,7 @@ GameObject:
   - component: {fileID: 686876252}
   - component: {fileID: 686876251}
   - component: {fileID: 686876253}
+  - component: {fileID: 686876254}
   m_Layer: 0
   m_Name: Background (3)
   m_TagString: BackGround
@@ -4177,6 +4178,18 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 18, y: 10}
   m_EdgeRadius: 0
+--- !u!114 &686876254
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 686876249}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c0d9b4a9a24f0db49854fa8f5785ec4a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &724051458
 GameObject:
   m_ObjectHideFlags: 0
@@ -4594,6 +4607,7 @@ GameObject:
   - component: {fileID: 888748633}
   - component: {fileID: 888748632}
   - component: {fileID: 888748634}
+  - component: {fileID: 888748635}
   m_Layer: 0
   m_Name: Background (4)
   m_TagString: BackGround
@@ -6572,6 +6586,18 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 18, y: 10}
   m_EdgeRadius: 0
+--- !u!114 &888748635
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 888748630}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c0d9b4a9a24f0db49854fa8f5785ec4a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &892809172
 GameObject:
   m_ObjectHideFlags: 0
@@ -9503,6 +9529,7 @@ GameObject:
   - component: {fileID: 1336291998}
   - component: {fileID: 1336291997}
   - component: {fileID: 1336291999}
+  - component: {fileID: 1336292000}
   m_Layer: 0
   m_Name: Background (1)
   m_TagString: BackGround
@@ -11481,6 +11508,18 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 18, y: 10}
   m_EdgeRadius: 0
+--- !u!114 &1336292000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1336291995}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c0d9b4a9a24f0db49854fa8f5785ec4a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1360956708
 GameObject:
   m_ObjectHideFlags: 0
@@ -11559,11 +11598,11 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 1642518709}
-  - {fileID: 1336291996}
-  - {fileID: 1761625019}
-  - {fileID: 686876250}
   - {fileID: 888748631}
+  - {fileID: 686876250}
+  - {fileID: 1761625019}
+  - {fileID: 1336291996}
+  - {fileID: 1642518709}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1496776652
@@ -12808,6 +12847,7 @@ GameObject:
   - component: {fileID: 1642518711}
   - component: {fileID: 1642518710}
   - component: {fileID: 1642518712}
+  - component: {fileID: 1642518713}
   m_Layer: 0
   m_Name: Background
   m_TagString: BackGround
@@ -14786,6 +14826,18 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 18, y: 10}
   m_EdgeRadius: 0
+--- !u!114 &1642518713
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1642518708}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c0d9b4a9a24f0db49854fa8f5785ec4a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1654713824
 GameObject:
   m_ObjectHideFlags: 0
@@ -15093,6 +15145,7 @@ GameObject:
   - component: {fileID: 1761625021}
   - component: {fileID: 1761625020}
   - component: {fileID: 1761625022}
+  - component: {fileID: 1761625023}
   m_Layer: 0
   m_Name: Background (2)
   m_TagString: BackGround
@@ -17071,6 +17124,18 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 18, y: 10}
   m_EdgeRadius: 0
+--- !u!114 &1761625023
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1761625018}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c0d9b4a9a24f0db49854fa8f5785ec4a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1766222304
 GameObject:
   m_ObjectHideFlags: 0
