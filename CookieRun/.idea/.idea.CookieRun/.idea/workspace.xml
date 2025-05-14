@@ -1,11 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="AutoImportSettings">
-    <option name="autoReloadType" value="SELECTIVE" />
-  </component>
   <component name="ChangeListManager">
-    <list default="true" id="7d074984-35ae-4300-8539-7454dcb4648f" name="변경" comment="">
+    <list default="true" id="bd999850-8ac0-4cd3-8532-079e46b1ecfd" name="변경" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.CookieRun/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.CookieRun/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Prefabs/Obstacles_0.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Prefabs/Obstacles_0.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Prefabs/Obstacles_1.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Prefabs/Obstacles_1.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Prefabs/Obstacles_2.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Prefabs/Obstacles_2.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Prefabs/Obstacles_3.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Prefabs/Obstacles_3.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Prefabs/Obstacles_4.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Prefabs/Obstacles_4.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Prefabs/Obstacles_5.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Prefabs/Obstacles_5.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Prefabs/Obstacles_6.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Prefabs/Obstacles_6.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Prefabs/Obstacles_7.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Prefabs/Obstacles_7.prefab" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -15,44 +20,28 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
-  <component name="HighlightingSettingsPerFile">
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/0abd682cf71c47b7a0a8ab90da9f508720a00/26/c54e662d/Collider2D.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/HYJ/Scripts/Player/PlayerInputSettings.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Items/SoundSettingUI.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/UI/In-Game/GameUI/GameUI.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/UI/In-Game/GameUIManager.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/UI/Start/StartUIManager.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.2d.tilemap@1.0.0/Editor/GridPaletteUtility.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.textmeshpro@3.0.6/Scripts/Runtime/TMPro_UGUI_Private.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.ugui@1.0.0/Runtime/UI/Core/Slider.cs" root0="SKIP_HIGHLIGHTING" />
-  </component>
-  <component name="ProjectColorInfo">{
-  &quot;associatedIndex&quot;: 5
-}</component>
-  <component name="ProjectId" id="2wnmK0mdCcIh7abWfJzvB22zN5q" />
+  <component name="ProjectColorInfo"><![CDATA[{
+  "associatedIndex": 5
+}]]></component>
+  <component name="ProjectId" id="2x4D4s0vOKFG1P42vuFq1F9onNB" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;YSD&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;CodeLensConfigurable&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "git-widget-placeholder": "YSD 병합 중",
+    "nodejs_package_manager_path": "npm",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RunManager" selected="Unity 에디터에 연결.Unity 에디터에 연결">
     <configuration name="유닛 테스트(배치 모드)" type="RunUnityExe" factoryName="Unity Executable">
       <option name="EXE_PATH" value="C:\Program Files\Unity\Hub\Editor\2022.3.17f1\Editor\Unity.exe" />
-      <option name="PROGRAM_PARAMETERS" value="-runTests -batchmode -projectPath C:\Users\User\Desktop\githubdesk\4rd_Week_Sparta\CookieRun -testResults Logs/results.xml -logFile Logs/Editor.log -testPlatform EditMode -debugCodeOptimization" />
-      <option name="WORKING_DIRECTORY" value="C:\Users\User\Desktop\githubdesk\4rd_Week_Sparta\CookieRun" />
+      <option name="PROGRAM_PARAMETERS" value="-runTests -batchmode -projectPath C:\Users\Admin\Desktop\test\4rd_Week_Sparta\CookieRun -testResults Logs/results.xml -logFile Logs/Editor.log -testPlatform EditMode -debugCodeOptimization" />
+      <option name="WORKING_DIRECTORY" value="C:\Users\Admin\Desktop\test\4rd_Week_Sparta\CookieRun" />
       <option name="PASS_PARENT_ENVS" value="1" />
       <option name="USE_EXTERNAL_CONSOLE" value="0" />
       <option name="ENV_FILE_PATHS" value="" />
@@ -62,8 +51,8 @@
     </configuration>
     <configuration name="Unity 시작" type="RunUnityExe" factoryName="Unity Executable">
       <option name="EXE_PATH" value="C:\Program Files\Unity\Hub\Editor\2022.3.17f1\Editor\Unity.exe" />
-      <option name="PROGRAM_PARAMETERS" value="-projectPath C:\Users\User\Desktop\githubdesk\4rd_Week_Sparta\CookieRun -debugCodeOptimization" />
-      <option name="WORKING_DIRECTORY" value="C:\Users\User\Desktop\githubdesk\4rd_Week_Sparta\CookieRun" />
+      <option name="PROGRAM_PARAMETERS" value="-projectPath C:\Users\Admin\Desktop\test\4rd_Week_Sparta\CookieRun -debugCodeOptimization" />
+      <option name="WORKING_DIRECTORY" value="C:\Users\Admin\Desktop\test\4rd_Week_Sparta\CookieRun" />
       <option name="PASS_PARENT_ENVS" value="1" />
       <option name="USE_EXTERNAL_CONSOLE" value="0" />
       <option name="ENV_FILE_PATHS" value="" />
@@ -102,51 +91,12 @@
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="디폴트 작업">
-      <changelist id="7d074984-35ae-4300-8539-7454dcb4648f" name="변경" comment="" />
-      <created>1746685646263</created>
+      <changelist id="bd999850-8ac0-4cd3-8532-079e46b1ecfd" name="변경" comment="" />
+      <created>1747188264418</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1746685646263</updated>
-      <workItem from="1746685651443" duration="1654000" />
-      <workItem from="1746695361947" duration="1000" />
-      <workItem from="1746695368545" duration="131000" />
-      <workItem from="1746695647867" duration="6000" />
-      <workItem from="1746758323462" duration="6489000" />
-      <workItem from="1746778267655" duration="590000" />
-      <workItem from="1746778963740" duration="968000" />
-      <workItem from="1746781740038" duration="223000" />
-      <workItem from="1746792924046" duration="1817000" />
-      <workItem from="1746869331331" duration="649000" />
-      <workItem from="1746891182211" duration="25000" />
-      <workItem from="1746891221905" duration="11759000" />
-      <workItem from="1746957181500" duration="265000" />
-      <workItem from="1746957518584" duration="59000" />
-      <workItem from="1746957978336" duration="6072000" />
-      <workItem from="1747010777891" duration="1113000" />
-      <workItem from="1747010797721" duration="515000" />
-      <workItem from="1747012641362" duration="9260000" />
-      <workItem from="1747028356769" duration="7345000" />
-      <workItem from="1747036924493" duration="71000" />
-      <workItem from="1747037036603" duration="155000" />
-      <workItem from="1747037223036" duration="57000" />
-      <workItem from="1747037294675" duration="25000" />
-      <workItem from="1747037336843" duration="307000" />
-      <workItem from="1747037676077" duration="329000" />
-      <workItem from="1747038315190" duration="1059000" />
-      <workItem from="1747039740497" duration="87000" />
-      <workItem from="1747039852141" duration="130000" />
-      <workItem from="1747040035058" duration="2000" />
-      <workItem from="1747047956623" duration="691000" />
-      <workItem from="1747053083921" duration="696000" />
-      <workItem from="1747097262585" duration="5475000" />
-      <workItem from="1747056322110" duration="2087000" />
-      <workItem from="1747058450509" duration="111000" />
-      <workItem from="1747097757223" duration="1991000" />
-      <workItem from="1747104710604" duration="10101000" />
-      <workItem from="1747119279541" duration="32000" />
-      <workItem from="1747123775561" duration="3465000" />
-      <workItem from="1747135747655" duration="3557000" />
-      <workItem from="1747183411634" duration="2671000" />
+      <updated>1747188264418</updated>
+      <workItem from="1747188266796" duration="23000" />
     </task>
     <servers />
   </component>
@@ -160,25 +110,4 @@
     <option name="unityProjectFolder" value="true" />
   </component>
   <component name="UnityUnitTestConfiguration" currentTestLauncher="Both" />
-  <component name="VcsManagerConfiguration">
-    <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <breakpoint enabled="true" type="DotNet_Exception_Breakpoints">
-          <properties exception="System.OperationCanceledException" breakIfHandledByOtherCode="false" displayValue="System.OperationCanceledException" />
-          <option name="timeStamp" value="1" />
-        </breakpoint>
-        <breakpoint enabled="true" type="DotNet_Exception_Breakpoints">
-          <properties exception="System.Threading.Tasks.TaskCanceledException" breakIfHandledByOtherCode="false" displayValue="System.Threading.Tasks.TaskCanceledException" />
-          <option name="timeStamp" value="2" />
-        </breakpoint>
-        <breakpoint enabled="true" type="DotNet_Exception_Breakpoints">
-          <properties exception="System.Threading.ThreadAbortException" breakIfHandledByOtherCode="false" displayValue="System.Threading.ThreadAbortException" />
-          <option name="timeStamp" value="3" />
-        </breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
-  </component>
 </project>
