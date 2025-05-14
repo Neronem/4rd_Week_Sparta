@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="bd999850-8ac0-4cd3-8532-079e46b1ecfd" name="변경" comment="">
+    <list default="true" id="980696c5-c13b-40ca-8d5d-13c3e88d8629" name="변경" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.CookieRun/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.CookieRun/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Resources/Prefabs/Obstacles_0.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Prefabs/Obstacles_0.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Resources/Prefabs/Obstacles_1.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Prefabs/Obstacles_1.prefab" afterDir="false" />
@@ -21,9 +21,10 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
   <component name="ProjectColorInfo"><![CDATA[{
+  "customColor": "",
   "associatedIndex": 5
 }]]></component>
-  <component name="ProjectId" id="2x4D4s0vOKFG1P42vuFq1F9onNB" />
+  <component name="ProjectId" id="2x4E8sjUE8XdCXcOWL7Et8Qw42j" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -91,12 +92,12 @@
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="디폴트 작업">
-      <changelist id="bd999850-8ac0-4cd3-8532-079e46b1ecfd" name="변경" comment="" />
-      <created>1747188264418</created>
+      <changelist id="980696c5-c13b-40ca-8d5d-13c3e88d8629" name="변경" comment="" />
+      <created>1747188790286</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1747188264418</updated>
-      <workItem from="1747188266796" duration="23000" />
+      <updated>1747188790286</updated>
+      <workItem from="1747188792798" duration="27000" />
     </task>
     <servers />
   </component>
